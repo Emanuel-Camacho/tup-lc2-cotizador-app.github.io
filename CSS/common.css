@@ -3,10 +3,12 @@
     padding: 0px;
     font-family: monospace;
     border-radius: 1em;
+
 }
 
 body {
     background-color: rgb(217, 217, 217);
+
 }
 
 
@@ -16,11 +18,14 @@ body {
     padding: 2px;
 
     width: 70%;
+
     gap: 20px;
 
     text-align: center;
     background-color: rgb(254, 254, 254);
     border: 0px solid red;
+    border-radius: 0em;
+    height: 100vh;
 }
 
 
@@ -51,10 +56,10 @@ body {
     color: rgb(0, 0, 0);
 
     text-shadow:
-        -1px -1px 0 greenyellow,
-        1px -1px 0 greenyellow,
-        -1px 1px 0 greenyellow,
-        1px 1px 0 greenyellow;
+        -1px -1px 2px rgb(246, 255, 0),
+        1px -1px 2px rgb(246, 255, 0),
+        -1px 1px 2px rgb(246, 255, 0),
+        1px 1px 2px rgb(246, 255, 0);
 }
 
 #CABECERA h2 span {
@@ -65,7 +70,12 @@ body {
 
 #CABECERA i {
     font-size: 2em;
-    color: rgb(0, 0, 0);
+    color: rgb(229, 255, 0);
+    text-shadow:
+        -1px -1px 2px rgb(0, 0, 0),
+        1px -1px 2px rgb(0, 0, 0),
+        -1px 1px 2px rgb(0, 0, 0),
+        1px 1px 2px rgb(0, 0, 0);
 }
 
 
@@ -81,7 +91,7 @@ body {
 
     font-size: 1.2em;
     font-weight: bold;
-    border-radius: 1em;
+
 
 }
 
@@ -132,7 +142,6 @@ body {
 .option:nth-child(3),
 .option:nth-child(4) {
     align-self: flex-start;
-    text-align: ;
     width: 100%;
 
 }
@@ -176,17 +185,19 @@ body {
     border: 0px solid black;
 }
 
-.URL{
+.URL {
     text-align: right;
+    margin-bottom: 7px;
 }
 
-.container{
+.container {
     border: 1px solid rgb(0, 0, 0);
-    
+
 }
 
 
 /* PIE DE PAGINA */
+#ROJO
 #PIE-DE-PAGINA {
     display: flex;
     align-items: center;
