@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(157, 157, 157, 0.577);
     display: ;
 }
 
@@ -17,7 +17,7 @@ body {
     margin: 0px auto;
     padding: 0px;
 
-    width: 100%;
+    width: 80%;
     height: ;
     /* como hacer que ocupe todo el ALTO ???*/
 
@@ -37,7 +37,7 @@ body {
 #AZUL {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    
+
 }
 
 
@@ -48,7 +48,7 @@ body {
     justify-content: center;
 
     margin: 5px;
-    height: 110px;
+    height: 300px;
     line-height: 110px;
 
     background-image: url(../IMG/monedas-2.jpg);
@@ -254,7 +254,8 @@ body {
 #ROJO {
     display: flex;
     flex-direction: column;
-    flex: 1; /* ??? */
+    flex: 1;
+    /* ??? */
 }
 
 #AZUL {
@@ -267,11 +268,30 @@ body {
     width: ;
     flex-shrink: 0;
     /* cabecera y pie que no cambien de tamaño como hacer ??? */
-    justify-content: center;
+    
+    
 
     margin: 5px;
-    height: 110px;
-    line-height: 110px;
+    height: 300px;
     background-color: #04364A;
     color: #DAFFFB;
+    
+}
+
+#PIE-DE-PAGINA .con-tenedor {
+    
+    
+    
+}
+
+#PIE-DE-PAGINA .con-tenedor div {
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+#PIE-DE-PAGINA .con-tenedor div ul {
+    text-transform: none;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
 }
