@@ -51,7 +51,7 @@ body {
     height: 110px;
     line-height: 110px;
 
-    background-image: url(/tup-lc2-cotizador-app/IMG/monedas-2.jpg);
+    background-image: url(../IMG/monedas-2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
