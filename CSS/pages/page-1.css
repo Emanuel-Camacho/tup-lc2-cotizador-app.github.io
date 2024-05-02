@@ -1,0 +1,11 @@
+#BARRA-LATERAL .option:nth-child(1) {
+    background-color: rgb(0, 216, 7);
+}
+
+#BARRA-LATERAL .option:nth-child(1) a {
+    color: rgb(0, 0, 0);
+}
+
+#BARRA-LATERAL .option:nth-child(1) a i {
+    color: rgb(0, 0, 0);
+}
