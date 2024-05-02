@@ -8,17 +8,17 @@
 
 body {
     background-color: rgb(217, 217, 217);
-
+    display: ;
 }
 
 
 /* TODO */
 #ROJO {
-
     margin: 2px auto;
     padding: 2px;
 
     width: 70%;
+
 
     /* gap: 20px; */
 
@@ -26,7 +26,9 @@ body {
     background-color: rgb(254, 254, 254);
     border: 0px solid red;
     border-radius: 0em;
-    height: 99vh;
+    /*
+    height: 100vh;
+    */
 }
 
 
@@ -110,11 +112,11 @@ body {
 
 }
 
-#BARRA-LATERAL div a {
+#BARRA-LATERAL .option a {
     text-decoration: none;
 }
 
-#BARRA-LATERAL div:hover {
+#BARRA-LATERAL .option:hover {
     background-color: rgb(11, 172, 0);
 }
 
@@ -176,6 +178,57 @@ body {
     text-align: center;
 }
 
+/* comentrario */
+#BARRA-LATERAL .comentarios {
+    background-color: gold;
+    height: fit-content;
+    display: flex;
+    clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%);
+    /* como hacer que quede fija ??? */
+}
+
+/* comentarios en todas la paginas ??? */
+
+.comentarios {
+    padding: 7px;
+}
+
+.comentarios .dere .texto {
+    font-size: 1em;
+    line-height: 30px;
+    text-transform: none;
+    font-weight: normal;
+}
+
+
+.comentarios img {
+    max-height: 50px;
+    border-radius: 10em;
+    box-shadow: rgba(20, 20, 20, 0.3);
+    border: #74a0cc;
+}
+
+.comentarios h3 {
+    font-size: 1.2em;
+}
+
+.comentarios .izquierda {
+    flex: 0 0 auto;
+    background-color: lightblue;
+}
+
+#BARRA-LATERAL .comentarios .dere {
+    background-color: gold;
+    height: fit-content;
+}
+
+.comentarios .derecha {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
 /* CONTENIDO CENTRAL */
 #CONTENIDO-CENTRAL {
     align-items: center;
@@ -193,13 +246,26 @@ body {
 
 .container {
     border: 1px solid rgb(0, 0, 0);
-
 }
 
 
 /* PIE DE PAGINA */
-#PIE-DE-PAGINA {
+#ROJO {
     display: flex;
+    flex-direction: column;
+    flex: 1; /* ??? */
+}
+
+#AZUL {
+    flex: 1;
+    /* ocupa todo el alto de la pag, esta bien???*/
+}
+
+
+#PIE-DE-PAGINA {
+    width: ;
+    flex-shrink: 0;
+    /* cabecera y pie que no cambien de tamaño como hacer ??? */
     justify-content: center;
 
     margin: 5px;
