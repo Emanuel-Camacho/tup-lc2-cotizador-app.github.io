@@ -14,18 +14,19 @@ body {
 
 /* TODO */
 #ROJO {
-    margin: 0px auto;
+
+    margin: 2px auto;
     padding: 2px;
 
     width: 70%;
 
-    gap: 20px;
+    /* gap: 20px; */
 
     text-align: center;
     background-color: rgb(254, 254, 254);
     border: 0px solid red;
     border-radius: 0em;
-    height: 100vh;
+    height: 99vh;
 }
 
 
@@ -197,10 +198,8 @@ body {
 
 
 /* PIE DE PAGINA */
-#ROJO
 #PIE-DE-PAGINA {
     display: flex;
-    align-items: center;
     justify-content: center;
 
     margin: 5px;
