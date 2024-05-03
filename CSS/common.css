@@ -297,6 +297,7 @@ body {
     text-align: left;
 }
 
+
 #PIE-DE-PAGINA .con-tenedor div ul {
     text-transform: none;
     list-style: none;
@@ -305,6 +306,7 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
 
 #PIE-DE-PAGINA .con-tenedor .listado ul li {
     position: relative;
@@ -330,4 +332,26 @@ body {
 #PIE-DE-PAGINA .con-tenedor .no-listado-2 {
     align-self: flex-end;
     text-align: right;
+}
+
+@media (max-width: 700px) {
+    .con-tenedor {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .con-tenedor div {
+        margin-bottom: 20px;
+    }
+
+    .con-tenedor div ul {
+        text-align: center;
+    }
+
+    #PIE-DE-PAGINA .con-tenedor .no-listado-2 {
+        align-self: center;
+        text-align: center;
+    }
+
 }
