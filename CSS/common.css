@@ -9,7 +9,6 @@
 
 body {
     background-color: rgba(157, 157, 157, 0.577);
-    display: ;
 }
 
 
@@ -19,7 +18,6 @@ body {
     padding: 0px;
 
     width: 80%;
-    height: ;
     /* como hacer que ocupe todo el ALTO ???*/
 
     /* gap: 20px; */
@@ -68,7 +66,7 @@ body {
         1px 1px 2px blue;
 }
 
-#CABECERA h2 span:hover{
+#CABECERA h2 span:hover {
     color: rgb(4, 255, 0);
     text-shadow:
         -1px -1px 7px black,
@@ -122,15 +120,15 @@ body {
 #BARRA-LATERAL div {
     background-color: #00003d;
 
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 
     height: 30px;
     line-height: 30px;
-    width: ;
     /* NO tocar */
     text-transform: uppercase;
-
+    
+    
 }
 
 #BARRA-LATERAL .option a {
@@ -285,7 +283,6 @@ body {
 
 
 #PIE-DE-PAGINA {
-    width: ;
     height: ;
     /* alto no nodificar por ahora  */
     flex-shrink: 0;
