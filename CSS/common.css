@@ -4,6 +4,7 @@
     font-family: monospace;
     border-radius: 1em;
 
+    user-select: none;
 }
 
 body {
@@ -48,26 +49,35 @@ body {
     justify-content: center;
 
     margin: 5px;
-    height: 300px;
+    height: 200px;
     line-height: 110px;
 
     background-color: lightgray;
-    background-image: url(../IMG/billetes.jpg);
+    background-image: url(../IMG/billetes-2.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
-    font-size: 1.3em;
-    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    color: #00c3ff;
 
     text-shadow:
-        -1px -1px 2px rgb(0, 255, 0),
-        1px -1px 2px rgb(0, 255, 0),
-        -1px 1px 2px rgb(0, 255, 0),
-        1px 1px 2px rgb(0, 255, 0);
+        -1px -1px 2px blue,
+        1px -1px 2px blue,
+        -1px 1px 2px blue,
+        1px 1px 2px blue;
 }
 
-#CABECERA h2 span {
+#CABECERA h2 span:hover{
+    color: rgb(4, 255, 0);
+    text-shadow:
+        -1px -1px 7px black,
+        1px -1px 7px black,
+        -1px 1px 7px black,
+        1px 1px 7px black;
+}
+
+#CABECERA h2 .mayus {
     text-transform: capitalize;
     font-size: 2em;
     font-weight: bold;
@@ -75,12 +85,21 @@ body {
 
 #CABECERA i {
     font-size: 2em;
-    color: rgb(0, 255, 4);
+    color: #00c3ff;
     text-shadow:
-        -1px -1px 2px rgb(0, 0, 0),
-        1px -1px 2px rgb(0, 0, 0),
-        -1px 1px 2px rgb(0, 0, 0),
-        1px 1px 2px rgb(0, 0, 0);
+        -1px -1px 7px blue,
+        1px -1px 7px blue,
+        -1px 1px 7px blue,
+        1px 1px 7px blue;
+}
+
+#CABECERA i:hover {
+    color: rgb(4, 255, 0);
+    text-shadow:
+        -1px -1px 7px black,
+        1px -1px 7px black,
+        -1px 1px 7px black,
+        1px 1px 7px black;
 }
 
 
