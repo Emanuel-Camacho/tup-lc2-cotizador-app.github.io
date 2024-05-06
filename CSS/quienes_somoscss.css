@@ -1,0 +1,447 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: monospace;
+    border-radius: 1em;
+
+    user-select: none;
+}
+
+body {
+    background-color: rgba(157, 157, 157, 0.577);
+}
+
+
+/* TODO */
+#ROJO {
+    margin: 0px auto;
+    padding: 0px;
+
+    width: 80%;
+    /* como hacer que ocupe todo el ALTO ???*/
+
+    /* gap: 20px; */
+
+    text-align: center;
+    background-color: rgb(254, 254, 254);
+    border: 0px solid red;
+    border-radius: 0em;
+    /*
+    height: 100vh;
+    */
+}
+
+
+/* SOLO MEDIO */
+#AZUL {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+}
+
+
+/* CABECERA */
+#CABECERA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 5px;
+    height: 200px;
+    line-height: 110px;
+
+    background-color: lightgray;
+    background-image: url(../IMG/billetes-2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    font-size: 1.5em;
+    color: #00c3ff;
+
+    text-shadow:
+        -1px -1px 2px blue,
+        1px -1px 2px blue,
+        -1px 1px 2px blue,
+        1px 1px 2px blue;
+}
+
+#CABECERA h2 span:hover {
+    color: rgb(4, 255, 0);
+    text-shadow:
+        -1px -1px 7px black,
+        1px -1px 7px black,
+        -1px 1px 7px black,
+        1px 1px 7px black;
+}
+
+#CABECERA h2 .mayus {
+    text-transform: capitalize;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#CABECERA i {
+    font-size: 2em;
+    color: #00c3ff;
+    text-shadow:
+        -1px -1px 7px blue,
+        1px -1px 7px blue,
+        -1px 1px 7px blue,
+        1px 1px 7px blue;
+}
+
+#CABECERA i:hover {
+    color: rgb(4, 255, 0);
+    text-shadow:
+        -1px -1px 7px black,
+        1px -1px 7px black,
+        -1px 1px 7px black,
+        1px 1px 7px black;
+}
+
+
+/* BARRA LATERAL */
+#BARRA-LATERAL {
+    display: flex;
+    flex-direction: column;
+
+    margin: 5px;
+    padding: 5px;
+
+    background-color: #176B87;
+
+    font-size: 1.2em;
+    font-weight: bold;
+
+
+}
+
+#BARRA-LATERAL div {
+    background-color: #00003d;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    height: 30px;
+    line-height: 30px;
+    /* NO tocar */
+    text-transform: uppercase;
+
+    
+}
+
+#BARRA-LATERAL .option a {
+    text-decoration: none;
+}
+
+#BARRA-LATERAL .option:hover {
+    background-color: #0c136e;
+}
+
+/* inicio */
+.option:nth-child(1) {
+    align-self: flex-end;
+}
+
+.option:nth-child(1) a {
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    /* permite centrar icono e inicio */
+}
+
+.option:nth-child(1) a i {
+    color: #ffffff;
+    line-height: 30px;
+
+}
+
+
+/* opciones */
+.option:nth-child(2),
+.option:nth-child(3),
+.option:nth-child(4) {
+    align-self: flex-start;
+    width: 100%;
+
+}
+
+.option:nth-child(2) a,
+.option:nth-child(3) a,
+.option:nth-child(4) a {
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    /* permite cosas */
+}
+
+.option:nth-child(2) a i,
+.option:nth-child(3) a i,
+.option:nth-child(4) a i {
+    color: rgb(255, 255, 255);
+    line-height: 30px;
+    /**/
+}
+
+.left {
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* comentrario */
+#BARRA-LATERAL .comentarios {
+    background-color: lightgray;
+    height: fit-content;
+    display: flex;
+    clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%);
+    /* como hacer que quede fija ??? */
+}
+
+/* comentarios en todas la paginas ??? */
+
+.comentarios {
+    padding: 7px;
+}
+
+.comentarios .dere .texto {
+    font-size: 1em;
+    line-height: 30px;
+    text-transform: none;
+    font-weight: normal;
+}
+
+
+.comentarios img {
+    max-height: 50px;
+    border-radius: 10em;
+    box-shadow: rgba(20, 20, 20, 0.3);
+    border: #74a0cc;
+}
+
+.comentarios h3 {
+    font-size: 1.2em;
+}
+
+.comentarios .izquierda {
+    flex: 0 0 auto;
+    background-color: lightblue;
+}
+
+#BARRA-LATERAL .comentarios .dere {
+    background-color: lightgray;
+    height: fit-content;
+}
+
+.comentarios .derecha {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+/* CONTENIDO CENTRAL */
+#CONTENIDO-CENTRAL {
+    align-items: center;
+    justify-content: center;
+
+    margin: 5px;
+    height: auto;
+    border: 0px solid black;
+
+}
+
+.URL {
+    text-align: right;
+    margin-bottom: 7px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las secciones "¿Quiénes Somos?" y "¿A Qué Nos Dedicamos?" */
+.container h2 {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el cuadro de miembros del equipo */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuir los elementos uniformemente */
+}
+
+.member {
+    flex: 0 0 calc(50% - 20px); /* Dos columnas en dispositivos grandes */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilo para cada miembro del equipo */
+.member h4 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.member p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Colores específicos para cada tipo de miembro */
+.member.blue {
+    background-color: #cce5ff; /* Fondo azul claro */
+}
+
+.member.green {
+    background-color: #d4edda; /* Fondo verde claro */
+}
+
+.member.yellow {
+    background-color: #fff3cd; /* Fondo amarillo claro */
+}
+
+.member.pink {
+    background-color: #f8d7da; /* Fondo rosado claro */
+}
+
+/* Media query para mostrar los miembros en una sola columna en dispositivos pequeños */
+@media (max-width: 600px) {
+    .member {
+        flex-basis: 100%; /* Una columna completa en dispositivos pequeños */
+    }
+}
+
+
+
+/* PIE DE PAGINA */
+#ROJO {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* ??? */
+}
+
+#AZUL {
+    flex: 1;
+    /* ocupa todo el alto de la pag, esta bien???*/
+}
+
+
+#PIE-DE-PAGINA {
+    height: ;
+    /* alto no nodificar por ahora  */
+    flex-shrink: 0;
+    /* cabecera y pie que no cambien de tamaño como hacer ??? */
+
+    margin: 5px;
+    padding: 10px;
+    background-color: #04364A;
+    color: #DAFFFB;
+
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#PIE-DE-PAGINA .con-tenedor {
+    display: flex;
+    justify-content: space-around;
+
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#PIE-DE-PAGINA .con-tenedor div {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    text-align: left;
+}
+
+
+#PIE-DE-PAGINA .con-tenedor div ul {
+    text-transform: none;
+    list-style: none;
+    font-size: 14px;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#PIE-DE-PAGINA .con-tenedor .listado ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+#PIE-DE-PAGINA .con-tenedor .listado ul li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+}
+
+#PIE-DE-PAGINA .con-tenedor div ul a {
+    text-decoration: none;
+    color: white;
+}
+
+#PIE-DE-PAGINA .con-tenedor .no-listado .no-listado-2 {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#PIE-DE-PAGINA .con-tenedor .no-listado-2 {
+    align-self: flex-end;
+    text-align: right;
+}
+
+@media (max-width: 700px) {
+    .con-tenedor {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .con-tenedor div {
+        margin-bottom: 20px;
+    }
+
+    .con-tenedor div ul {
+        text-align: center;
+    }
+
+    #PIE-DE-PAGINA .con-tenedor .no-listado-2 {
+        align-self: center;
+        text-align: center;
+    }
+
+}
