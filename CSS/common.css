@@ -66,15 +66,6 @@ body {
         1px 1px 2px blue;
 }
 
-#CABECERA h2 span:hover {
-    color: rgb(4, 255, 0);
-    text-shadow:
-        -1px -1px 7px black,
-        1px -1px 7px black,
-        -1px 1px 7px black,
-        1px 1px 7px black;
-}
-
 #CABECERA h2 .mayus {
     text-transform: capitalize;
     font-size: 2em;
@@ -120,15 +111,13 @@ body {
 #BARRA-LATERAL div {
     background-color: #00003d;
 
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 
     height: 30px;
     line-height: 30px;
     /* NO tocar */
     text-transform: uppercase;
-
-    
 }
 
 #BARRA-LATERAL .option a {
@@ -267,6 +256,30 @@ body {
     border: 1px solid rgb(0, 0, 0);
 }
 
+#CONTENIDO-CENTRAL .container .dia {
+    text-align: right;
+    margin-bottom: 7px;
+    margin-right: 10px;
+}
+
+#CONTENIDO-CENTRAL .select {
+    border: 1px solid black;
+    width: fit-content;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 1em;
+    display: flex;
+}
+#CONTENIDO-CENTRAL .select label {
+    font-size: 16px;
+} 
+
+#CONTENIDO-CENTRAL .select i{
+    font-size: 24px;
+}
+
+
+
 
 /* PIE DE PAGINA */
 #ROJO {
@@ -278,7 +291,7 @@ body {
 
 #AZUL {
     flex: 1;
-    /* ocupa todo el alto de la pag, esta bien???*/
+    /* ocupa todo el alto de la pag, esta bien ??? */
 }
 
 
