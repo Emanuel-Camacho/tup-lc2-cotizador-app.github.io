@@ -268,11 +268,17 @@ body {
     margin-left: 10px;
     padding: 5px;
     border-radius: 1em;
+    display: flex;
 }
 #CONTENIDO-CENTRAL .select label {
     font-size: 16px;
-    
 } 
+
+#CONTENIDO-CENTRAL .select i{
+    font-size: 24px;
+}
+
+
 
 
 /* PIE DE PAGINA */
