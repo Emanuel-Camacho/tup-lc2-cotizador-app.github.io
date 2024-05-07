@@ -254,32 +254,163 @@ body {
 
 .container {
     border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
 }
+
+/* selector */
 
 #CONTENIDO-CENTRAL .container .dia {
     text-align: right;
-    margin-bottom: 7px;
-    margin-right: 10px;
+    margin: 10px;
 }
 
 #CONTENIDO-CENTRAL .select {
-    border: 1px solid black;
+    border: 0px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+
     width: fit-content;
-    margin-left: 10px;
+    margin: 10px;
     padding: 5px;
     border-radius: 1em;
+
     display: flex;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
 }
+
 #CONTENIDO-CENTRAL .select label {
     font-size: 16px;
-} 
+}
 
-#CONTENIDO-CENTRAL .select i{
+#options {
+    color: black;
+}
+
+#CONTENIDO-CENTRAL .select i {
     font-size: 24px;
 }
 
+/* Pizarra de Monedas */
 
 
+.cotizaciones {
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 0em;
+    margin: 10px;
+
+    /* a partir  de 1119px de ancho el grid rompe la pagina
+    */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: rgb(255, 255, 255);
+
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+
+}
+
+.tarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.moneda {
+    /* a partir de 1233px se rompen las tarjetas de monedas
+    */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 67%;
+    height: 30px;
+    margin: 20px;
+    padding: 15px;
+
+    border: 1px solid #74a0cc4f;
+    background-color: #74a0cc4f;
+
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+}
+
+
+.moneda .precio {
+    display: flex;
+    align-self: flex-end;
+    align-self: center;
+
+}
+
+.precio div {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 20px;
+    font-weight: normal;
+    width: 85px;
+}
+
+.precio div span {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.precio .compra {
+    background-color: rgba(255, 0, 0, 0.379);
+    border-radius: 0.5em;
+    width: ;
+}
+
+.precio .venta {
+    margin-left: 15px;
+    background-color: rgba(68, 255, 68, 0.379);
+    border-radius: 0.5em;
+    width: ;
+}
+
+/* pie */
+
+.pie {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.pie .izquierda {
+    text-align: left;
+}
+
+.pie .derecha {
+    text-align: right;
+
+    padding: 2px;
+    border-radius: 0em;
+}
+
+.pie .derecha span {
+    padding: 2px;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.238);
+}
+
+.pie .derecha a {
+    padding: 2px;
+    border-radius: 2px;
+    background-color: rgb(238, 131, 238);
+
+    text-decoration: none;
+    color: white;
+}
+
+.pie .derecha a:hover {
+    background-color: rgb(215, 138, 215);
+}
 
 /* PIE DE PAGINA */
 #ROJO {
@@ -299,7 +430,7 @@ body {
     height: ;
     /* alto no nodificar por ahora  */
     flex-shrink: 0;
-    /* cabecera y pie que no cambien de tamaño como hacer ??? */
+    
 
     margin: 5px;
     padding: 10px;
@@ -383,4 +514,13 @@ body {
         text-align: center;
     }
 
+}
+
+@media (max-width: 1119px) {
+    /* a partir  de 1119px de ancho el grid rompe la pagina
+    */
+}
+@media (max-width: 1233px) {
+    /* a partir de 1233px se rompen las tarjetas de monedas
+    */
 }
