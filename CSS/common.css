@@ -18,7 +18,7 @@ body {
     padding: 0px;
 
     width: 80%;
-    /* como hacer que ocupe todo el ALTO ???*/
+    /* como hacer que ocupe todo el ALTO */
 
     /* gap: 20px; */
 
@@ -192,10 +192,8 @@ body {
     height: fit-content;
     display: flex;
     clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%);
-    /* como hacer que quede fija ??? */
+    /* como hacer que los angulos queden fijos ??? */
 }
-
-/* comentarios en todas la paginas ??? */
 
 .comentarios {
     padding: 7px;
@@ -302,17 +300,14 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    /* ??? */
 }
 
 #AZUL {
     flex: 1;
-    /* ocupa todo el alto de la pag, esta bien ??? */
 }
 
 
 #PIE-DE-PAGINA {
-    height: ;
     /* alto no nodificar por ahora  */
     flex-shrink: 0;
     

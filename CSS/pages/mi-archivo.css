@@ -14,12 +14,18 @@
     color: blue;
 }
 
+.head a {
+    font-size: 30px;
+}
+
 /* TABLA */
 
 .tabla-container {
     max-height: 450px;
     overflow-y: auto;
-    /* Agrega un scrollbar vertical si el contenido es más largo que la altura máxima */
+    /* Agrega un scrollbar vertical si el contenido es más largo que la altura máxima 
+    se puede hacer que el scroll este oculto ???
+    */
     border: 1px solid lightgray;
 
 }
