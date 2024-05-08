@@ -1,0 +1,116 @@
+/* selector */
+
+#CONTENIDO-CENTRAL .container .dia {
+    text-align: right;
+    margin: 10px;
+}
+
+#CONTENIDO-CENTRAL .select {
+    border: 0px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+
+    width: fit-content;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 1em;
+
+    display: flex;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+}
+
+#CONTENIDO-CENTRAL .select label {
+    font-size: 16px;
+}
+
+#options {
+    color: black;
+}
+
+#CONTENIDO-CENTRAL .select i {
+    font-size: 24px;
+}
+
+/* Pizarra de Monedas */
+
+
+.cotizaciones {
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 0em;
+    margin: 10px;
+
+    /* a partir  de 1119px de ancho el grid rompe la pagina
+    */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    background-color: rgb(255, 255, 255);
+
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+
+}
+
+.tarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.moneda {
+    /* a partir de 1233px se rompen las tarjetas de monedas
+    */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 67%;
+    height: 30px;
+    margin: 20px;
+    padding: 15px;
+
+    border: 1px solid #74a0cc4f;
+    background-color: #74a0cc4f;
+
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+}
+
+
+.moneda .precio {
+    display: flex;
+    align-self: flex-end;
+    align-self: center;
+
+}
+
+.precio div {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 20px;
+    font-weight: normal;
+    width: 85px;
+}
+
+.precio div span {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.precio .compra {
+    background-color: rgba(34, 255, 0, 0.379);
+    border-radius: 0.5em;
+    width: ;
+}
+
+.precio .venta {
+    margin-left: 15px;
+    background-color: rgba(255, 68, 68, 0.617);
+    border-radius: 0.5em;
+    width: ;
+}

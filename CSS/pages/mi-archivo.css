@@ -1,0 +1,60 @@
+/* TITULO */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.head .titulo {
+    margin: auto;
+}
+
+.head a {
+    color: blue;
+}
+
+/* TABLA */
+
+.tabla-container {
+    max-height: 450px;
+    overflow-y: auto;
+    /* Agrega un scrollbar vertical si el contenido es más largo que la altura máxima */
+    border: 1px solid lightgray;
+
+}
+
+.tabla-container table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.tabla-container table thead {
+    background-color: #b5daff;
+
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+    border-radius: 0em;
+
+}
+
+thead {
+    position: sticky;
+    top: 0;
+}
+
+table .fecha {
+    text-align: left;
+    background-color: lightgrey;
+}
+
+tbody {}
+
+.bor {
+    border: 2px solid lightgray;
+}
