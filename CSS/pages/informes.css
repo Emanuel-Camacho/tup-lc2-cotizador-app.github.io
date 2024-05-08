@@ -9,3 +9,124 @@
 #BARRA-LATERAL .option:nth-child(3) a i {
     color: rgb(0, 0, 0);
 }
+
+/* SELECTOR */
+.selector {
+    border: 0px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+
+    width: fit-content;
+    height: fit-content;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 1em;
+
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+}
+
+.selector label {
+    font-size: 16px;
+}
+
+.selector a {
+    color: red;
+}
+
+.selector div select {
+    font-size: 17px;
+}
+
+
+/* GRAFICO */
+.grafico {
+    width: fit-content;
+}
+
+.grafico img {
+    width: 600px;
+}
+
+/* COMPARTIR */
+
+.compartir {
+    width: fit-content;
+}
+
+.compartir a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compartir a span {
+    text-decoration: underline;
+}
+
+.compartir a i {
+    font-size: 30px;
+    color: blue;
+}
+
+/* NO-TABLA */
+.no-tabla .lado-lado {
+    display: flex;
+    justify-content: space-between;
+}
+
+.no-tabla .selector {
+    align-self: center;
+
+}
+
+/* TABLA */
+
+.tabla-container {
+    max-height: 330px;
+    overflow-y: auto;
+    /* Agrega un scrollbar vertical si el contenido es más largo que la altura máxima 
+    se puede hacer que el scroll este oculto ???
+    */
+    border: 1px solid lightgray;
+
+}
+
+.tabla-container table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.tabla-container table thead {
+    background-color: #b5daff;
+
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+    border-radius: 0em;
+
+}
+
+thead {
+    position: sticky;
+    top: 0;
+}
+
+table .fecha {
+    text-align: left;
+    background-color: lightgrey;
+}
+
+tbody {}
+
+.bor {
+    border: 2px solid lightgray;
+}
