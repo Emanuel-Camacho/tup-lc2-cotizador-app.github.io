@@ -60,6 +60,15 @@
     text-align: center;
 }
 
+.tarjeta a {
+    color: black;
+}
+
+.tarjeta a:hover {
+    color: gold;
+}
+
+
 .moneda {
     /* a partir de 1233px se rompen las tarjetas de monedas
     */
