@@ -264,6 +264,7 @@ body {
     margin-bottom: 7px;
 }
 
+/* Estilos generales */
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -272,9 +273,8 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para las secciones "¿Quiénes Somos?" y "¿A Qué Nos Dedicamos?" */
 .container h2 {
-    background-color: #007bff;
+    background-color: #087bf7;
     color: #fff;
     padding: 10px 20px;
     border-radius: 8px;
@@ -284,26 +284,24 @@ body {
 .container p {
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-/* Estilo para el cuadro de miembros del equipo */
+/* Estilos del equipo */
 .team-members {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Distribuir los elementos uniformemente */
+    justify-content: space-between;
 }
 
 .member {
-    flex: 0 0 calc(50% - 20px); /* Dos columnas en dispositivos grandes */
-    background-color: #f8f9fa;
+    flex: 0 0 calc(50% - 20px);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-/* Estilo para cada miembro del equipo */
 .member h4 {
     color: #333;
     font-size: 20px;
@@ -318,25 +316,25 @@ body {
 
 /* Colores específicos para cada tipo de miembro */
 .member.blue {
-    background-color: #cce5ff; /* Fondo azul claro */
+    background-color: #cce5ff;
 }
 
 .member.green {
-    background-color: #d4edda; /* Fondo verde claro */
+    background-color: #d4edda;
 }
 
 .member.yellow {
-    background-color: #fff3cd; /* Fondo amarillo claro */
+    background-color: #fff3cd;
 }
 
 .member.pink {
-    background-color: #f8d7da; /* Fondo rosado claro */
+    background-color: #f8d7da;
 }
 
-/* Media query para mostrar los miembros en una sola columna en dispositivos pequeños */
+/* Media query para dispositivos pequeños */
 @media (max-width: 600px) {
     .member {
-        flex-basis: 100%; /* Una columna completa en dispositivos pequeños */
+        flex-basis: calc(100% - 20px);
     }
 }
 
