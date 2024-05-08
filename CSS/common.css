@@ -311,7 +311,7 @@ body {
 #PIE-DE-PAGINA {
     /* alto no nodificar por ahora  */
     flex-shrink: 0;
-    
+
 
     margin: 5px;
     padding: 10px;
@@ -329,12 +329,10 @@ body {
 
     margin-bottom: 15px;
     margin-top: 15px;
+
 }
 
 #PIE-DE-PAGINA .con-tenedor div {
-    margin-left: 20px;
-    margin-right: 20px;
-
     text-align: left;
 }
 
@@ -353,6 +351,16 @@ body {
     position: relative;
     padding-left: 20px;
 }
+
+.listado {
+    width: 190px;
+}
+
+
+#PIE-DE-PAGINA .con-tenedor .listado ul li a:hover {
+    margin-left: 5px;
+}
+
 
 #PIE-DE-PAGINA .con-tenedor .listado ul li::before {
     content: ">";
@@ -401,6 +409,7 @@ body {
     /* a partir  de 1119px de ancho el grid rompe la pagina
     */
 }
+
 @media (max-width: 1233px) {
     /* a partir de 1233px se rompen las tarjetas de monedas
     */

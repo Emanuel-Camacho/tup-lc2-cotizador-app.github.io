@@ -28,6 +28,10 @@
     color: black;
 }
 
+.select a {
+    color: red;
+}
+
 #CONTENIDO-CENTRAL .select i {
     font-size: 24px;
 }
