@@ -304,6 +304,7 @@ body {
 
 #AZUL {
     flex: 1;
+    /* ocupa todo el alto de la pag, esta bien ??? */
 }
 
 
