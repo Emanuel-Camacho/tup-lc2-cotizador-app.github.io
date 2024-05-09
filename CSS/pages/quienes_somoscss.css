@@ -1,4 +1,3 @@
-
 /* Estilos generales */
 .container {
     max-width: 100%;
@@ -6,7 +5,8 @@
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra al contenedor */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Agregar sombra al contenedor */
     border: 1px solid #ddd;
 }
 
@@ -16,12 +16,15 @@
     padding: 10px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    transition: color 0.3s ease; /* Agregar transición suave en el color */
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el título */
+    transition: color 0.3s ease;
+    /* Agregar transición suave en el color */
+    cursor: pointer;
+    /* Cambiar el cursor al pasar sobre el título */
 }
 
 .container h2:hover {
-    color: #02d1ec; /* Cambiar el color al pasar el cursor sobre el título */
+    color: #02d1ec;
+    /* Cambiar el color al pasar el cursor sobre el título */
 }
 
 
@@ -30,19 +33,28 @@
     line-height: 1.5;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ddd; /* Agregar borde gris claro a los párrafos */
-    border-radius: 4px; /* Suavizar las esquinas del borde */
-    background-color: #f8f9fa; /* Fondo gris claro para los párrafos */
+    border: 1px solid #ddd;
+    /* Agregar borde gris claro a los párrafos */
+    border-radius: 4px;
+    /* Suavizar las esquinas del borde */
+    background-color: #f8f9fa;
+    /* Fondo gris claro para los párrafos */
 }
 
 .team-members .member p {
     /* Estilos específicos para los párrafos dentro de elementos .member */
-    font-size: inherit; /* Utiliza el tamaño de fuente heredado */
-    line-height: inherit; /* Utiliza la altura de línea heredada */
-    margin-bottom: 0; /* Elimina el margen inferior para los párrafos */
-    padding: 0; /* Elimina el relleno interno para los párrafos */
-    border: none; /* Elimina el borde para los párrafos */
-    border-radius: 0; /* Elimina el radio de borde para los párrafos */
+    font-size: inherit;
+    /* Utiliza el tamaño de fuente heredado */
+    line-height: inherit;
+    /* Utiliza la altura de línea heredada */
+    margin-bottom: 0;
+    /* Elimina el margen inferior para los párrafos */
+    padding: 0;
+    /* Elimina el relleno interno para los párrafos */
+    border: none;
+    /* Elimina el borde para los párrafos */
+    border-radius: 0;
+    /* Elimina el radio de borde para los párrafos */
     background-color: initial;
 }
 
@@ -53,25 +65,31 @@
     justify-content: space-between;
 }
 
-.team-members > div {
+.team-members>div {
     flex: 0 0 calc(50% - 20px);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Agregamos transición para background-color */
-    background-color: #f8f9fa; /* Color de fondo predeterminado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    /* Agregamos transición para background-color */
+    background-color: #f8f9fa;
+    /* Color de fondo predeterminado */
 }
 
-.team-members > div:hover {
-    transform: translateY(-5px); /* Mueve el elemento hacia arriba */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
-    background-color: #cce5ff; /* Cambia el color de fondo al azul suave al pasar el cursor */
+.team-members>div:hover {
+    transform: translateY(-5px);
+    /* Mueve el elemento hacia arriba */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Aumenta la sombra */
+    background-color: #cce5ff;
+    /* Cambia el color de fondo al azul suave al pasar el cursor */
 }
 
 
 .member {
-    flex: 0 0 calc(50% - 20px); /* Ocupa el 50% del espacio menos el espacio del margen en dispositivos grandes */
+    flex: 0 0 calc(50% - 20px);
+    /* Ocupa el 50% del espacio menos el espacio del margen en dispositivos grandes */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -80,47 +98,51 @@
 
 @media (min-width: 801px) {
     .team-members {
-        justify-content: center; /* Centra los elementos en dispositivos grandes */
+        justify-content: center;
+        /* Centra los elementos en dispositivos grandes */
     }
 
-/* Estilo para organizar en cuadrícula 2x2 en dispositivos grandes */
-@media (min-width: 801px) {
-    .team-members {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
-        gap: 20px; /* Espacio entre elementos */
+    /* Estilo para organizar en cuadrícula 2x2 en dispositivos grandes */
+    @media (min-width: 801px) {
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* Dos columnas de igual tamaño */
+            gap: 20px;
+            /* Espacio entre elementos */
+        }
+
+        .member {
+            margin: 10px;
+            /* Agrega espacio entre los elementos */
+        }
     }
 
-    .member {
-        margin: 10px; /* Agrega espacio entre los elementos */
+    .member h4 {
+        color: #110c0c;
+        font-size: 20px;
+        margin-bottom: 8px;
     }
-}
 
-.member h4 {
-    color: #110c0c;
-    font-size: 20px;
-    margin-bottom: 8px;
-}
+    .member p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 0;
+    }
 
-.member p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 0;
-}
+    /* Colores específicos para cada tipo de miembro */
+    .member.blue {
+        background-color: #cce5ff;
+    }
 
-/* Colores específicos para cada tipo de miembro */
-.member.blue {
-    background-color: #cce5ff;
-}
+    .member.green {
+        background-color: #d4edda;
+    }
 
-.member.green {
-    background-color: #d4edda;
-}
+    .member.yellow {
+        background-color: #fff3cd;
+    }
 
-.member.yellow {
-    background-color: #fff3cd;
-}
-
-.member.pink {
-    background-color: #f8d7da;
-}
+    .member.pink {
+        background-color: #f8d7da;
+    }
