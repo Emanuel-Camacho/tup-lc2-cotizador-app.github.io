@@ -41,12 +41,10 @@
 
 /* GRAFICO */
 .grafico {
-    width: fit-content;
+    /* imagen no se adapta al ancho ??? */
 }
 
-.grafico img {
-    width: 600px;
-}
+.grafico img {}
 
 /* COMPARTIR */
 
@@ -76,7 +74,7 @@
 /* NO-TABLA */
 .no-tabla .lado-lado {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .no-tabla .selector {
