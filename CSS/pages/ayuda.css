@@ -1,4 +1,6 @@
 .container {
+    max-width: 1000px;
+    height: 200px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -18,7 +20,7 @@
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    
+
 }
 
 .container input[type="text"] {
