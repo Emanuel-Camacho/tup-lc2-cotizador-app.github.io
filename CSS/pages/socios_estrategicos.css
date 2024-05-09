@@ -8,6 +8,45 @@
     margin-top: 20px;
 }
 
+.container h2{
+    background-color: lightseagreen;
+}
+
+.imagen_nombre{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.imagen_nombre div{
+    
+}
+
+.imagen{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen h3 {
+    background-color: lightseagreen;
+}
+
+.nombre{
+    width: 70%;
+    margin-left: 20px;
+    background-color: rgba(1, 107, 199, 0.679);
+    border:1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imagen_nombre .nombre p {
+    color: white;
+}
+
 .container h2 {
     font-size: 28px;
     color: #333;
