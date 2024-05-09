@@ -14,7 +14,16 @@
     padding: 10px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    margin: 10 auto;
+
 }
+
+.container h2:hover {
+    transform: translateY(-5px); /* Mueve el encabezado hacia arriba */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+}
+
 
 .container p {
     font-size: 16px;
@@ -22,23 +31,39 @@
     margin-bottom: 20px;
 }
 
-/* Estilos del equipo */
 .team-members {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.member {
+.team-members > div {
     flex: 0 0 calc(50% - 20px);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Agregamos transición para background-color */
+    background-color: #f8f9fa; /* Color de fondo predeterminado */
+}
+
+.team-members > div:hover {
+    transform: translateY(-5px); /* Mueve el elemento hacia arriba */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+    background-color: #cce5ff; /* Cambia el color de fondo al azul suave al pasar el cursor */
+}
+
+
+.member {
+    flex: 0 0 calc(50% - 20px);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(255, 41, 41, 0.836);
+    margin-bottom: 20px;
 }
 
 .member h4 {
-    color: #333;
+    color: #110c0c;
     font-size: 20px;
     margin-bottom: 8px;
 }
