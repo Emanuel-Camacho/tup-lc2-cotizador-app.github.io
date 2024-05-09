@@ -5,7 +5,9 @@
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra al contenedor */
+    border: 1px solid #ddd;
 }
 
 .container h2 {
@@ -29,10 +31,24 @@
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd; /* Agregar borde gris claro a los párrafos */
+    border-radius: 4px; /* Suavizar las esquinas del borde */
 }
 
+.team-members .member p {
+    /* Estilos específicos para los párrafos dentro de elementos .member */
+    font-size: inherit; /* Utiliza el tamaño de fuente heredado */
+    line-height: inherit; /* Utiliza la altura de línea heredada */
+    margin-bottom: 0; /* Elimina el margen inferior para los párrafos */
+    padding: 0; /* Elimina el relleno interno para los párrafos */
+    border: none; /* Elimina el borde para los párrafos */
+    border-radius: 0; /* Elimina el radio de borde para los párrafos */
+}
+
+
 .team-members {
-    display: block;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -55,11 +71,31 @@
 
 
 .member {
-    flex: 0 0 calc(50% - 20px);
+    flex: 0 0 calc(50% - 20px); /* Ocupa la mitad del espacio (menos el espacio del margen) en dispositivos grandes */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(255, 41, 41, 0.836);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    .member {
+        flex-basis: 100%; /* Ocupa todo el ancho en dispositivos más pequeños */
+    }
+}
+
+/* Estilo para organizar en cuadrícula 2x2 en dispositivos grandes */
+@media (min-width: 801px) {
+    .team-members {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+        gap: 20px; /* Espacio entre elementos */
+    }
+
+    .member {
+        flex-basis: unset; /* Restablece el tamaño base */
+        width: calc(100% - 20px); /* Ancho del elemento dentro de la cuadrícula (menos el espacio del margen) */
+    }
 }
 
 .member h4 {
