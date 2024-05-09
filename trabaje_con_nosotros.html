@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.D.M. - Cotizador de Monedas</title>
+    <link rel="stylesheet" href="CSS/common.css">
+    <link rel="stylesheet" href="CSS/pages/trabaje_con_nosotros.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="IMG/icon.ico">
+</head>
+
+<body>
+
+    <div id="ROJO">
+        <header id="CABECERA">
+            <h2><i class="fa-solid fa-sack-dollar"></i> <span class="mayus">c</span>otizador de <span
+                    class="mayus">m</span>onedas
+            </h2>
+        </header>
+
+        <div id="AZUL">
+            <section id="BARRA-LATERAL">
+
+                <div class="option">
+                    <a href="index.html">
+                        <i class="fa-solid fa-house-user"></i> Inicio
+                    </a>
+                </div>
+
+                <div class="option">
+                    <a href="miarchivo.html">
+                        <i class="fa-solid fa-folder left"></i> <span class="center">Mi Archivo</span>
+                    </a>
+                </div>
+
+                <div class="option">
+                    <a href="informes.html">
+                        <i class="fa-regular fa-file left"></i> <span class="center">Informe</span>
+                    </a>
+                </div>
+
+                <div class="option">
+                    <a href="#">
+                        <i class="fa-solid fa-address-book left"></i> <span class="center">Contáctenos</span>
+                    </a>
+                </div>
+
+            </section>
+
+            <main id="CONTENIDO-CENTRAL">
+
+                <!-- Indicador de ubicación -->
+                <div class="URL">
+                    <p>Usted está en: Trabaje con Nosotros </p>
+                </div>
+
+                <!-- Formulario de registro -->
+                <div class="container">
+                    <h2>Formulario de Registro</h2>
+                    <br>
+                    <p>Complete el siguiente formulario para aplicar a una posición en nuestro equipo:</p>
+
+                    <!-- Formulario -->
+                    <form action="procesar_formulario.php" method="POST">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+
+                        <label for="mensaje">Mensaje o Comentarios:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+
+            </main>
+        </div>
+
+        <footer id="PIE-DE-PAGINA"> <!-- animacion hover moverse 1px a la -->
+            <div class="con-tenedor">
+
+                <div class="listado">
+                    <ul>
+                        <h3>INSTITUCIONAL</h3>
+                        <li><a href="quienes_somos.html"><span>¿Quienes somos?</span></a></li>
+                        <li><a href="socios_estrategicos.html"><span>Socios Estrategicos</span></a></li>
+                        <li><a href="trabaje_con_nosotros.html"><span>Trabaje con Nosotros</span></a></li>
+                        <li><a href="#"><span>Ayuda</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="listado">
+                    <ul>
+                        <h3>ACCESO</h3>
+                        <li><a href="index.html"><span>Inicio</span></a></li> <!--- que te mande arriba? -->
+                        <li><a href="miarchivo.html"><span>Mi Archivo</span></a></li>
+                        <li><a href="informes.html"><span>Informes</span></a></li>
+                        <li><a href="Contacto.html"><span>Contácto</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="no-listado">
+                    <ul>
+                        <h3>CONTACTO</h3>
+                        <li>Universidad Tecnologica Nacional</li>
+                        <li>ZEBALLOS 1341 S2000BQA</li>
+                        <li>ROSARIO</li>
+                        <li>0341-4481871</li>
+                        <li class="no-listado-2">¡Escribanos!</li>
+                    </ul>
+                </div>
+
+                <div class="no-listado no-listado-2">
+                    <ul>
+                        <h3>Desarrollado por:</h3>
+                        <li>Emanuel Thomas Camacho (53363)</li>
+                        <li>Sergio Duarte (53356)</li>
+                        <li>Mateo Fux (53351)</li>
+                        <li>Felipe Gil (53336)</li>
+                        <li>TUP6 - 2024</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                TUP - Catedra de Laboratorio de Computacion 2 - Año 2024
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
