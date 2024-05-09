@@ -1,0 +1,51 @@
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra el contenido del contenedor */
+}
+
+.container h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px; /* Añade espacio debajo del título */
+    background-color: lightseagreen;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    
+}
+
+.container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #0056b3;
+}
+
+.container input[type="text"]::placeholder {
+    color: #999;
+    font-style: italic;
+}
