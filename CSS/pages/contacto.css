@@ -9,3 +9,121 @@
 #BARRA-LATERAL .option:nth-child(4) a i {
     color: rgb(0, 0, 0);
 }
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+.lado-lado {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.lado-lado div {
+    width: ;
+    align-self: center;
+}
+
+/* IZQUIERDA */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.formulario div {}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    width: 100%;
+    border: 1px solid lightgray;
+    background-color: rgb(232, 232, 232);
+    padding: 10px;
+    margin: 5px;
+}
+
+.campo form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.campo form div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.campo form div input,
+textarea {
+    border-radius: 0em;
+}
+
+.botones {
+    margin-left: auto;
+}
+
+.botones input {
+    border-radius: 0.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+.gris {
+    background-color: lightgray;
+}
+
+.verde {
+    background-color: green;
+    color: white;
+}
+
+/* DERECHA */
+
+.derecha {
+    display: flex;
+    flex-direction: column;
+}
+
+.derecha div {}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    text-align: justify;
+}
+
+.info p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.datos {
+    display: flex;
+    max-width: 400px;
+
+    border: 1px solid lightgray;
+    padding: 20px;
+
+    margin-top: ;
+
+}
+
+
+.datos div ul {
+    list-style: none;
+    text-align: left;
+}
+
+.datos img {
+    width: 70%;
+}
