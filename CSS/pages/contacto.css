@@ -22,14 +22,17 @@
 .lado-lado div {
     width: ;
     align-self: center;
+    margin: 10px;
+
 }
 
 /* IZQUIERDA */
 
 .formulario {
-    display: flex;
-    flex-direction: column;
+    display: ;
+    flex-direction: ;
     margin: 10px;
+
 }
 
 .formulario div {}
@@ -39,7 +42,6 @@
     flex-direction: column;
     text-align: left;
 
-    width: 100%;
     border: 1px solid lightgray;
     background-color: rgb(232, 232, 232);
     padding: 10px;
@@ -59,13 +61,21 @@
     margin: 10px;
 }
 
+.campo form div input {
+    width: 50%;
+}
+
 .campo form div input,
 textarea {
     border-radius: 0em;
+    width: 50%;
+
 }
 
 .botones {
-    margin-left: auto;
+    margin-left: ;
+    text-align: right;
+
 }
 
 .botones input {

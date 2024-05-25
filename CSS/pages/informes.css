@@ -38,6 +38,12 @@
     font-size: 17px;
 }
 
+.selector .sel_bott {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 /* GRAFICO */
 .grafico {

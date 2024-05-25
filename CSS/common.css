@@ -12,12 +12,12 @@ body {
 }
 
 
-/* TODO */
+/* TODO MEDIO */
 #ROJO {
     margin: 0px auto;
     padding: 0px;
 
-    width: 80%;
+    width: 100%;
     /* como hacer que ocupe todo el ALTO */
 
     /* gap: 20px; */
@@ -34,9 +34,7 @@ body {
 
 /* SOLO MEDIO */
 #AZUL {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-
+    display: flex;
 }
 
 
@@ -105,7 +103,8 @@ body {
     font-size: 1.2em;
     font-weight: bold;
 
-
+    width: 200px;
+    /* ancho predeterminado de la barra lateral */
 }
 
 #BARRA-LATERAL div {
@@ -243,6 +242,7 @@ body {
     margin: 5px;
     height: auto;
     border: 0px solid black;
+    width: 100%;
 }
 
 .URL {

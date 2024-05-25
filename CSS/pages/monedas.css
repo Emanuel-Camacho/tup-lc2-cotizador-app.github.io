@@ -44,11 +44,18 @@
     border-radius: 0em;
     margin: 10px;
 
-    /* a partir  de 1119px de ancho el grid rompe la pagina
+    /* 
+    NO SIRVE NOSE PORQUE LO DEJO
+    a partir  de 1119px de ancho el grid rompe la pagina
     */
+
+    /*
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    */
 
+    display: flex;
+    flex-wrap: wrap;
     background-color: rgb(255, 255, 255);
 
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
@@ -58,6 +65,10 @@
 }
 
 .tarjeta {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    min-width: 100px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +91,8 @@
     justify-content: space-between;
     align-items: center;
 
-    width: 67%;
+    min-width: fit-content;
+    width: 60%;
     height: 30px;
     margin: 20px;
     padding: 15px;
