@@ -124,9 +124,11 @@ thead {
     top: 0;
 }
 
-table .fecha {
+table .moneda {
     text-align: left;
     background-color: lightgrey;
+    color: blue;
+    font-weight: bold;
 }
 
 tbody {}
