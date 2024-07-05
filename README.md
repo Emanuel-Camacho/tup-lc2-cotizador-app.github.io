@@ -2,10 +2,10 @@ TPI Laboratorio
 
 Integreantes:
 
-    Emanuel Camacho
+Emanuel Camacho
 
-    Sergio Duarte
+Sergio Duarte
     
-    Mateo Fux
+Mateo Fux
     
-    Felipe Gil
+Felipe Gil
