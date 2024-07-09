@@ -131,6 +131,13 @@
     background-color: rgba(34, 255, 0, 0.379);
     border-radius: 0.5em;
     width: ;
+    font-size: 13px;
+
+    align-self: flex-end;
+    align-self: center;
+}
+.precio .compra .plata{
+    font-size: 20px;
 }
 
 .precio .venta {
@@ -138,4 +145,11 @@
     background-color: rgba(255, 68, 68, 0.617);
     border-radius: 0.5em;
     width: ;
+    font-size: 13px;
+
+    align-self: flex-end;
+    align-self: center;
+}
+.precio .venta .plata{
+    font-size: 20px;
 }

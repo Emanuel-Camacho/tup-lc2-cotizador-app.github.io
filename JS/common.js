@@ -1,25 +1,21 @@
-fetch("https://dolarapi.com/v1/cotizaciones/uyu")
+fetch("https://dolarapi.com/v1/dolares")
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => {
+        console.log(data)
+        localStorage.setItem('DOLARES', JSON.stringify(data))
 
-fetch("https://dolarapi.com/v1/dolares/oficial")
-    .then(response => response.json())
-    .then(data => console.log(data));
+    });
+    
+    // dolar oficial
+    moneda_0 = JSON.parse(localStorage.getItem('DOLARES'));
 
+    dolar_H_0 = document.querySelector('.moneda-0 h3');
+    dolar_H_0.innerHTML = "Dolar " + moneda_0[0].nombre;
 
-localStorage.setItem('cotizaciones', JSON.stringify(cotizaciones));
-const cotizacionesGuardadas = JSON.parse(localStorage.getItem('cotizaciones'));
+    dolar_C_0 = document.querySelector('.moneda-0 .compra .plata');
+    dolar_C_0.textContent = moneda_0[0].compra;
 
-const ctx = document.getElementById("miGrafica").getContext("2d");
-new Chart(ctx, {
-    type: "line",
-    data: {
-    labels: ["Enero", "Febrero", "Marzo"],
-    datasets: [{
-        label: "Ventas por mes",
-        data: [100, 150, 120],
-        borderColor: "blue",
-        fill: false
-    }]
-    }
-});
+    dolar_V_0 = document.querySelector('.moneda-0 .venta .plata');
+    dolar_V_0.innerHTML = moneda_0[0].venta;
+    
+    // dolar blue
