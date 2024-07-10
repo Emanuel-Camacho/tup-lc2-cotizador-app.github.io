@@ -81,9 +81,25 @@ dolar_C_6.textContent = MONEDAS[6].compra;
 dolar_V_6 = document.querySelector('.moneda-6 .venta .plata');
 dolar_V_6.innerHTML = MONEDAS[6].venta;
 
-// fecha y hora
+// Obtener el elemento de fecha y hora
 fecha_hora = document.querySelector('.container .dia');
-fecha_hora.textContent = "Datos Actualizados al " + MONEDAS[0].fechaActualizacion;
+
+// Obtener la fecha de actualización de MONEDAS
+const fechaActualizacion = MONEDAS[0].fechaActualizacion;
+
+// Crear un objeto Date a partir de la fecha de actualización
+const fecha = new Date(fechaActualizacion);
+
+// Formatear la fecha y la hora por separado
+const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+const opcionesHora = { hour: '2-digit', minute: '2-digit' };
+
+const fechaFormateada = fecha.toLocaleDateString('es-ES', opcionesFecha);
+const horaFormateada = fecha.toLocaleTimeString('es-ES', opcionesHora);
+
+// Asignar el texto formateado al elemento
+fecha_hora.textContent = `Datos Actualizados al ${fechaFormateada} a las ${horaFormateada}`;
+
 
 // funcion para mostrar un mensaje de alerta
 function showAlert(type, message) {
