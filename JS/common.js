@@ -128,3 +128,40 @@ setTimeout(() => {
             showAlert('error', 'ERROR: Ha ocurrido un problema.')
         });
 }, 50000);
+
+let FAVORITOS = new Array();
+// variable que funcona como bool
+let booleano = true;
+
+// Selecciona el elemento del enlace
+const cambio_accion = document.getElementById('cambio_accion');
+
+// Agrega un evento de clic al enlace
+cambio_accion.addEventListener('click', function (event) {
+    // Previene el comportamiento predeterminado del enlace
+    event.preventDefault();
+
+    if (booleano) {
+        // Acción para el primer clic
+        console.log('Primera acción ejecutada');
+        booleano = false;
+    } else {
+        // Acción para los clics posteriores
+        console.log('Segunda acción ejecutada');
+        booleano = true;
+    }
+});
+
+
+// Agregar un valor al localStorage
+localStorage.setItem('fav', FAVORITOS);
+
+// Obtener un valor del localStorage
+var nombre = localStorage.getItem('nombre');
+//console.log(nombre);  // Esto imprimirá "Juan" en la consola
+
+// Eliminar un valor del localStorage
+
+// Verificar si el valor ha sido eliminado
+nombre = localStorage.getItem('nombre');
+//console.log(nombre);  // Esto imprimirá "null" en la consola, porque ya no existe el dato
