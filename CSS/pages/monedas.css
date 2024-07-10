@@ -159,8 +159,12 @@
 }
 
 
+
 /* Estilos para los mensajes de alerta */
 .alert {
+    width: 480px;
+    font-size: 20px;
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -168,7 +172,7 @@
     padding: 20px;
     border-radius: 5px;
     color: white;
-    opacity: 0.7;
+    opacity: 0.9;
     z-index: 1000;
     display: none; /* Oculto por defecto */
 }

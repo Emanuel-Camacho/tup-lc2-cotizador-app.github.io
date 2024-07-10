@@ -1,12 +1,5 @@
-fetch("https://dolarapi.com/v1/dolares")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        localStorage.setItem('DOLARES', JSON.stringify(data))
-    })
-    .catch((error) => {
-        showAlert('error', 'ERROR: Ha ocurrido un problema.')
-    });
+
+
 
 // llamamos y guardamos el arreglo con todas las monedas y sus datos
 MONEDAS = JSON.parse(localStorage.getItem('DOLARES'));
@@ -81,24 +74,26 @@ dolar_C_6.textContent = MONEDAS[6].compra;
 dolar_V_6 = document.querySelector('.moneda-6 .venta .plata');
 dolar_V_6.innerHTML = MONEDAS[6].venta;
 
-// Obtener el elemento de fecha y hora
+// FECHA Y HORA DE ACTUALIZACION
+
+// obtener el elemento de fecha y hora
 fecha_hora = document.querySelector('.container .dia');
 
-// Obtener la fecha de actualización de MONEDAS
-const fechaActualizacion = MONEDAS[0].fechaActualizacion;
+// obtener la fecha de actualización de MONEDAS
+fechaActualizacion = MONEDAS[0].fechaActualizacion;
 
-// Crear un objeto Date a partir de la fecha de actualización
-const fecha = new Date(fechaActualizacion);
+// crear un objeto Date a partir de la fecha de actualización
+fecha = new Date(fechaActualizacion);
 
-// Formatear la fecha y la hora por separado
-const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-const opcionesHora = { hour: '2-digit', minute: '2-digit' };
+// formatear la fecha y la hora por separado hecho con chatGPT porque no tenemos ni idea de como arreglarlo
+opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+opcionesHora = { hour: '2-digit', minute: '2-digit' };
 
-const fechaFormateada = fecha.toLocaleDateString('es-ES', opcionesFecha);
-const horaFormateada = fecha.toLocaleTimeString('es-ES', opcionesHora);
+fechaFormateada = fecha.toLocaleDateString('es-ES', opcionesFecha);
+horaFormateada = fecha.toLocaleTimeString('es-ES', opcionesHora);
 
-// Asignar el texto formateado al elemento
 fecha_hora.textContent = `Datos Actualizados al ${fechaFormateada} a las ${horaFormateada}`;
+
 
 
 // funcion para mostrar un mensaje de alerta
@@ -118,3 +113,18 @@ function showAlert(type, message) {
         alert.style.display = 'none';
     }, 3000);
 }
+
+// se actualiza cada 5 minutos
+setTimeout(() => {
+    location.reload(true)
+
+    fetch("https://dolarapi.com/v1/dolares")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            localStorage.setItem('DOLARES', JSON.stringify(data))
+        })
+        .catch((error) => {
+            showAlert('error', 'ERROR: Ha ocurrido un problema.')
+        });
+}, 50000);
