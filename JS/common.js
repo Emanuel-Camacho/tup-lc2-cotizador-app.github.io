@@ -1,5 +1,12 @@
-
-
+fetch("https://dolarapi.com/v1/dolares")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        localStorage.setItem('DOLARES', JSON.stringify(data))
+    })
+    .catch((error) => {
+        showAlert('error', 'ERROR: Ha ocurrido un problema.')
+    });
 
 // llamamos y guardamos el arreglo con todas las monedas y sus datos
 MONEDAS = JSON.parse(localStorage.getItem('DOLARES'));
