@@ -38,6 +38,10 @@
 
 /* Pizarra de Monedas */
 
+.dosendos {
+    display: flex;
+    flex-direction: column;
+}
 
 .cotizaciones {
     border: 1px solid rgb(187, 187, 187);
@@ -135,7 +139,8 @@
     align-self: flex-end;
     align-self: center;
 }
-.precio .compra .plata{
+
+.precio .compra .plata {
     font-size: 20px;
 }
 
@@ -148,6 +153,39 @@
     align-self: flex-end;
     align-self: center;
 }
-.precio .venta .plata{
+
+.precio .venta .plata {
     font-size: 20px;
+}
+
+
+/* Estilos para los mensajes de alerta */
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    opacity: 0.7;
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+}
+
+.alert-success {
+    background-color: #28a746;
+    font-weight: bold;
+}
+
+.alert-warning {
+    background-color: #ffc107;
+    font-weight: bold;
+
+}
+
+.alert-error {
+    background-color: #dc3545;
+    font-weight: bold;
+
 }
