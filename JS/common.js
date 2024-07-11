@@ -118,7 +118,7 @@ function showAlert(type, message) {
     // ocultar la alerta después de 3 segundos
     setTimeout(() => {
         alert.style.display = 'none';
-    }, 3000);
+    }, 1700);
 }
 
 // se actualiza cada 5 minutos
@@ -136,39 +136,33 @@ setTimeout(() => {
         });
 }, 50000);
 
-let FAVORITOS = new Array();
-// variable que funcona como bool
-let booleano = true;
+// arreglo para guardar / sacar monedas
+let FAVORITOS = {};
 
-// Selecciona el elemento del enlace
-const cambio_accion = document.getElementById('cambio_accion');
 
-// Agrega un evento de clic al enlace
-cambio_accion.addEventListener('click', function (event) {
-    // Previene el comportamiento predeterminado del enlace
-    event.preventDefault();
+// funciones para los botones de las monedas
+function boton0() {
+    const button1 = document.getElementById('button0');
+    if (button1.dataset.state === 'off') {
+        button1.style.color = 'gold';
+        showAlert('success', 'Agregado a favoritos con exito');
+        FAVORITOS = { dolar0: MONEDAS[0] };
+        console.log(FAVORITOS);
+        button1.dataset.state = 'on';
 
-    if (booleano) {
-        // Acción para el primer clic
-        console.log('Primera acción ejecutada');
-        booleano = false;
+        localStorage.setItem('VALOR','1');
+
     } else {
-        // Acción para los clics posteriores
-        console.log('Segunda acción ejecutada');
-        booleano = true;
+        button1.style.color = 'black';
+        showAlert('success', 'Eliminado a favoritos con exito');
+        delete FAVORITOS.dolar0
+        console.log(FAVORITOS);
+        button1.dataset.state = 'off';
+
+        localStorage.setItem('VALOR','0');
+
     }
-});
+    localStorage.setItem('FAVORITOS',JSON.stringify(FAVORITOS));
+}
 
 
-// Agregar un valor al localStorage
-localStorage.setItem('fav', FAVORITOS);
-
-// Obtener un valor del localStorage
-var nombre = localStorage.getItem('nombre');
-//console.log(nombre);  // Esto imprimirá "Juan" en la consola
-
-// Eliminar un valor del localStorage
-
-// Verificar si el valor ha sido eliminado
-nombre = localStorage.getItem('nombre');
-//console.log(nombre);  // Esto imprimirá "null" en la consola, porque ya no existe el dato
