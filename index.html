@@ -91,15 +91,15 @@
                     <div class="select">
                         <label class="coin" for="moneda">Selecciona una moneda: </label>
                         <select id="options" name="moneda">
-                            <option value="">TODAS</option>
-                            <option value="">Dolar Oficial</option>
-                            <option value="">Dolar Blue</option>
-                            <option value="">Dolar Bolsa</option>
-                            <option value="">Dolar CCL</option>
-                            <option value="">Dolar Mayorista</option>
-                            <option value="">Dolar Cripto</option>
-                            <option value="">Dolar Tarjeta</option>
-                            <option value="">FAVORITOS</option>
+                            <option value="TODAS">TODAS</option>
+                            <option value="DolarOficial">Dolar Oficial</option>
+                            <option value="DolarBlue">Dolar Blue</option>
+                            <option value="DolarBolsa">Dolar Bolsa</option>
+                            <option value="DolarCCL">Dolar CCL</option>
+                            <option value="DolarMayorista">Dolar Mayorista</option>
+                            <option value="DolarCripto">Dolar Cripto</option>
+                            <option value="DolarTarjeta">Dolar Tarjeta</option>
+                            <option value="FAVORITOS">FAVORITOS</option>
                         </select>
                         <a href="#"><i class="fa-solid fa-filter-circle-dollar"></i></a>
                     </div>
@@ -109,7 +109,7 @@
                     <div class="dosendos">
                         <div class="cotizaciones">
 
-                            <div class="tarjeta tarjeta0">
+                            <div class="tarjeta tarjeta0" id="tarjeta">
                                 <div class="moneda moneda-0">
                                     <div>
                                         <h3>Dolar</h3>
@@ -143,7 +143,7 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button2" data-state="off" onclick=""><i
+                                <button id="button2" class="boton_repetido" data-state="off" onclick="boton2()"><i
                                         class="fa-solid fa-star"></i></button>
                             </div>
 
@@ -155,7 +155,7 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button3" data-state="off" onclick=""><i
+                                <button id="button3" class="boton_repetido" data-state="off" onclick="boton3()"><i
                                         class="fa-solid fa-star"></i></button>
                             </div>
 
@@ -167,7 +167,7 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button4" data-state="off" onclick=""><i
+                                <button id="button4" class="boton_repetido" data-state="off" onclick="boton4()"><i
                                         class="fa-solid fa-star"></i></button>
                             </div>
 
@@ -179,7 +179,7 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button5" data-state="off" onclick=""><i
+                                <button id="button5" class="boton_repetido" data-state="off" onclick="boton5()"><i
                                         class="fa-solid fa-star"></i></button>
                             </div>
 
@@ -191,7 +191,7 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button6" data-state="off" onclick=""><i
+                                <button id="button6" class="boton_repetido" data-state="off" onclick="boton6()"><i
                                         class="fa-solid fa-star"></i></button>
                             </div>
                         </div>
