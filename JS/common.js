@@ -134,35 +134,58 @@ setTimeout(() => {
         .catch((error) => {
             showAlert('error', 'ERROR: Ha ocurrido un problema.')
         });
-}, 50000);
+}, 300000);
 
 // arreglo para guardar / sacar monedas
 let FAVORITOS = {};
 
-
-// funciones para los botones de las monedas
-function boton0() {
-    const button1 = document.getElementById('button0');
-    if (button1.dataset.state === 'off') {
-        button1.style.color = 'gold';
-        showAlert('success', 'Agregado a favoritos con exito');
-        FAVORITOS = { dolar0: MONEDAS[0] };
-        console.log(FAVORITOS);
-        button1.dataset.state = 'on';
-
-        localStorage.setItem('VALOR','1');
-
-    } else {
-        button1.style.color = 'black';
-        showAlert('success', 'Eliminado a favoritos con exito');
-        delete FAVORITOS.dolar0
-        console.log(FAVORITOS);
-        button1.dataset.state = 'off';
-
-        localStorage.setItem('VALOR','0');
-
+// para que al recargar la pagina y quede prendida la estrella y algo con localStorage
+// hecho con ayuda externa (amigos de Emanuel)
+document.addEventListener('DOMContentLoaded', () => {
+    const favoritosGuardados = JSON.parse(localStorage.getItem('FAVORITOS'));
+    if (favoritosGuardados) {
+        FAVORITOS = favoritosGuardados;
+        if (FAVORITOS.dolar0) {
+            const button0 = document.getElementById('button0');
+            button0.style.color = 'gold';
+            button0.dataset.state = 'on';
+        }
+        if (FAVORITOS.dolar1) {
+            const button1 = document.getElementById('button1');
+            button1.style.color = 'gold';
+            button1.dataset.state = 'on';
+        }
     }
-    localStorage.setItem('FAVORITOS',JSON.stringify(FAVORITOS));
+});
+
+function boton0() {
+    const button0 = document.getElementById('button0');
+    if (button0.dataset.state == 'off') {
+        button0.style.color = 'gold';
+        showAlert('success', 'Agregado a favoritos con exito');
+        FAVORITOS.dolar0 = MONEDAS[0];
+        button0.dataset.state = 'on';
+    } else {
+        button0.style.color = 'black';
+        showAlert('success', 'Eliminado de favoritos con exito');
+        delete FAVORITOS.dolar0;
+        button0.dataset.state = 'off';
+    }
+    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 }
 
-
+function boton1() {
+    const button1 = document.getElementById('button1');
+    if (button1.dataset.state == 'off') {
+        button1.style.color = 'gold';
+        showAlert('success', 'Agregado a favoritos con exito');
+        FAVORITOS.dolar1 = MONEDAS[1];
+        button1.dataset.state = 'on';
+    } else {
+        button1.style.color = 'black';
+        showAlert('success', 'Eliminado de favoritos con exito');
+        delete FAVORITOS.dolar1;
+        button1.dataset.state = 'off';
+    }
+    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+}
