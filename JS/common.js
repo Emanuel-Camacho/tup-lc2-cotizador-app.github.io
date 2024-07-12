@@ -141,170 +141,166 @@ let FAVORITOS = {};
 
 // para que al recargar la pagina y quede prendida la estrella y algo con localStorage
 // hecho con ayuda externa (amigos de Emanuel)
+var boton_bool; // variable que se usa en todos los if de abajo para comprobar si una moneda esta en favoritos o no
 document.addEventListener('DOMContentLoaded', () => {
     const favoritosGuardados = JSON.parse(localStorage.getItem('FAVORITOS'));
     if (favoritosGuardados) {
         FAVORITOS = favoritosGuardados;
 
         if (FAVORITOS.dolar0) {
-            const button0 = document.getElementById('button0');
-            button0.style.color = 'gold';
-            button0.dataset.state = 'on';
+            boton_bool = document.getElementById('button0');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
         }
         if (FAVORITOS.dolar1) {
-            const button1 = document.getElementById('button1');
-            button1.style.color = 'gold';
-            button1.dataset.state = 'on';
+            boton_bool = document.getElementById('button1');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
         }
         if (FAVORITOS.dolar2) {
-            const button2 = document.getElementById('button2');
-            button2.style.color = 'gold';
-            button2.dataset.state = 'on';
+            boton_bool = document.getElementById('button2');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
         }
         if (FAVORITOS.dolar3) {
-            const button3 = document.getElementById('button3');
-            button3.style.color = 'gold';
-            button3.dataset.state = 'on';
+            boton_bool = document.getElementById('button3');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
         }
         if (FAVORITOS.dolar4) {
-            const button4 = document.getElementById('button4');
-            button4.style.color = 'gold';
-            button4.dataset.state = 'on';
+            boton_bool = document.getElementById('button4');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
         }
         if (FAVORITOS.dolar5) {
-            const button5 = document.getElementById('button5');
-            button5.style.color = 'gold';
-            button5.dataset.state = 'on';
+            boton_bool = document.getElementById('button5');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
         }
         if (FAVORITOS.dolar6) {
-            const button6 = document.getElementById('button6');
-            button6.style.color = 'gold';
-            button6.dataset.state = 'on';
+            boton_bool = document.getElementById('button6');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
         }
     }
 });
 
-// BOTON 0
-function boton0() {
-    const button0 = document.getElementById('button0');
-    if (button0.dataset.state == 'off') {
-        button0.style.color = 'gold';
-        showAlert('success', 'Agregado a favoritos con exito');
-        FAVORITOS.dolar0 = MONEDAS[0];
-        button0.dataset.state = 'on';
-    } else {
-        button0.style.color = 'black';
-        showAlert('success', 'Eliminado de favoritos con exito');
-        delete FAVORITOS.dolar0;
-        button0.dataset.state = 'off';
-    }
-    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
-}
 
-// BOTON 1
-function boton1() {
-    const button1 = document.getElementById('button1');
-    if (button1.dataset.state == 'off') {
-        button1.style.color = 'gold';
-        showAlert('success', 'Agregado a favoritos con exito');
-        FAVORITOS.dolar1 = MONEDAS[1];
-        button1.dataset.state = 'on';
-    } else {
-        button1.style.color = 'black';
-        showAlert('success', 'Eliminado de favoritos con exito');
-        delete FAVORITOS.dolar1;
-        button1.dataset.state = 'off';
+// funciones para que al tocar un boton se guarde en favoritos / localstorage la moneda
+var boton_fav; // varaible que se usa en todos los case para modificar el color y data-state
+function agregar_fav(buttonId) {
+    switch (buttonId) {
+        case 'boton0':
+            boton_fav = document.getElementById('button0');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.dolar0 = MONEDAS[0];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.dolar0;
+                boton_fav.dataset.state = 'off';
+            }
+            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+            break;
+        case 'boton1':
+            boton_fav = document.getElementById('button1');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.dolar1 = MONEDAS[1];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.dolar1;
+                boton_fav.dataset.state = 'off';
+            }
+            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+            break;
+        case 'boton2':
+            boton_fav = document.getElementById('button2');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.dolar2 = MONEDAS[2];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.dolar2;
+                boton_fav.dataset.state = 'off';
+            }
+            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+            break;
+        case 'boton3':
+            boton_fav = document.getElementById('button3');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.dolar3 = MONEDAS[3];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.dolar3;
+                boton_fav.dataset.state = 'off';
+            }
+            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+            break;
+        case 'boton4':
+            boton_fav = document.getElementById('button4');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.dolar4 = MONEDAS[4];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.dolar4;
+                boton_fav.dataset.state = 'off';
+            }
+            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+            break;
+        case 'boton5':
+            boton_fav = document.getElementById('button5');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.dolar5 = MONEDAS[5];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.dolar5;
+                boton_fav.dataset.state = 'off';
+            }
+            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+            break;
+        case 'boton6':
+            boton_fav = document.getElementById('button6');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.dolar6 = MONEDAS[6];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.dolar6;
+                boton_fav.dataset.state = 'off';
+            }
+            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+            break;
     }
-    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
-}
-
-// BOTON 2
-function boton2() {
-    const button2 = document.getElementById('button2');
-    if (button2.dataset.state == 'off') {
-        button2.style.color = 'gold';
-        showAlert('success', 'Agregado a favoritos con exito');
-        FAVORITOS.dolar2 = MONEDAS[2];
-        button2.dataset.state = 'on';
-    } else {
-        button2.style.color = 'black';
-        showAlert('success', 'Eliminado de favoritos con exito');
-        delete FAVORITOS.dolar2;
-        button2.dataset.state = 'off';
-    }
-    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
-}
-
-// BOTON 3
-function boton3() {
-    const button3 = document.getElementById('button3');
-    if (button3.dataset.state == 'off') {
-        button3.style.color = 'gold';
-        showAlert('success', 'Agregado a favoritos con exito');
-        FAVORITOS.dolar3 = MONEDAS[3];
-        button3.dataset.state = 'on';
-    } else {
-        button3.style.color = 'black';
-        showAlert('success', 'Eliminado de favoritos con exito');
-        delete FAVORITOS.dolar3;
-        button3.dataset.state = 'off';
-    }
-    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
-}
-
-// BOTON 4
-function boton4() {
-    const button4 = document.getElementById('button4');
-    if (button4.dataset.state == 'off') {
-        button4.style.color = 'gold';
-        showAlert('success', 'Agregado a favoritos con exito');
-        FAVORITOS.dolar4 = MONEDAS[4];
-        button4.dataset.state = 'on';
-    } else {
-        button4.style.color = 'black';
-        showAlert('success', 'Eliminado de favoritos con exito');
-        delete FAVORITOS.dolar4;
-        button4.dataset.state = 'off';
-    }
-    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
-}
-
-// BOTON 5
-function boton5() {
-    const button5 = document.getElementById('button5');
-    if (button5.dataset.state == 'off') {
-        button5.style.color = 'gold';
-        showAlert('success', 'Agregado a favoritos con exito');
-        FAVORITOS.dolar5 = MONEDAS[5];
-        button5.dataset.state = 'on';
-    } else {
-        button5.style.color = 'black';
-        showAlert('success', 'Eliminado de favoritos con exito');
-        delete FAVORITOS.dolar5;
-        button5.dataset.state = 'off';
-    }
-    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
-}
-
-// BOTON 6
-function boton6() {
-    const button6 = document.getElementById('button6');
-    if (button6.dataset.state == 'off') {
-        button6.style.color = 'gold';
-        showAlert('success', 'Agregado a favoritos con exito');
-        FAVORITOS.dolar6 = MONEDAS[6];
-        button6.dataset.state = 'on';
-    } else {
-        button6.style.color = 'black';
-        showAlert('success', 'Eliminado de favoritos con exito');
-        delete FAVORITOS.dolar6;
-        button6.dataset.state = 'off';
-    }
-    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 }
 
 
-// LABEL SELECT
+// LABEL SELECT OPTIONS
+// ??? codigo muy repetitivo, hacerlo mas compacto
 const tarjetas = document.querySelectorAll('.cotizaciones .tarjeta');
 const tarjeta0 = document.querySelector('.cotizaciones .tarjeta0');
 const tarjeta1 = document.querySelector('.cotizaciones .tarjeta1');

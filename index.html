@@ -101,7 +101,8 @@
                             <option value="DolarTarjeta">Dolar Tarjeta</option>
                             <option value="FAVORITOS">FAVORITOS</option>
                         </select>
-                        <a href="#"><i class="fa-solid fa-filter-circle-dollar"></i></a>
+                        <!-- sacar boton o hacerlo funcional ??? -->
+                        <!-- <a href="#"><i class="fa-solid fa-filter-circle-dollar"></i></a> -->
                     </div>
 
                     <div class="dia">Datos Actualizados al 00/00/0000 00:00hs</div>
@@ -109,7 +110,7 @@
                     <div class="dosendos">
                         <div class="cotizaciones">
 
-                            <div class="tarjeta tarjeta0" id="tarjeta">
+                            <div class="tarjeta tarjeta0">
                                 <div class="moneda moneda-0">
                                     <div>
                                         <h3>Dolar</h3>
@@ -119,8 +120,8 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button0" class="boton_repetido" data-state="off" onclick="boton0()"><i
-                                        class="fa-solid fa-star"></i></button>
+                                <button id="button0" class="boton_repetido" data-state="off"
+                                    onclick="agregar_fav('boton0')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
                             <div class="tarjeta tarjeta1">
@@ -131,8 +132,8 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button1" class="boton_repetido" data-state="off" onclick="boton1()"><i
-                                        class="fa-solid fa-star"></i></button>
+                                <button id="button1" class="boton_repetido" data-state="off"
+                                    onclick="agregar_fav('boton1')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
                             <div class="tarjeta tarjeta2">
@@ -143,8 +144,8 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button2" class="boton_repetido" data-state="off" onclick="boton2()"><i
-                                        class="fa-solid fa-star"></i></button>
+                                <button id="button2" class="boton_repetido" data-state="off"
+                                    onclick="agregar_fav('boton2')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
                             <div class="tarjeta tarjeta3">
@@ -155,8 +156,8 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button3" class="boton_repetido" data-state="off" onclick="boton3()"><i
-                                        class="fa-solid fa-star"></i></button>
+                                <button id="button3" class="boton_repetido" data-state="off"
+                                    onclick="agregar_fav('boton3')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
                             <div class="tarjeta tarjeta4">
@@ -167,8 +168,8 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button4" class="boton_repetido" data-state="off" onclick="boton4()"><i
-                                        class="fa-solid fa-star"></i></button>
+                                <button id="button4" class="boton_repetido" data-state="off"
+                                    onclick="agregar_fav('boton4')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
                             <div class="tarjeta tarjeta5">
@@ -179,8 +180,8 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button5" class="boton_repetido" data-state="off" onclick="boton5()"><i
-                                        class="fa-solid fa-star"></i></button>
+                                <button id="button5" class="boton_repetido" data-state="off"
+                                    onclick="agregar_fav('boton5')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
                             <div class="tarjeta tarjeta6">
@@ -191,8 +192,8 @@
                                         <div class="venta">VENTA <span class="plata"></span></div>
                                     </div>
                                 </div>
-                                <button id="button6" class="boton_repetido" data-state="off" onclick="boton6()"><i
-                                        class="fa-solid fa-star"></i></button>
+                                <button id="button6" class="boton_repetido" data-state="off"
+                                    onclick="agregar_fav('boton6')"><i class="fa-solid fa-star"></i></button>
                             </div>
                         </div>
 
@@ -205,23 +206,20 @@
                     </div>
                 </div>
 
-                <!-- ??? quitar al final -->
+                <!-- botones para probar alertas / IMPORTANTE quitar al final -->
                 <div>
-                    <!-- Botón para probar la alerta de éxito -->
                     <button onclick="showAlert('success', 'Operación completada con éxito.')">Mostrar Alerta de
                         Éxito</button>
 
-                    <!-- Botón para probar la alerta de advertencia -->
                     <button onclick="showAlert('warning', 'Advertencia: Por favor, revise sus datos.')">Mostrar
                         Alerta de
                         Advertencia</button>
 
-                    <!-- Botón para probar la alerta de error -->
                     <button onclick="showAlert('error', 'ERROR: Ha ocurrido un problema.')">Mostrar Alerta de
                         Error</button>
                 </div>
 
-                <!-- Estructura HTML para los mensajes de alerta -->
+                <!-- mensajes de alerta -->
                 <div id="alert-success" class="alert alert-success">
                     Mensaje de éxito
                 </div>
@@ -237,7 +235,7 @@
             </main>
         </div>
 
-        <footer id="PIE-DE-PAGINA"> <!-- animacion hover moverse 1px a la -->
+        <footer id="PIE-DE-PAGINA"> <!-- "animacion" hover moverse 1px a la -->
             <div class="con-tenedor">
 
                 <div class="listado">
