@@ -56,110 +56,110 @@ var moneda_V; // moneda_V - cambia la venta
 moneda_H = document.querySelector('.moneda-0 h3');
 moneda_H.innerHTML = "Dolar " + MONEDAS[0].nombre;
 
-moneda_C = document.querySelector('.moneda-0 .compra .plata');
+moneda_C = document.querySelector('.moneda-0 .compra .monto');
 moneda_C.textContent = "$" + MONEDAS[0].compra;
 
-moneda_V = document.querySelector('.moneda-0 .venta .plata');
+moneda_V = document.querySelector('.moneda-0 .venta .monto');
 moneda_V.innerHTML = "$" + MONEDAS[0].venta;
 
 // dolar blue
 moneda_H = document.querySelector('.moneda-1 h3');
 moneda_H.innerHTML = "Dolar " + MONEDAS[1].nombre;
 
-moneda_C = document.querySelector('.moneda-1 .compra .plata');
+moneda_C = document.querySelector('.moneda-1 .compra .monto');
 moneda_C.textContent = "$" + MONEDAS[1].compra;
 
-moneda_V = document.querySelector('.moneda-1 .venta .plata');
+moneda_V = document.querySelector('.moneda-1 .venta .monto');
 moneda_V.innerHTML = "$" + MONEDAS[1].venta;
 
 // dolar bolsa
 moneda_H = document.querySelector('.moneda-2 h3');
 moneda_H.innerHTML = "Dolar " + MONEDAS[2].nombre;
 
-moneda_C = document.querySelector('.moneda-2 .compra .plata');
+moneda_C = document.querySelector('.moneda-2 .compra .monto');
 moneda_C.textContent = "$" + MONEDAS[2].compra;
 
-moneda_V = document.querySelector('.moneda-2 .venta .plata');
+moneda_V = document.querySelector('.moneda-2 .venta .monto');
 moneda_V.innerHTML = "$" + MONEDAS[2].venta;
 
 // dolar contado con liquidacion
 moneda_H = document.querySelector('.moneda-3 h3');
 moneda_H.innerHTML = "Dolar " + MONEDAS[3].nombre;
 
-moneda_C = document.querySelector('.moneda-3 .compra .plata');
+moneda_C = document.querySelector('.moneda-3 .compra .monto');
 moneda_C.textContent = "$" + MONEDAS[3].compra;
 
-moneda_V = document.querySelector('.moneda-3 .venta .plata');
+moneda_V = document.querySelector('.moneda-3 .venta .monto');
 moneda_V.innerHTML = "$" + MONEDAS[3].venta;
 
 // dolar mayorista
 moneda_H = document.querySelector('.moneda-4 h3');
 moneda_H.innerHTML = "Dolar " + MONEDAS[4].nombre;
 
-moneda_C = document.querySelector('.moneda-4 .compra .plata');
+moneda_C = document.querySelector('.moneda-4 .compra .monto');
 moneda_C.textContent = "$" + MONEDAS[4].compra;
 
-moneda_V = document.querySelector('.moneda-4 .venta .plata');
+moneda_V = document.querySelector('.moneda-4 .venta .monto');
 moneda_V.innerHTML = "$" + MONEDAS[4].venta;
 
 // dolar cryto
 moneda_H = document.querySelector('.moneda-5 h3');
 moneda_H.innerHTML = "Dolar " + MONEDAS[5].nombre;
 
-moneda_C = document.querySelector('.moneda-5 .compra .plata');
+moneda_C = document.querySelector('.moneda-5 .compra .monto');
 moneda_C.textContent = "$" + MONEDAS[5].compra;
 
-moneda_V = document.querySelector('.moneda-5 .venta .plata');
+moneda_V = document.querySelector('.moneda-5 .venta .monto');
 moneda_V.innerHTML = "$" + MONEDAS[5].venta;
 
 // dolar tarjeta
 moneda_H = document.querySelector('.moneda-6 h3');
 moneda_H.innerHTML = "Dolar " + MONEDAS[6].nombre;
 
-moneda_C = document.querySelector('.moneda-6 .compra .plata');
+moneda_C = document.querySelector('.moneda-6 .compra .monto');
 moneda_C.textContent = "$" + MONEDAS[6].compra;
 
-moneda_V = document.querySelector('.moneda-6 .venta .plata');
+moneda_V = document.querySelector('.moneda-6 .venta .monto');
 moneda_V.innerHTML = "$" + MONEDAS[6].venta;
 
 // euro
 moneda_H = document.querySelector('.moneda-7 h3');
 moneda_H.innerHTML = OTRAS_MONEDAS[1].nombre;
 
-moneda_C = document.querySelector('.moneda-7 .compra .plata');
+moneda_C = document.querySelector('.moneda-7 .compra .monto');
 moneda_C.textContent = "$" + OTRAS_MONEDAS[1].compra;
 
-moneda_V = document.querySelector('.moneda-7 .venta .plata');
+moneda_V = document.querySelector('.moneda-7 .venta .monto');
 moneda_V.innerHTML = "$" + OTRAS_MONEDAS[1].venta;
 
 // real brasileño
 moneda_H = document.querySelector('.moneda-8 h3');
 moneda_H.innerHTML = OTRAS_MONEDAS[2].nombre;
 
-moneda_C = document.querySelector('.moneda-8 .compra .plata');
+moneda_C = document.querySelector('.moneda-8 .compra .monto');
 moneda_C.textContent = "$" + OTRAS_MONEDAS[2].compra;
 
-moneda_V = document.querySelector('.moneda-8 .venta .plata');
+moneda_V = document.querySelector('.moneda-8 .venta .monto');
 moneda_V.innerHTML = "$" + OTRAS_MONEDAS[2].venta;
 
 // chile
 moneda_H = document.querySelector('.moneda-9 h3');
 moneda_H.innerHTML = OTRAS_MONEDAS[3].nombre;
 
-moneda_C = document.querySelector('.moneda-9 .compra .plata');
+moneda_C = document.querySelector('.moneda-9 .compra .monto');
 moneda_C.textContent = "$" + OTRAS_MONEDAS[3].compra;
 
-moneda_V = document.querySelector('.moneda-9 .venta .plata');
+moneda_V = document.querySelector('.moneda-9 .venta .monto');
 moneda_V.innerHTML = "$" + OTRAS_MONEDAS[3].venta;
 
 // uruguay
 moneda_H = document.querySelector('.moneda-10 h3');
 moneda_H.innerHTML = OTRAS_MONEDAS[4].nombre;
 
-moneda_C = document.querySelector('.moneda-10 .compra .plata');
+moneda_C = document.querySelector('.moneda-10 .compra .monto');
 moneda_C.textContent = "$" + OTRAS_MONEDAS[4].compra;
 
-moneda_V = document.querySelector('.moneda-10 .venta .plata');
+moneda_V = document.querySelector('.moneda-10 .venta .monto');
 moneda_V.innerHTML = "$" + OTRAS_MONEDAS[4].venta;
 
 
@@ -441,7 +441,6 @@ function agregar_fav(buttonId) {
 
 // LABEL SELECT OPTIONS
 // ??? codigo muy repetitivo, hacerlo mas compacto
-const tarjetas = document.querySelectorAll('.cotizaciones .tarjeta');
 const tarjeta0 = document.querySelector('.cotizaciones .tarjeta0');
 const tarjeta1 = document.querySelector('.cotizaciones .tarjeta1');
 const tarjeta2 = document.querySelector('.cotizaciones .tarjeta2');
@@ -450,159 +449,181 @@ const tarjeta4 = document.querySelector('.cotizaciones .tarjeta4');
 const tarjeta5 = document.querySelector('.cotizaciones .tarjeta5');
 const tarjeta6 = document.querySelector('.cotizaciones .tarjeta6');
 
-const tarjeta7 = document.querySelector('.cotizaciones .tarjeta7');
-const tarjeta8 = document.querySelector('.cotizaciones .tarjeta8');
-const tarjeta9 = document.querySelector('.cotizaciones .tarjeta9');
-const tarjeta10 = document.querySelector('.cotizaciones .tarjeta10');
+const tarjetas = document.querySelectorAll('.cotizaciones .tarjeta');
+const USD = document.querySelectorAll('.cotizaciones .USD');
+const OTRA = document.querySelectorAll('.cotizaciones .OTRA');
+
+const euro = document.querySelector('.cotizaciones .tarjeta7');
+const realBR = document.querySelector('.cotizaciones .tarjeta8');
+const pesoCH = document.querySelector('.cotizaciones .tarjeta9');
+const pesoUYU = document.querySelector('.cotizaciones .tarjeta10');
 const MENSAJE = document.querySelector('.MENSAJE');
 
 document.getElementById('options').addEventListener('change', function () {
     const seleccion = this.value;
 
-    switch (seleccion) {
-        case 'TODAS':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'flex';
-            });
-            MENSAJE.style.display = 'none';
-            break;
-        case 'DolarOficial':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta0.style.display = 'flex';
-            break;
-        case 'DolarBlue':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta1.style.display = 'flex';
-            break;
-        case 'DolarBolsa':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta2.style.display = 'flex';
-            break;
-        case 'DolarCCL':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta3.style.display = 'flex';
-            break;
-        case 'DolarMayorista':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta4.style.display = 'flex';
-            break;
-        case 'DolarCripto':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta5.style.display = 'flex';
-            break;
-        case 'DolarTarjeta':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta6.style.display = 'flex';
-            break;
+    const boton_filtro = document.querySelector('.boton_filtro');
+    boton_filtro.addEventListener('click', function () {
 
-        case 'Euro':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta7.style.display = 'flex';
-            break;
+        switch (seleccion) {
+            case 'TODAS':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'flex';
+                });
+                MENSAJE.style.display = 'none';
+                break;
 
-        case 'PesoBR':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta8.style.display = 'flex';
-            break;
+            case 'USD':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                USD.forEach(tarjeta => {
+                    tarjeta.style.display = 'flex';
+                });
+                break;
+            case 'DolarOficial':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                tarjeta0.style.display = 'flex';
+                break;
+            case 'DolarBlue':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                tarjeta1.style.display = 'flex';
+                break;
+            case 'DolarBolsa':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                tarjeta2.style.display = 'flex';
+                break;
+            case 'DolarCCL':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                tarjeta3.style.display = 'flex';
+                break;
+            case 'DolarMayorista':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                tarjeta4.style.display = 'flex';
+                break;
+            case 'DolarCripto':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                tarjeta5.style.display = 'flex';
+                break;
+            case 'DolarTarjeta':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                tarjeta6.style.display = 'flex';
+                break;
 
-        case 'PesoChileno':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta9.style.display = 'flex';
-            break;
+            case 'OTRA':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                OTRA.forEach(tarjeta => {
+                    tarjeta.style.display = 'flex';
+                });
+                break;
 
-        case 'PesoUruguayo':
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
-            tarjeta10.style.display = 'flex';
-            break;
+            case 'Euro':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                euro.style.display = 'flex';
+                break;
+            case 'PesoBR':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                realBR.style.display = 'flex';
+                break;
 
-        case 'FAVORITOS':
+            case 'PesoChileno':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                pesoCH.style.display = 'flex';
+                break;
 
-            tarjetas.forEach(tarjeta => {
-                tarjeta.style.display = 'none';
-            });
+            case 'PesoUruguayo':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                pesoUYU.style.display = 'flex';
+                break;
 
-            const agregados_favoritos = JSON.parse(localStorage.getItem('FAVORITOS'));
+            case 'FAVORITOS':
+                tarjetas.forEach(tarjeta => {
+                    tarjeta.style.display = 'none';
+                });
+                const agregados_favoritos = JSON.parse(localStorage.getItem('FAVORITOS'));
+                var bool_favor = false;
+                if (agregados_favoritos) {
+                    if (agregados_favoritos.dolar0) {
+                        tarjeta0.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.dolar1) {
+                        tarjeta1.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.dolar2) {
+                        tarjeta2.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.dolar3) {
+                        tarjeta3.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.dolar4) {
+                        tarjeta4.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.dolar5) {
+                        tarjeta5.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.dolar6) {
+                        tarjeta6.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.OTRA1) {
+                        euro.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.OTRA2) {
+                        realBR.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.OTRA3) {
+                        pesoCH.style.display = 'flex';
+                        bool_favor = true;
+                    }
+                    if (agregados_favoritos.OTRA4) {
+                        pesoUYU.style.display = 'flex';
+                        bool_favor = true;
+                    }
 
-            var bool_favor = false;
+                    if (bool_favor == false) {
+                        MENSAJE.style.display = 'flex';
+                        MENSAJE.style.minWidth = 'fit-content';
+                    }
+                    else {
+                        MENSAJE.style.display = 'none';
+                    }
+                }
+                break;
+            default:
+                showAlert('error', 'ERROR: Ha ocurrido un problema.');
+        }
+    });
 
-            if (agregados_favoritos) {
-                if (agregados_favoritos.dolar0) {
-                    tarjeta0.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.dolar1) {
-                    tarjeta1.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.dolar2) {
-                    tarjeta2.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.dolar3) {
-                    tarjeta3.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.dolar4) {
-                    tarjeta4.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.dolar5) {
-                    tarjeta5.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.dolar6) {
-                    tarjeta6.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.OTRA1) {
-                    tarjeta7.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.OTRA2) {
-                    tarjeta8.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.OTRA3) {
-                    tarjeta9.style.display = 'flex';
-                    bool_favor = true;
-                }
-                if (agregados_favoritos.OTRA4) {
-                    tarjeta10.style.display = 'flex';
-                    bool_favor = true;
-                }
-
-                if (bool_favor == false) {
-                    MENSAJE.style.display = 'flex';
-                    MENSAJE.style.minWidth = 'fit-content';
-                }
-                else {
-                    MENSAJE.style.display = 'none';
-                }
-            }
-            break;
-        default:
-            showAlert('error', 'ERROR: Ha ocurrido un problema.');
-    }
 });

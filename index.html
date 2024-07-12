@@ -92,6 +92,7 @@
                         <label class="coin" for="moneda">Selecciona una moneda: </label>
                         <select id="options" name="moneda">
                             <option value="TODAS">TODAS</option>
+                            <option value="USD">Dolares</option>
                             <option value="DolarOficial">Dolar Oficial</option>
                             <option value="DolarBlue">Dolar Blue</option>
                             <option value="DolarBolsa">Dolar Bolsa</option>
@@ -99,6 +100,7 @@
                             <option value="DolarMayorista">Dolar Mayorista</option>
                             <option value="DolarCripto">Dolar Cripto</option>
                             <option value="DolarTarjeta">Dolar Tarjeta</option>
+                            <option value="OTRA">Otras Monedas</option>
                             <option value="Euro">Euro</option>
                             <option value="PesoBR">Peso Brasilero</option>
                             <option value="PesoChileno">Peso Chileno</option>
@@ -106,7 +108,7 @@
                             <option value="FAVORITOS">FAVORITOS</option>
                         </select>
                         <!-- sacar boton o hacerlo funcional ??? -->
-                        <!-- <a href="#"><i class="fa-solid fa-filter-circle-dollar"></i></a> -->
+                        <button class="boton_filtro"><i class="fa-solid fa-filter-circle-dollar"></i></button>
                     </div>
 
                     <div class="dia">Datos Actualizados al 00/00/0000 00:00hs</div>
@@ -114,134 +116,134 @@
                     <div class="dosendos">
                         <div class="cotizaciones">
 
-                            <div class="tarjeta tarjeta0">
+                            <div class="tarjeta tarjeta0 USD">
                                 <div class="moneda moneda-0">
                                     <div>
                                         <h3>Dolar</h3>
                                     </div>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button0" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton0')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta1">
+                            <div class="tarjeta tarjeta1 USD">
                                 <div class="moneda moneda-1">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button1" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton1')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta2">
+                            <div class="tarjeta tarjeta2 USD">
                                 <div class="moneda moneda-2">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button2" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton2')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta3">
+                            <div class="tarjeta tarjeta3 USD">
                                 <div class="moneda moneda-3">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button3" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton3')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta4">
+                            <div class="tarjeta tarjeta4 USD">
                                 <div class="moneda moneda-4">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button4" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton4')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta5">
+                            <div class="tarjeta tarjeta5 USD">
                                 <div class="moneda moneda-5">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button5" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton5')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta6">
+                            <div class="tarjeta tarjeta6 USD">
                                 <div class="moneda moneda-6">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button6" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton6')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta7">
+                            <div class="tarjeta tarjeta7 OTRA">
                                 <div class="moneda moneda-7">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button7" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton7')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta8">
+                            <div class="tarjeta tarjeta8 OTRA">
                                 <div class="moneda moneda-8">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button8" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton8')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta9">
+                            <div class="tarjeta tarjeta9 OTRA">
                                 <div class="moneda moneda-9">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button9" class="boton_repetido" data-state="off"
                                     onclick="agregar_fav('boton9')"><i class="fa-solid fa-star"></i></button>
                             </div>
 
-                            <div class="tarjeta tarjeta10">
+                            <div class="tarjeta tarjeta10 OTRA">
                                 <div class="moneda moneda-10">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="plata"></span></div>
-                                        <div class="venta">VENTA <span class="plata"></span></div>
+                                        <div class="compra">COMPRA <span class="monto"></span></div>
+                                        <div class="venta">VENTA <span class="monto"></span></div>
                                     </div>
                                 </div>
                                 <button id="button10" class="boton_repetido" data-state="off"

@@ -6,15 +6,15 @@
 }
 
 #CONTENIDO-CENTRAL .select {
-    border: 0px solid rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    display: flex;
 
     width: fit-content;
     margin: 10px;
     padding: 5px;
     border-radius: 1em;
 
-    display: flex;
+    border: 0px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
     -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
     -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
@@ -22,6 +22,7 @@
 
 #CONTENIDO-CENTRAL .select label {
     font-size: 16px;
+    padding: 3px;
 }
 
 #options {
@@ -77,7 +78,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 .tarjeta a {
@@ -141,7 +141,7 @@
     align-self: center;
 }
 
-.precio .compra .plata {
+.precio .compra .monto {
     font-size: 20px;
 }
 
@@ -155,7 +155,7 @@
     align-self: center;
 }
 
-.precio .venta .plata {
+.precio .venta .monto {
     font-size: 20px;
 }
 
@@ -197,11 +197,19 @@
 
 }
 
-.boton_repetido {
+.boton_repetido,
+.boton_filtro {
     background: none;
     border: none;
     padding: 0;
     font: inherit;
     color: inherit;
     cursor: pointer;
+<<<<<<< Updated upstream
+=======
+}
+
+.boton_filtro {
+    color: red;
+>>>>>>> Stashed changes
 }
