@@ -41,14 +41,16 @@ function imprimirMensaje() {
 imprimirMensaje();
 
 
+// ----------------------------------------------------------------------------
+
 
 // llamamos y guardamos el arreglo con todas las monedas y sus datos
 MONEDAS = JSON.parse(localStorage.getItem('DOLARES'));
 OTRAS_MONEDAS = JSON.parse(localStorage.getItem('OTRAS_MONEDAS'));
 
-var moneda_H;
-var moneda_C;
-var moneda_V;
+var moneda_H; // moneda_H - cambia el h3
+var moneda_C; // moneda_C - cambia la compra
+var moneda_V; // moneda_V - cambia la venta
 
 // dolar oficial
 moneda_H = document.querySelector('.moneda-0 h3');
@@ -161,6 +163,8 @@ moneda_V = document.querySelector('.moneda-10 .venta .plata');
 moneda_V.innerHTML = "$" + OTRAS_MONEDAS[4].venta;
 
 
+// ----------------------------------------------------------------------------
+
 
 // funcion para mostrar un mensaje de alerta
 function showAlert(type, message) {
@@ -180,6 +184,8 @@ function showAlert(type, message) {
     }, 1700);
 }
 
+
+// ----------------------------------------------------------------------------
 
 
 // arreglo para guardar / sacar monedas
@@ -252,6 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 });
+
+
+// ----------------------------------------------------------------------------
 
 
 // funciones para que al tocar un boton se guarde en favoritos / localstorage la moneda
@@ -425,6 +434,9 @@ function agregar_fav(buttonId) {
     }
     localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 }
+
+
+// ----------------------------------------------------------------------------
 
 
 // LABEL SELECT OPTIONS
