@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="grafico">
-                                <canvas id="miGrafica" width="400" height="200"></canvas>
+                                <canvas id="miGrafica"></canvas>
                                 <script>
                                     // Eje X
                                     const etiquetas = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"];
@@ -100,9 +100,7 @@
                                     const datosLinea1 = [100, 150, 120, 200, 10, 20];
                                     const datosLinea2 = [80, 120, 140, 180, 0, 50];
                                     const datosLinea3 = [88, 100, 140, 200, 20, 0];
-
                                     const ctx = document.getElementById("miGrafica").getContext("2d");
-
                                     new Chart(ctx, {
                                         type: "line",
                                         data: {

@@ -45,12 +45,18 @@
 }
 
 
-/* GRAFICO */
+/* Estilos para el gráfico */
 .grafico {
-    /* imagen no se adapta al ancho ??? */
+    width: 400px;
+    height: 200px;
+
 }
 
-.grafico img {}
+.grafico img {
+    max-width: 100%;
+    /* Hace que la imagen del gráfico se adapte al ancho del contenedor */
+}
+
 
 /* COMPARTIR */
 
