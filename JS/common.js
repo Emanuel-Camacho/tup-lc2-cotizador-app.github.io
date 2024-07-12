@@ -274,12 +274,13 @@ function agregar_fav(buttonId) {
                 showAlert('success', 'Agregado a favoritos con exito');
                 FAVORITOS.dolar0 = MONEDAS[0];
                 boton_fav.dataset.state = 'on';
-            } else {
+            } 
+            /* else {
                 boton_fav.style.color = 'black';
                 showAlert('success', 'Eliminado de favoritos con exito');
                 delete FAVORITOS.dolar0;
                 boton_fav.dataset.state = 'off';
-            }
+            } */
             break;
 
         case 'boton1':
