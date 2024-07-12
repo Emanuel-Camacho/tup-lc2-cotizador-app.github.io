@@ -1,6 +1,7 @@
 // FECHA Y HORA DE ACTUALIZACION CADA 5 MINUTOS
 
 function imprimirMensaje() {
+    // pedimos monedas DOLAR
     fetch("https://dolarapi.com/v1/dolares")
         .then(response => response.json())
         .then(data => {
@@ -9,6 +10,13 @@ function imprimirMensaje() {
         })
         .catch((error) => {
             showAlert('error', 'ERROR: Ha ocurrido un problema.')
+        });
+
+    // pedimos EU, BR, CH, UY
+    fetch("https://dolarapi.com/v1/cotizaciones")
+        .then(response => response.json())
+        .then(data => {
+            localStorage.setItem('OTRAS_MONEDAS', JSON.stringify(data))
         });
 
     // obtener el elemento de fecha y hora
@@ -36,6 +44,7 @@ imprimirMensaje();
 
 // llamamos y guardamos el arreglo con todas las monedas y sus datos
 MONEDAS = JSON.parse(localStorage.getItem('DOLARES'));
+OTRAS_MONEDAS = JSON.parse(localStorage.getItem('OTRAS_MONEDAS'));
 
 // dolar oficial
 dolar_H_0 = document.querySelector('.moneda-0 h3');
@@ -107,6 +116,47 @@ dolar_C_6.textContent = "$" + MONEDAS[6].compra;
 dolar_V_6 = document.querySelector('.moneda-6 .venta .plata');
 dolar_V_6.innerHTML = "$" + MONEDAS[6].venta;
 
+// euro
+dolar_H_7 = document.querySelector('.moneda-7 h3');
+dolar_H_7.innerHTML = OTRAS_MONEDAS[1].nombre;
+
+dolar_C_7 = document.querySelector('.moneda-7 .compra .plata');
+dolar_C_7.textContent = "$" + OTRAS_MONEDAS[1].compra;
+
+dolar_V_7 = document.querySelector('.moneda-7 .venta .plata');
+dolar_V_7.innerHTML = "$" + OTRAS_MONEDAS[1].venta;
+
+// real brasileño
+dolar_H_8 = document.querySelector('.moneda-8 h3');
+dolar_H_8.innerHTML = OTRAS_MONEDAS[2].nombre;
+
+dolar_C_8 = document.querySelector('.moneda-8 .compra .plata');
+dolar_C_8.textContent = "$" + OTRAS_MONEDAS[2].compra;
+
+dolar_V_8 = document.querySelector('.moneda-8 .venta .plata');
+dolar_V_8.innerHTML = "$" + OTRAS_MONEDAS[2].venta;
+
+// chile
+dolar_H_9 = document.querySelector('.moneda-9 h3');
+dolar_H_9.innerHTML = OTRAS_MONEDAS[3].nombre;
+
+dolar_C_9 = document.querySelector('.moneda-9 .compra .plata');
+dolar_C_9.textContent = "$" + OTRAS_MONEDAS[3].compra;
+
+dolar_V_9 = document.querySelector('.moneda-9 .venta .plata');
+dolar_V_9.innerHTML = "$" + OTRAS_MONEDAS[3].venta;
+
+// uruguay
+dolar_H_10 = document.querySelector('.moneda-10 h3');
+dolar_H_10.innerHTML = OTRAS_MONEDAS[4].nombre;
+
+dolar_C_10 = document.querySelector('.moneda-10 .compra .plata');
+dolar_C_10.textContent = "$" + OTRAS_MONEDAS[4].compra;
+
+dolar_V_10 = document.querySelector('.moneda-10 .venta .plata');
+dolar_V_10.innerHTML = "$" + OTRAS_MONEDAS[4].venta;
+
+
 
 // funcion para mostrar un mensaje de alerta
 function showAlert(type, message) {
@@ -136,6 +186,7 @@ let FAVORITOS = {};
 var boton_bool; // variable que se usa en todos los if de abajo para comprobar si una moneda esta en favoritos o no
 document.addEventListener('DOMContentLoaded', () => {
     const favoritosGuardados = JSON.parse(localStorage.getItem('FAVORITOS'));
+
     if (favoritosGuardados) {
         FAVORITOS = favoritosGuardados;
 
@@ -174,6 +225,27 @@ document.addEventListener('DOMContentLoaded', () => {
             boton_bool.style.color = 'gold';
             boton_bool.dataset.state = 'on';
         }
+        if (FAVORITOS.OTRA1) {
+            boton_bool = document.getElementById('button7');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
+        }
+        if (FAVORITOS.OTRA2) {
+            boton_bool = document.getElementById('button8');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
+        }
+        if (FAVORITOS.OTRA3) {
+            boton_bool = document.getElementById('button9');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
+        }
+        if (FAVORITOS.OTRA4) {
+            boton_bool = document.getElementById('button10');
+            boton_bool.style.color = 'gold';
+            boton_bool.dataset.state = 'on';
+        }
+
     }
 });
 
@@ -195,8 +267,8 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar0;
                 boton_fav.dataset.state = 'off';
             }
-
             break;
+
         case 'boton1':
             boton_fav = document.getElementById('button1');
             if (boton_fav.dataset.state == 'off') {
@@ -210,8 +282,8 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar1;
                 boton_fav.dataset.state = 'off';
             }
-
             break;
+
         case 'boton2':
             boton_fav = document.getElementById('button2');
             if (boton_fav.dataset.state == 'off') {
@@ -225,8 +297,8 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar2;
                 boton_fav.dataset.state = 'off';
             }
-
             break;
+
         case 'boton3':
             boton_fav = document.getElementById('button3');
             if (boton_fav.dataset.state == 'off') {
@@ -240,8 +312,8 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar3;
                 boton_fav.dataset.state = 'off';
             }
-
             break;
+
         case 'boton4':
             boton_fav = document.getElementById('button4');
             if (boton_fav.dataset.state == 'off') {
@@ -255,8 +327,8 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar4;
                 boton_fav.dataset.state = 'off';
             }
-
             break;
+
         case 'boton5':
             boton_fav = document.getElementById('button5');
             if (boton_fav.dataset.state == 'off') {
@@ -270,8 +342,8 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar5;
                 boton_fav.dataset.state = 'off';
             }
-
             break;
+
         case 'boton6':
             boton_fav = document.getElementById('button6');
             if (boton_fav.dataset.state == 'off') {
@@ -283,6 +355,66 @@ function agregar_fav(buttonId) {
                 boton_fav.style.color = 'black';
                 showAlert('success', 'Eliminado de favoritos con exito');
                 delete FAVORITOS.dolar6;
+                boton_fav.dataset.state = 'off';
+            }
+            break;
+
+        case 'boton7':
+            boton_fav = document.getElementById('button7');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.OTRA1 = OTRAS_MONEDAS[1];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.OTRA1;
+                boton_fav.dataset.state = 'off';
+            }
+            break;
+
+        case 'boton8':
+            boton_fav = document.getElementById('button8');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.OTRA2 = OTRAS_MONEDAS[2];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.OTRA2;
+                boton_fav.dataset.state = 'off';
+            }
+            break;
+
+        case 'boton9':
+            boton_fav = document.getElementById('button9');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.OTRA3 = OTRAS_MONEDAS[3];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.OTRA3;
+                boton_fav.dataset.state = 'off';
+            }
+            break;
+
+        case 'boton10':
+            boton_fav = document.getElementById('button10');
+            if (boton_fav.dataset.state == 'off') {
+                boton_fav.style.color = 'gold';
+                showAlert('success', 'Agregado a favoritos con exito');
+                FAVORITOS.OTRA4 = OTRAS_MONEDAS[4];
+                boton_fav.dataset.state = 'on';
+            } else {
+                boton_fav.style.color = 'black';
+                showAlert('success', 'Eliminado de favoritos con exito');
+                delete FAVORITOS.OTRA4;
                 boton_fav.dataset.state = 'off';
             }
             break;
@@ -301,6 +433,11 @@ const tarjeta3 = document.querySelector('.cotizaciones .tarjeta3');
 const tarjeta4 = document.querySelector('.cotizaciones .tarjeta4');
 const tarjeta5 = document.querySelector('.cotizaciones .tarjeta5');
 const tarjeta6 = document.querySelector('.cotizaciones .tarjeta6');
+
+const tarjeta7 = document.querySelector('.cotizaciones .tarjeta7');
+const tarjeta8 = document.querySelector('.cotizaciones .tarjeta8');
+const tarjeta9 = document.querySelector('.cotizaciones .tarjeta9');
+const tarjeta10 = document.querySelector('.cotizaciones .tarjeta10');
 const MENSAJE = document.querySelector('.MENSAJE');
 
 document.getElementById('options').addEventListener('change', function () {
@@ -355,6 +492,35 @@ document.getElementById('options').addEventListener('change', function () {
             });
             tarjeta6.style.display = 'flex';
             break;
+
+        case 'Euro':
+            tarjetas.forEach(tarjeta => {
+                tarjeta.style.display = 'none';
+            });
+            tarjeta7.style.display = 'flex';
+            break;
+
+        case 'PesoBR':
+            tarjetas.forEach(tarjeta => {
+                tarjeta.style.display = 'none';
+            });
+            tarjeta8.style.display = 'flex';
+            break;
+
+        case 'PesoChileno':
+            tarjetas.forEach(tarjeta => {
+                tarjeta.style.display = 'none';
+            });
+            tarjeta9.style.display = 'flex';
+            break;
+
+        case 'PesoUruguayo':
+            tarjetas.forEach(tarjeta => {
+                tarjeta.style.display = 'none';
+            });
+            tarjeta10.style.display = 'flex';
+            break;
+
         case 'FAVORITOS':
 
             tarjetas.forEach(tarjeta => {
@@ -392,6 +558,22 @@ document.getElementById('options').addEventListener('change', function () {
                 }
                 if (agregados_favoritos.dolar6) {
                     tarjeta6.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.OTRA1) {
+                    tarjeta7.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.OTRA2) {
+                    tarjeta8.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.OTRA3) {
+                    tarjeta9.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.OTRA4) {
+                    tarjeta10.style.display = 'flex';
                     bool_favor = true;
                 }
 
