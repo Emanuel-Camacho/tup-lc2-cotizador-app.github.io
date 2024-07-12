@@ -205,11 +205,10 @@
     font: inherit;
     color: inherit;
     cursor: pointer;
-<<<<<<< Updated upstream
-=======
+    <<<<<<< Updated upstream=======
 }
 
 .boton_filtro {
     color: red;
->>>>>>> Stashed changes
+    >>>>>>>Stashed changes
 }
