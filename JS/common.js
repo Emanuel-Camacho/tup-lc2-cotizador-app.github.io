@@ -46,115 +46,119 @@ imprimirMensaje();
 MONEDAS = JSON.parse(localStorage.getItem('DOLARES'));
 OTRAS_MONEDAS = JSON.parse(localStorage.getItem('OTRAS_MONEDAS'));
 
+var moneda_H;
+var moneda_C;
+var moneda_V;
+
 // dolar oficial
-dolar_H_0 = document.querySelector('.moneda-0 h3');
-dolar_H_0.innerHTML = "Dolar " + MONEDAS[0].nombre;
+moneda_H = document.querySelector('.moneda-0 h3');
+moneda_H.innerHTML = "Dolar " + MONEDAS[0].nombre;
 
-dolar_C_0 = document.querySelector('.moneda-0 .compra .plata');
-dolar_C_0.textContent = "$" + MONEDAS[0].compra;
+moneda_C = document.querySelector('.moneda-0 .compra .plata');
+moneda_C.textContent = "$" + MONEDAS[0].compra;
 
-dolar_V_0 = document.querySelector('.moneda-0 .venta .plata');
-dolar_V_0.innerHTML = "$" + MONEDAS[0].venta;
+moneda_V = document.querySelector('.moneda-0 .venta .plata');
+moneda_V.innerHTML = "$" + MONEDAS[0].venta;
 
 // dolar blue
-dolar_H_1 = document.querySelector('.moneda-1 h3');
-dolar_H_1.innerHTML = "Dolar " + MONEDAS[1].nombre;
+moneda_H = document.querySelector('.moneda-1 h3');
+moneda_H.innerHTML = "Dolar " + MONEDAS[1].nombre;
 
-dolar_C_1 = document.querySelector('.moneda-1 .compra .plata');
-dolar_C_1.textContent = "$" + MONEDAS[1].compra;
+moneda_C = document.querySelector('.moneda-1 .compra .plata');
+moneda_C.textContent = "$" + MONEDAS[1].compra;
 
-dolar_V_1 = document.querySelector('.moneda-1 .venta .plata');
-dolar_V_1.innerHTML = "$" + MONEDAS[1].venta;
+moneda_V = document.querySelector('.moneda-1 .venta .plata');
+moneda_V.innerHTML = "$" + MONEDAS[1].venta;
 
 // dolar bolsa
-dolar_H_2 = document.querySelector('.moneda-2 h3');
-dolar_H_2.innerHTML = "Dolar " + MONEDAS[2].nombre;
+moneda_H = document.querySelector('.moneda-2 h3');
+moneda_H.innerHTML = "Dolar " + MONEDAS[2].nombre;
 
-dolar_C_2 = document.querySelector('.moneda-2 .compra .plata');
-dolar_C_2.textContent = "$" + MONEDAS[2].compra;
+moneda_C = document.querySelector('.moneda-2 .compra .plata');
+moneda_C.textContent = "$" + MONEDAS[2].compra;
 
-dolar_V_2 = document.querySelector('.moneda-2 .venta .plata');
-dolar_V_2.innerHTML = "$" + MONEDAS[2].venta;
+moneda_V = document.querySelector('.moneda-2 .venta .plata');
+moneda_V.innerHTML = "$" + MONEDAS[2].venta;
 
 // dolar contado con liquidacion
-dolar_H_3 = document.querySelector('.moneda-3 h3');
-dolar_H_3.innerHTML = "Dolar " + MONEDAS[3].nombre;
+moneda_H = document.querySelector('.moneda-3 h3');
+moneda_H.innerHTML = "Dolar " + MONEDAS[3].nombre;
 
-dolar_C_3 = document.querySelector('.moneda-3 .compra .plata');
-dolar_C_3.textContent = "$" + MONEDAS[3].compra;
+moneda_C = document.querySelector('.moneda-3 .compra .plata');
+moneda_C.textContent = "$" + MONEDAS[3].compra;
 
-dolar_V_3 = document.querySelector('.moneda-3 .venta .plata');
-dolar_V_3.innerHTML = "$" + MONEDAS[3].venta;
+moneda_V = document.querySelector('.moneda-3 .venta .plata');
+moneda_V.innerHTML = "$" + MONEDAS[3].venta;
 
 // dolar mayorista
-dolar_H_4 = document.querySelector('.moneda-4 h3');
-dolar_H_4.innerHTML = "Dolar " + MONEDAS[4].nombre;
+moneda_H = document.querySelector('.moneda-4 h3');
+moneda_H.innerHTML = "Dolar " + MONEDAS[4].nombre;
 
-dolar_C_4 = document.querySelector('.moneda-4 .compra .plata');
-dolar_C_4.textContent = "$" + MONEDAS[4].compra;
+moneda_C = document.querySelector('.moneda-4 .compra .plata');
+moneda_C.textContent = "$" + MONEDAS[4].compra;
 
-dolar_V_4 = document.querySelector('.moneda-4 .venta .plata');
-dolar_V_4.innerHTML = "$" + MONEDAS[4].venta;
+moneda_V = document.querySelector('.moneda-4 .venta .plata');
+moneda_V.innerHTML = "$" + MONEDAS[4].venta;
 
 // dolar cryto
-dolar_H_5 = document.querySelector('.moneda-5 h3');
-dolar_H_5.innerHTML = "Dolar " + MONEDAS[5].nombre;
+moneda_H = document.querySelector('.moneda-5 h3');
+moneda_H.innerHTML = "Dolar " + MONEDAS[5].nombre;
 
-dolar_C_5 = document.querySelector('.moneda-5 .compra .plata');
-dolar_C_5.textContent = "$" + MONEDAS[5].compra;
+moneda_C = document.querySelector('.moneda-5 .compra .plata');
+moneda_C.textContent = "$" + MONEDAS[5].compra;
 
-dolar_V_5 = document.querySelector('.moneda-5 .venta .plata');
-dolar_V_5.innerHTML = "$" + MONEDAS[5].venta;
+moneda_V = document.querySelector('.moneda-5 .venta .plata');
+moneda_V.innerHTML = "$" + MONEDAS[5].venta;
 
 // dolar tarjeta
-dolar_H_6 = document.querySelector('.moneda-6 h3');
-dolar_H_6.innerHTML = "Dolar " + MONEDAS[6].nombre;
+moneda_H = document.querySelector('.moneda-6 h3');
+moneda_H.innerHTML = "Dolar " + MONEDAS[6].nombre;
 
-dolar_C_6 = document.querySelector('.moneda-6 .compra .plata');
-dolar_C_6.textContent = "$" + MONEDAS[6].compra;
+moneda_C = document.querySelector('.moneda-6 .compra .plata');
+moneda_C.textContent = "$" + MONEDAS[6].compra;
 
-dolar_V_6 = document.querySelector('.moneda-6 .venta .plata');
-dolar_V_6.innerHTML = "$" + MONEDAS[6].venta;
+moneda_V = document.querySelector('.moneda-6 .venta .plata');
+moneda_V.innerHTML = "$" + MONEDAS[6].venta;
 
 // euro
-dolar_H_7 = document.querySelector('.moneda-7 h3');
-dolar_H_7.innerHTML = OTRAS_MONEDAS[1].nombre;
+moneda_H = document.querySelector('.moneda-7 h3');
+moneda_H.innerHTML = OTRAS_MONEDAS[1].nombre;
 
-dolar_C_7 = document.querySelector('.moneda-7 .compra .plata');
-dolar_C_7.textContent = "$" + OTRAS_MONEDAS[1].compra;
+moneda_C = document.querySelector('.moneda-7 .compra .plata');
+moneda_C.textContent = "$" + OTRAS_MONEDAS[1].compra;
 
-dolar_V_7 = document.querySelector('.moneda-7 .venta .plata');
-dolar_V_7.innerHTML = "$" + OTRAS_MONEDAS[1].venta;
+moneda_V = document.querySelector('.moneda-7 .venta .plata');
+moneda_V.innerHTML = "$" + OTRAS_MONEDAS[1].venta;
 
 // real brasileño
-dolar_H_8 = document.querySelector('.moneda-8 h3');
-dolar_H_8.innerHTML = OTRAS_MONEDAS[2].nombre;
+moneda_H = document.querySelector('.moneda-8 h3');
+moneda_H.innerHTML = OTRAS_MONEDAS[2].nombre;
 
-dolar_C_8 = document.querySelector('.moneda-8 .compra .plata');
-dolar_C_8.textContent = "$" + OTRAS_MONEDAS[2].compra;
+moneda_C = document.querySelector('.moneda-8 .compra .plata');
+moneda_C.textContent = "$" + OTRAS_MONEDAS[2].compra;
 
-dolar_V_8 = document.querySelector('.moneda-8 .venta .plata');
-dolar_V_8.innerHTML = "$" + OTRAS_MONEDAS[2].venta;
+moneda_V = document.querySelector('.moneda-8 .venta .plata');
+moneda_V.innerHTML = "$" + OTRAS_MONEDAS[2].venta;
 
 // chile
-dolar_H_9 = document.querySelector('.moneda-9 h3');
-dolar_H_9.innerHTML = OTRAS_MONEDAS[3].nombre;
+moneda_H = document.querySelector('.moneda-9 h3');
+moneda_H.innerHTML = OTRAS_MONEDAS[3].nombre;
 
-dolar_C_9 = document.querySelector('.moneda-9 .compra .plata');
-dolar_C_9.textContent = "$" + OTRAS_MONEDAS[3].compra;
+moneda_C = document.querySelector('.moneda-9 .compra .plata');
+moneda_C.textContent = "$" + OTRAS_MONEDAS[3].compra;
 
-dolar_V_9 = document.querySelector('.moneda-9 .venta .plata');
-dolar_V_9.innerHTML = "$" + OTRAS_MONEDAS[3].venta;
+moneda_V = document.querySelector('.moneda-9 .venta .plata');
+moneda_V.innerHTML = "$" + OTRAS_MONEDAS[3].venta;
 
 // uruguay
-dolar_H_10 = document.querySelector('.moneda-10 h3');
-dolar_H_10.innerHTML = OTRAS_MONEDAS[4].nombre;
+moneda_H = document.querySelector('.moneda-10 h3');
+moneda_H.innerHTML = OTRAS_MONEDAS[4].nombre;
 
-dolar_C_10 = document.querySelector('.moneda-10 .compra .plata');
-dolar_C_10.textContent = "$" + OTRAS_MONEDAS[4].compra;
+moneda_C = document.querySelector('.moneda-10 .compra .plata');
+moneda_C.textContent = "$" + OTRAS_MONEDAS[4].compra;
 
-dolar_V_10 = document.querySelector('.moneda-10 .venta .plata');
-dolar_V_10.innerHTML = "$" + OTRAS_MONEDAS[4].venta;
+moneda_V = document.querySelector('.moneda-10 .venta .plata');
+moneda_V.innerHTML = "$" + OTRAS_MONEDAS[4].venta;
 
 
 
