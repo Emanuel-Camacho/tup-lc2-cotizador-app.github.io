@@ -1,12 +1,38 @@
-fetch("https://dolarapi.com/v1/dolares")
-    .then(response => response.json())
-    .then(data => {
-        // console.log(data)
-        localStorage.setItem('DOLARES', JSON.stringify(data))
-    })
-    .catch((error) => {
-        showAlert('error', 'ERROR: Ha ocurrido un problema.')
-    });
+// FECHA Y HORA DE ACTUALIZACION CADA 5 MINUTOS
+
+function imprimirMensaje() {
+    fetch("https://dolarapi.com/v1/dolares")
+        .then(response => response.json())
+        .then(data => {
+            // console.log(data)
+            localStorage.setItem('DOLARES', JSON.stringify(data))
+        })
+        .catch((error) => {
+            showAlert('error', 'ERROR: Ha ocurrido un problema.')
+        });
+
+    // obtener el elemento de fecha y hora
+    fecha_hora = document.querySelector('.container .dia');
+
+    // crear un objeto Date a partir de la fecha de actualización
+    fecha = new Date();
+
+    // formatear la fecha y la hora por separado hecho con chatGPT porque no tenemos ni idea de como arreglarlo
+    opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+    opcionesHora = { hour: '2-digit', minute: '2-digit' };
+
+    fechaFormateada = fecha.toLocaleDateString('es-ES', opcionesFecha);
+    horaFormateada = fecha.toLocaleTimeString('es-ES', opcionesHora);
+
+    fecha_hora.textContent = `Datos Actualizados al ${fechaFormateada} a las ${horaFormateada}`;
+
+    setTimeout(imprimirMensaje, 5 * 60 * 1000); // Llamar a imprimirMensaje nuevamente después de 5 minutos
+}
+
+// Llamar a imprimirMensaje por primera vez
+imprimirMensaje();
+
+
 
 // llamamos y guardamos el arreglo con todas las monedas y sus datos
 MONEDAS = JSON.parse(localStorage.getItem('DOLARES'));
@@ -81,27 +107,6 @@ dolar_C_6.textContent = "$" + MONEDAS[6].compra;
 dolar_V_6 = document.querySelector('.moneda-6 .venta .plata');
 dolar_V_6.innerHTML = "$" + MONEDAS[6].venta;
 
-// FECHA Y HORA DE ACTUALIZACION
-
-// obtener el elemento de fecha y hora
-fecha_hora = document.querySelector('.container .dia');
-
-// obtener la fecha de actualización de MONEDAS
-fechaActualizacion = MONEDAS[0].fechaActualizacion;
-
-// crear un objeto Date a partir de la fecha de actualización
-fecha = new Date(fechaActualizacion);
-
-// formatear la fecha y la hora por separado hecho con chatGPT porque no tenemos ni idea de como arreglarlo
-opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-opcionesHora = { hour: '2-digit', minute: '2-digit' };
-
-fechaFormateada = fecha.toLocaleDateString('es-ES', opcionesFecha);
-horaFormateada = fecha.toLocaleTimeString('es-ES', opcionesHora);
-
-fecha_hora.textContent = `Datos Actualizados al ${fechaFormateada} a las ${horaFormateada}`;
-
-
 
 // funcion para mostrar un mensaje de alerta
 function showAlert(type, message) {
@@ -121,20 +126,7 @@ function showAlert(type, message) {
     }, 1700);
 }
 
-// se actualiza cada 5 minutos
-setTimeout(() => {
-    location.reload(true)
 
-    fetch("https://dolarapi.com/v1/dolares")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            localStorage.setItem('DOLARES', JSON.stringify(data))
-        })
-        .catch((error) => {
-            showAlert('error', 'ERROR: Ha ocurrido un problema.')
-        });
-}, 300000);
 
 // arreglo para guardar / sacar monedas
 let FAVORITOS = {};
@@ -203,7 +195,7 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar0;
                 boton_fav.dataset.state = 'off';
             }
-            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+
             break;
         case 'boton1':
             boton_fav = document.getElementById('button1');
@@ -218,7 +210,7 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar1;
                 boton_fav.dataset.state = 'off';
             }
-            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+
             break;
         case 'boton2':
             boton_fav = document.getElementById('button2');
@@ -233,7 +225,7 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar2;
                 boton_fav.dataset.state = 'off';
             }
-            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+
             break;
         case 'boton3':
             boton_fav = document.getElementById('button3');
@@ -248,7 +240,7 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar3;
                 boton_fav.dataset.state = 'off';
             }
-            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+
             break;
         case 'boton4':
             boton_fav = document.getElementById('button4');
@@ -263,7 +255,7 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar4;
                 boton_fav.dataset.state = 'off';
             }
-            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+
             break;
         case 'boton5':
             boton_fav = document.getElementById('button5');
@@ -278,7 +270,7 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar5;
                 boton_fav.dataset.state = 'off';
             }
-            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
+
             break;
         case 'boton6':
             boton_fav = document.getElementById('button6');
@@ -293,9 +285,9 @@ function agregar_fav(buttonId) {
                 delete FAVORITOS.dolar6;
                 boton_fav.dataset.state = 'off';
             }
-            localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
             break;
     }
+    localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 }
 
 
@@ -309,6 +301,7 @@ const tarjeta3 = document.querySelector('.cotizaciones .tarjeta3');
 const tarjeta4 = document.querySelector('.cotizaciones .tarjeta4');
 const tarjeta5 = document.querySelector('.cotizaciones .tarjeta5');
 const tarjeta6 = document.querySelector('.cotizaciones .tarjeta6');
+const MENSAJE = document.querySelector('.MENSAJE');
 
 document.getElementById('options').addEventListener('change', function () {
     const seleccion = this.value;
@@ -318,6 +311,7 @@ document.getElementById('options').addEventListener('change', function () {
             tarjetas.forEach(tarjeta => {
                 tarjeta.style.display = 'flex';
             });
+            MENSAJE.style.display = 'none';
             break;
         case 'DolarOficial':
             tarjetas.forEach(tarjeta => {
@@ -362,12 +356,55 @@ document.getElementById('options').addEventListener('change', function () {
             tarjeta6.style.display = 'flex';
             break;
         case 'FAVORITOS':
+
             tarjetas.forEach(tarjeta => {
                 tarjeta.style.display = 'none';
             });
-            // favoritos
+
+            const agregados_favoritos = JSON.parse(localStorage.getItem('FAVORITOS'));
+
+            var bool_favor = false;
+
+            if (agregados_favoritos) {
+                if (agregados_favoritos.dolar0) {
+                    tarjeta0.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.dolar1) {
+                    tarjeta1.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.dolar2) {
+                    tarjeta2.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.dolar3) {
+                    tarjeta3.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.dolar4) {
+                    tarjeta4.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.dolar5) {
+                    tarjeta5.style.display = 'flex';
+                    bool_favor = true;
+                }
+                if (agregados_favoritos.dolar6) {
+                    tarjeta6.style.display = 'flex';
+                    bool_favor = true;
+                }
+
+                if (bool_favor == false) {
+                    MENSAJE.style.display = 'flex';
+                    MENSAJE.style.minWidth = 'fit-content';
+                }
+                else {
+                    MENSAJE.style.display = 'none';
+                }
+            }
             break;
         default:
-            console.log('Opción no reconocida');
+            showAlert('error', 'ERROR: Ha ocurrido un problema.');
     }
 });
