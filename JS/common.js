@@ -480,7 +480,7 @@ const MENSAJE = document.querySelector('.MENSAJE');
 document.getElementById('options').addEventListener('change', function () {
     const seleccion = this.value;
 
-    const boton_filtro = document.querySelector('fa-solid fa-filter-circle-dollar');
+    const boton_filtro = document.querySelector('.boton_filtro');
     boton_filtro.addEventListener('click', function () {
 
         switch (seleccion) {
