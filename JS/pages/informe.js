@@ -128,7 +128,5 @@ function getRandomColor() {
 
 document.getElementById('options').addEventListener('change', function () {
     const seleccion = this.value;
-
-
 });
 
