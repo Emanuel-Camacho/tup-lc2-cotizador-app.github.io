@@ -79,10 +79,24 @@
 
             </section>
 
+
             <main id="CONTENIDO-CENTRAL">
 
                 <div class="URL">
                     <p>Usted esta en: INICIO</p>
+                </div>
+                <!-- mensajes de alerta -->
+
+                <div id="alert-success" class="alert alert-success">
+                    Mensaje de éxito
+                </div>
+
+                <div id="alert-warning" class="alert alert-warning">
+                    Mensaje de advertencia
+                </div>
+
+                <div id="alert-error" class="alert alert-error">
+                    ERROR: Ha ocurrido un error al intentar consultar los datos.
                 </div>
 
                 <div class="container">
@@ -115,19 +129,6 @@
 
                     <div class="dosendos">
                         <div class="cotizaciones">
-
-                            <!-- mensajes de alerta -->
-                            <div id="alert-success" class="alert alert-success">
-                                Mensaje de éxito
-                            </div>
-
-                            <div id="alert-warning" class="alert alert-warning">
-                                Mensaje de advertencia
-                            </div>
-
-                            <div id="alert-error" class="alert alert-error">
-                                ERROR: Ha ocurrido un error al intentar consultar los datos.
-                            </div>
 
                             <div class="tarjeta tarjeta0 USD">
                                 <div class="moneda moneda-0">
@@ -293,21 +294,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- botones para probar alertas / IMPORTANTE quitar al final -->
-                <div>
-                    <button onclick="showAlert('success', 'Operación completada con éxito.')">Mostrar Alerta de
-                        Éxito</button>
-
-                    <button onclick="showAlert('warning', 'Advertencia: Por favor, revise sus datos.')">Mostrar
-                        Alerta de
-                        Advertencia</button>
-
-                    <button onclick="showAlert('error', 'ERROR: Ha ocurrido un problema.')">Mostrar Alerta de
-                        Error</button>
-                </div>
-
-
 
             </main>
         </div>
