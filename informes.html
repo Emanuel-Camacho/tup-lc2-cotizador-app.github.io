@@ -95,44 +95,6 @@
 
                             <div class="grafico">
                                 <canvas id="miGrafica"></canvas>
-                                <script>
-                                    // Eje X
-                                    const etiquetas = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"];
-                                    // Datos
-                                    const datosLinea1 = [100, 150, 120, 200, 10, 20];
-                                    const datosLinea2 = [80, 120, 140, 180, 0, 50];
-                                    const datosLinea3 = [88, 100, 140, 200, 20, 0];
-                                    const ctx = document.getElementById("miGrafica").getContext("2d");
-                                    new Chart(ctx, {
-                                        type: "line",
-                                        data: {
-                                            labels: etiquetas,
-                                            datasets: [
-                                                { // Ejemplo de gráfica con relleno
-                                                    label: "Dólar Blue",
-                                                    data: datosLinea1,
-                                                    borderColor: "rgba(54, 162, 235, 1)",
-                                                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo
-                                                    borderWidth: 1,
-                                                    fill: true
-                                                },
-                                                {
-                                                    label: "Dólar Oficial",
-                                                    data: datosLinea2,
-                                                    borderColor: "green",
-                                                    borderWidth: 1,
-                                                    fill: false
-                                                },
-                                                {
-                                                    label: "Euro",
-                                                    data: datosLinea3,
-                                                    borderColor: "red",
-                                                    fill: false
-                                                }
-                                            ]
-                                        }
-                                    });
-                                </script>
                             </div>
 
                         </div>
