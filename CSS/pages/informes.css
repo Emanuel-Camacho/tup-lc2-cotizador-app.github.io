@@ -47,10 +47,10 @@
 
 /* Estilos para el gráfico */
 .grafico {
-    width: 400px;
-    height: 200px;
-
+    width: 50%;
+    height: 2%;
 }
+
 
 .grafico img {
     max-width: 100%;
