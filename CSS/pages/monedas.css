@@ -162,21 +162,36 @@
 
 
 /* Estilos para los mensajes de alerta */
+
+.flexgrande {
+    display: none;
+    /* debo cambiar a "display: flex" para que se muestre la alerta */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+}
+
 .alert {
+    display: none;
+    /* Oculto por defecto */
+
     width: max-content;
     font-size: 20px;
 
-    position: fixed;
+    /* 
     top: 48%;
     left: 55%;
     transform: translate(-50%, -50%);
-    padding: 20px;
-    border-radius: 5px;
+    */
+
+    z-index: 1000;
+    position: absolute;
+
+    margin: auto auto;
+    padding: 20px 40px;
     color: white;
     opacity: 0.9;
-    z-index: 1000;
-    display: none;
-    /* Oculto por defecto */
     border-radius: 50px;
 }
 
@@ -205,16 +220,8 @@
     font: inherit;
     color: inherit;
     cursor: pointer;
-<<<<<<< HEAD
-    <<<<<<< Updated upstream=======
-=======
->>>>>>> b8960f7df68a7a940b472c55367d2c6c0eba83d0
 }
 
 .boton_filtro {
     color: red;
-<<<<<<< HEAD
-    >>>>>>>Stashed changes
-=======
->>>>>>> b8960f7df68a7a940b472c55367d2c6c0eba83d0
 }
