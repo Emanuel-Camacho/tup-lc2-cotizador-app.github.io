@@ -1,23 +1,38 @@
 // FECHA Y HORA DE ACTUALIZACION CADA 5 MINUTOS
 
+let LISTA_NUBE = {};
+
 function imprimirMensaje() {
     // pedimos monedas DOLAR
     fetch("https://dolarapi.com/v1/dolares")
         .then(response => response.json())
         .then(data => {
-            // console.log(data)
-            localStorage.setItem('DOLARES', JSON.stringify(data))
+            localStorage.setItem('DOLARES', JSON.stringify(data));
+            console.log(data);
+
+            data.forEach((valor, indice) => {
+                LISTA_NUBE[`moneda${indice + 1}`] = valor;
+            });
+            localStorage.setItem('LISTA_NUBE',JSON.stringify(LISTA_NUBE));
         })
         .catch((error) => {
-            showAlert('error', 'ERROR: Ha ocurrido un problema.')
+            showAlert('error', 'ERROR: Ha ocurrido un problema.');
         });
 
     // pedimos EU, BR, CH, UY
     fetch("https://dolarapi.com/v1/cotizaciones")
         .then(response => response.json())
         .then(data => {
-            localStorage.setItem('OTRAS_MONEDAS', JSON.stringify(data))
+            localStorage.setItem('OTRAS_MONEDAS', JSON.stringify(data));
+
+            data.forEach((valor, indice) => {
+                LISTA_NUBE[`otro${indice}`] = valor;
+            });
+            delete LISTA_NUBE.otro0;
         });
+
+    console.log(LISTA_NUBE);
+
 
     // obtener el elemento de fecha y hora
     fecha_hora = document.querySelector('.container .dia');
@@ -265,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // funciones para que al tocar un boton se guarde en favoritos / localstorage la moneda
 var boton_fav; // varaible que se usa en todos los case para modificar el color y data-state
+
 function agregar_fav(buttonId) {
     switch (buttonId) {
         case 'boton0':
@@ -274,13 +290,13 @@ function agregar_fav(buttonId) {
                 showAlert('success', 'Agregado a favoritos con exito');
                 FAVORITOS.dolar0 = MONEDAS[0];
                 boton_fav.dataset.state = 'on';
-            } 
-            /* else {
+            } else {
+                // ??? continuar luego con index / mi archivo
+                showAlert('warning', 'CUIDADO - Esa moneda ya esta agregada a su archivo');
                 boton_fav.style.color = 'black';
-                showAlert('success', 'Eliminado de favoritos con exito');
                 delete FAVORITOS.dolar0;
                 boton_fav.dataset.state = 'off';
-            } */
+            }
             break;
 
         case 'boton1':
