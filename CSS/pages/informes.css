@@ -64,7 +64,7 @@
     width: fit-content;
 }
 
-.compartir a {
+.compartir button {
     text-decoration: none;
     color: black;
     font-size: 20px;
@@ -72,13 +72,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: none;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
 }
 
-.compartir a span {
+.compartir button span {
     text-decoration: underline;
 }
 
-.compartir a i {
+.compartir button i {
     font-size: 30px;
     color: blue;
 }
