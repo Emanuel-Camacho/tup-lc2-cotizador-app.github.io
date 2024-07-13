@@ -84,6 +84,7 @@ const myChart = new Chart(ctx, {
 // Capturar cambio en el select y actualizar el gráfico
 const selectMoneda = document.getElementById("options");
 selectMoneda.addEventListener("change", function () {
+    
     const monedaSeleccionada = selectMoneda.value;
     if (monedaSeleccionada === "") {
         // Mostrar todas las monedas
