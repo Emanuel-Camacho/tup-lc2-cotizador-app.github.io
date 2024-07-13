@@ -289,13 +289,14 @@ function agregar_fav(buttonId) {
                 showAlert('success', 'Agregado a favoritos con exito');
                 FAVORITOS.dolar0 = LISTA.moneda0;
                 boton_fav.dataset.state = 'on';
-            } else {
+
+            } /* else {
                 // ??? continuar luego con index / mi archivo
                 showAlert('warning', 'CUIDADO - Esa moneda ya esta agregada a su archivo');
                 boton_fav.style.color = 'black';
                 delete FAVORITOS.dolar0;
                 boton_fav.dataset.state = 'off';
-            }
+            } */
             break;
 
         case 'boton1':
