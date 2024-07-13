@@ -119,3 +119,12 @@ function getRandomColor() {
     }
     return color;
 }
+
+document.getElementById('options').addEventListener('change', function () {
+    const seleccion = this.value;
+
+    const boton_filtro = document.querySelector('.boton_info');
+    boton_filtro.addEventListener('click', function () {
+
+    });
+});
