@@ -13,7 +13,7 @@ function imprimirMensaje() {
             data.forEach((valor, indice) => {
                 LISTA_NUBE[`moneda${indice + 1}`] = valor;
             });
-            localStorage.setItem('LISTA_NUBE',JSON.stringify(LISTA_NUBE));
+            localStorage.setItem('LISTA_NUBE', JSON.stringify(LISTA_NUBE));
         })
         .catch((error) => {
             showAlert('error', 'ERROR: Ha ocurrido un problema.');
@@ -29,6 +29,7 @@ function imprimirMensaje() {
                 LISTA_NUBE[`otro${indice}`] = valor;
             });
             delete LISTA_NUBE.otro0;
+            localStorage.setItem('LISTA_NUBE', JSON.stringify(LISTA_NUBE));
         });
 
     console.log(LISTA_NUBE);
