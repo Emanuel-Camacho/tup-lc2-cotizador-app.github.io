@@ -84,31 +84,36 @@ const myChart = new Chart(ctx, {
 // Capturar cambio en el select y actualizar el gráfico
 const selectMoneda = document.getElementById("options");
 selectMoneda.addEventListener("change", function () {
-    
-    const monedaSeleccionada = selectMoneda.value;
-    if (monedaSeleccionada === "") {
-        // Mostrar todas las monedas
-        const datasets = Object.keys(datos).map(moneda => ({
-            label: moneda,
-            data: datos[moneda],
-            borderColor: getRandomColor(), // Función para obtener un color aleatorio
-            borderWidth: 1,
-            fill: false
-        }));
-        myChart.data.datasets = datasets;
-        myChart.options.scales.y.beginAtZero = true; // Asegurar que el eje y empiece en cero
-    } else {
-        // Mostrar una moneda específica
-        myChart.data.datasets = [{
-            label: monedaSeleccionada,
-            data: datos[monedaSeleccionada],
-            borderColor: getRandomColor(), // Función para obtener un color aleatorio
-            borderWidth: 1,
-            fill: false
-        }];
-        myChart.options.scales.y.beginAtZero = false; // No forzar que el eje y empiece en cero
-    }
-    myChart.update(); // Actualizar el gráfico
+
+    const boton_info = document.querySelector('.boton_info');
+    boton_info.addEventListener('click', function () {
+        const monedaSeleccionada = selectMoneda.value;
+        if (monedaSeleccionada === "") {
+            // Mostrar todas las monedas
+            const datasets = Object.keys(datos).map(moneda => ({
+                label: moneda,
+                data: datos[moneda],
+                borderColor: getRandomColor(), // Función para obtener un color aleatorio
+                borderWidth: 1,
+                fill: false
+            }));
+            myChart.data.datasets = datasets;
+            myChart.options.scales.y.beginAtZero = true; // Asegurar que el eje y empiece en cero
+        } else {
+            // Mostrar una moneda específica
+            myChart.data.datasets = [{
+                label: monedaSeleccionada,
+                data: datos[monedaSeleccionada],
+                borderColor: getRandomColor(), // Función para obtener un color aleatorio
+                borderWidth: 1,
+                fill: false
+            }];
+            myChart.options.scales.y.beginAtZero = false; // No forzar que el eje y empiece en cero
+        }
+        myChart.update(); // Actualizar el gráfico
+    });
+
+
 });
 
 // Función para obtener un color aleatorio
@@ -124,8 +129,6 @@ function getRandomColor() {
 document.getElementById('options').addEventListener('change', function () {
     const seleccion = this.value;
 
-    const boton_filtro = document.querySelector('.boton_info');
-    boton_filtro.addEventListener('click', function () {
 
-    });
 });
+
