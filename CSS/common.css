@@ -205,23 +205,6 @@ body {
     font-weight: normal;
 }
 
-
-.comentarios img {
-    max-height: 50px;
-    border-radius: 10em;
-    box-shadow: rgba(20, 20, 20, 0.3);
-    border: #74a0cc;
-}
-
-.comentarios h3 {
-    font-size: 1.2em;
-}
-
-.comentarios .izquierda {
-    flex: 0 0 auto;
-    background-color: lightblue;
-}
-
 #BARRA-LATERAL .comentarios .dere {
     background-color: lightgray;
     height: fit-content;
@@ -238,7 +221,6 @@ body {
 #CONTENIDO-CENTRAL {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 
     margin: 5px;
@@ -247,27 +229,7 @@ body {
     width: 100%;
 }
 
-.URL {
-    align-self: self-end;
-    text-align: right;
-    margin-bottom: 7px;
-}
-
-.container {
-    border: 1px solid rgb(0, 0, 0);
-    padding: 10px;
-    width: 98%;
-}
-
-
-
 /* PIE */
-
-.pie {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 20px;
-}
 
 .pie .izquierda {
     text-align: left;
@@ -387,34 +349,3 @@ body {
     text-align: right;
 }
 
-@media (max-width: 700px) {
-    .con-tenedor {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .con-tenedor div {
-        margin-bottom: 20px;
-    }
-
-    .con-tenedor div ul {
-        text-align: center;
-    }
-
-    #PIE-DE-PAGINA .con-tenedor .no-listado-2 {
-        align-self: center;
-        text-align: center;
-    }
-
-}
-
-@media (max-width: 1119px) {
-    /* a partir  de 1119px de ancho el grid rompe la pagina
-    */
-}
-
-@media (max-width: 1233px) {
-    /* a partir de 1233px se rompen las tarjetas de monedas
-    */
-}

@@ -13,11 +13,7 @@
     padding: 5px;
     border-radius: 1em;
 
-    border: 0px solid rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
-    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
-    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
+    border: 1px solid black;
 }
 
 #CONTENIDO-CENTRAL .select label {
@@ -39,49 +35,61 @@
 
 /* Pizarra de Monedas */
 
-.dosendos {
-    display: flex;
-    flex-direction: column;
+.container {
+    display: grid;
+    grid-template-areas:
+        "h2"
+        "select"
+        "dia"
+        "cotizaciones"
+        "pie";
+    grid-gap: 10px;
+
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
 }
 
-.cotizaciones {
-    border: 1px solid rgb(187, 187, 187);
-    border-radius: 0em;
-    margin: 10px;
+.URL {
+    grid-area: URL;
+    align-self: self-end;
+    text-align: right;
+    margin-bottom: 7px;
+}
 
-    /* 
-    NO SIRVE NOSE PORQUE LO DEJO
-    a partir  de 1119px de ancho el grid rompe la pagina
-    */
+.container h2 {
+    grid-area: h2;
+}
 
-    /*
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    */
+.container select {
+    grid-area: select;
+}
 
+.container .dia {
+    grid-area: dia;
+}
+
+.container #cotizaciones {
+    grid-area: cotizaciones;
+    border: 1px solid black;
+    padding: 20px;
+    height: 60%;
     display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(255, 255, 255);
+    flex-flow: column wrap;
+}
 
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
-    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
-    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
-
+.container .pie {
+    grid-area: pie;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
 }
 
 .tarjeta {
-    flex-basis: 50%;
-    box-sizing: border-box;
-    min-width: 100px;
-
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    text-align: center;
-}
-
-.tarjeta a {
-    color: black;
+    width: 50%;
+    min-width: 343px;
 }
 
 .tarjeta button:hover {
@@ -90,75 +98,56 @@
 
 
 .moneda {
-    /* a partir de 1233px se rompen las tarjetas de monedas
-    */
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    min-width: fit-content;
-    width: 60%;
-    height: 30px;
-    margin: 20px;
-    padding: 15px;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
 
     border: 1px solid #74a0cc4f;
     background-color: #74a0cc4f;
 
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
-    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
-    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.66);
 }
 
-
-.moneda .precio {
+.precio {
     display: flex;
-    align-self: flex-end;
-    align-self: center;
-
+    justify-content: space-between;
+    align-items: center;
 }
 
 .precio div {
     display: flex;
     flex-direction: column;
 
-    font-size: 20px;
-    font-weight: normal;
-    width: 85px;
 }
 
-.precio div span {
-    font-size: 13px;
-    font-weight: normal;
-}
-
-.precio .compra {
-    background-color: rgba(34, 255, 0, 0.379);
-    border-radius: 0.5em;
-    font-size: 13px;
-
-    align-self: flex-end;
-    align-self: center;
-}
-
-.precio .compra .monto {
-    font-size: 20px;
-}
-
-.precio .venta {
+.precio .compra,
+.venta {
     margin-left: 15px;
-    background-color: rgba(255, 68, 68, 0.617);
     border-radius: 0.5em;
     font-size: 13px;
-
-    align-self: flex-end;
     align-self: center;
 }
 
-.precio .venta .monto {
-    font-size: 20px;
+.compra {
+    background-color: #28a746;
 }
 
+.venta {
+    background-color: #dc3545;
+}
+
+.precio div h3 {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.precio div p {
+    font-size: 15px;
+}
 
 
 /* Estilos para los mensajes de alerta */

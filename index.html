@@ -17,8 +17,7 @@
 
     <script src="JS/common.js" defer></script>
     <script src="JS/pages/mi-archivo.js" defer></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
-
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script> -->
 
 </head>
 
@@ -85,19 +84,6 @@
                 <div class="URL">
                     <p>Usted esta en: INICIO</p>
                 </div>
-                <!-- mensajes de alerta -->
-
-                <div id="alert-success" class="alert alert-success">
-                    Mensaje de éxito
-                </div>
-
-                <div id="alert-warning" class="alert alert-warning">
-                    Mensaje de advertencia
-                </div>
-
-                <div id="alert-error" class="alert alert-error">
-                    ERROR: Ha ocurrido un error al intentar consultarB los datos.
-                </div>
 
                 <div class="container">
 
@@ -127,172 +113,37 @@
 
                     <div class="dia">Datos Actualizados al 00/00/0000 00:00hs</div>
 
-                    <div class="dosendos">
-                        <div class="cotizaciones">
 
-                            <div class="tarjeta tarjeta0 USD">
-                                <div class="moneda moneda-0">
-                                    <div>
-                                        <h3>Dolar</h3>
-                                    </div>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button0" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton0')"><i class="fa-solid fa-star"></i></button>
-                            </div>
+                    <div id="cotizaciones">
 
-                            <div class="tarjeta tarjeta1 USD">
-                                <div class="moneda moneda-1">
+                        <!-- <div class="tarjeta">
+                                <div class="moneda">
                                     <h3>Dolar</h3>
                                     <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
+                                        <div class="compra">
+                                            <h3>COMPRA</h3>
+                                            <p>$0000</p>
+                                        </div>
+
+                                        <div class="venta">
+                                            <h3>VENTA</h3>
+                                            <p>$0000</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <button id="button1" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton1')"><i class="fa-solid fa-star"></i></button>
-                            </div>
+                                <button id="button" class="boton_repetido" data-state="off" onclick=""><i
+                                        class="fa-solid fa-star"></i></button>
+                            </div> -->
 
-                            <div class="tarjeta tarjeta2 USD">
-                                <div class="moneda moneda-2">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button2" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton2')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-                            <div class="tarjeta tarjeta3 USD">
-                                <div class="moneda moneda-3">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button3" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton3')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-                            <div class="tarjeta tarjeta4 USD">
-                                <div class="moneda moneda-4">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button4" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton4')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-                            <div class="tarjeta tarjeta5 USD">
-                                <div class="moneda moneda-5">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button5" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton5')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-                            <div class="tarjeta tarjeta6 USD">
-                                <div class="moneda moneda-6">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button6" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton6')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-                            <div class="tarjeta tarjeta7 OTRA">
-                                <div class="moneda moneda-7">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button7" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton7')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-                            <div class="tarjeta tarjeta8 OTRA">
-                                <div class="moneda moneda-8">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button8" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton8')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-                            <div class="tarjeta tarjeta9 OTRA">
-                                <div class="moneda moneda-9">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button9" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton9')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-                            <div class="tarjeta tarjeta10 OTRA">
-                                <div class="moneda moneda-10">
-                                    <h3>Dolar</h3>
-                                    <div class="precio">
-                                        <div class="compra">COMPRA <span class="monto"></span></div>
-                                        <div class="venta">VENTA <span class="monto"></span></div>
-                                    </div>
-                                </div>
-                                <button id="button10" class="boton_repetido" data-state="off"
-                                    onclick="agregar_fav('boton10')"><i class="fa-solid fa-star"></i></button>
-                            </div>
-
-
-                            <!-- menaje oculto -->
-                            <div class="tarjeta MENSAJE">
-                                No hay favoritos agregados.
-                                <style>
-                                    .MENSAJE {
-                                        display: none;
-                                        justify-content: space-between;
-                                        align-items: center;
-                                        font-size: 15px;
-                                        font-weight: bold;
-
-                                        min-width: fit-content;
-                                        width: 60%;
-                                        height: 30px;
-                                        margin: 50px;
-                                        padding: 15px;
-                                    }
-                                </style>
-                            </div>
-                        </div>
-
-                        <div class="pie">
-                            <div class="izquierda"><i class="fa-solid fa-exclamation"></i> Haga click en la estrella
-                                para guardar los datos de cotizacion</div>
-                            <div class="derecha"><span>Datos obtenidos de </span><a
-                                    href="https://dolarapi.com">Dolarapi.com</a></div>
-                        </div>
                     </div>
+
+                    <div class="pie">
+                        <div class="izquierda"><i class="fa-solid fa-exclamation"></i> Haga click en la estrella
+                            para guardar los datos de cotizacion</div>
+                        <div class="derecha"><span>Datos obtenidos de </span><a
+                                href="https://dolarapi.com">Dolarapi.com</a></div>
+                    </div>
+
                 </div>
 
             </main>
