@@ -6,25 +6,32 @@ let LISTA = new Array();
 
 let USD = new Array();
 let OTRA = new Array();
+// Función para actualizar la fecha en el HTML
+function actualizarFecha() {
+    const fechaElemento = document.querySelector('.dia');
+    const fechaActual = new Date();
+    const dia = fechaActual.getDate();
+    const mes = fechaActual.getMonth() + 1;
+    const año = fechaActual.getFullYear();
+    const horas = fechaActual.getHours();
+    const minutos = fechaActual.getMinutes();
+    const fechaTexto = `Datos Actualizados al ${dia}/${mes}/${año} ${horas}:${minutos < 10 ? '0' + minutos : minutos}hs`;
+    fechaElemento.textContent = fechaTexto;
+}
 
-let fechaExacta = new Date();
-const diaExacta = fechaExacta.getDate();
-const mesExacta = fechaExacta.getMonth() + 1;
-const añoExacta = fechaExacta.getFullYear();
-fechaExacta = `${diaExacta}/${mesExacta}/${añoExacta}`;
+// Actualizar la fecha al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarFecha(); // Actualizar al inicio
+    setInterval(actualizarFecha, 5 * 60 * 1000); // Actualizar cada 5 minutos
+});
 
+// Fetch de los datos de dólares y cotizaciones
 fetch("https://dolarapi.com/v1/dolares")
     .then(response => response.json())
     .then(data => {
         if (data.length > 0) {
-            data.forEach(element => {
-                LISTA_NUBE.push(element);
-            });
-
-            for (let i = 0; i < LISTA_NUBE.length; i++) {
-                LISTA_NUBE[i].fechaActualizacion = fechaExacta;
-            }
-
+            LISTA_NUBE.push(...data);
+            actualizarFecha(); // Actualizar la fecha después de cada fetch
             localStorage.setItem('MONEDAS', JSON.stringify(LISTA_NUBE));
         } else {
             console.log("No se encontraron datos de dólares.");
@@ -35,18 +42,15 @@ fetch("https://dolarapi.com/v1/cotizaciones")
     .then(response => response.json())
     .then(data => {
         if (data.length > 0) {
-            data.forEach(element => {
-                LISTA_NUBE.push(element);
-            });
+            LISTA_NUBE.push(...data);
+            actualizarFecha(); // Actualizar la fecha después de cada fetch
             LISTA_NUBE.splice(7, 1);
-            for (let i = 0; i < LISTA_NUBE.length; i++) {
-                LISTA_NUBE[i].fechaActualizacion = fechaExacta;
-            }
             localStorage.setItem('MONEDAS', JSON.stringify(LISTA_NUBE));
         } else {
             console.log("No se encontraron cotizaciones.");
         }
     });
+
 
 LISTA = JSON.parse(localStorage.getItem('MONEDAS'));
 
