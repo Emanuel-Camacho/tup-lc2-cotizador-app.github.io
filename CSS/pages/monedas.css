@@ -45,16 +45,10 @@
         "pie";
     grid-gap: 10px;
 
-    border: 1px solid rgb(0, 0, 0);
     padding: 10px;
 }
 
-.URL {
-    grid-area: URL;
-    align-self: self-end;
-    text-align: right;
-    margin-bottom: 7px;
-}
+
 
 .container h2 {
     grid-area: h2;

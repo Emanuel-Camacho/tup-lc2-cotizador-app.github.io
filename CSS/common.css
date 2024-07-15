@@ -229,6 +229,17 @@ body {
     width: 100%;
 }
 
+.URL {
+    grid-area: URL;
+    align-self: self-end;
+    text-align: right;
+    margin-bottom: 7px;
+}
+
+.container {
+    border: 1px solid rgb(0, 0, 0);
+}
+
 /* PIE */
 
 .pie .izquierda {

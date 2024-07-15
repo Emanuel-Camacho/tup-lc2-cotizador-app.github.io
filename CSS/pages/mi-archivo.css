@@ -3,30 +3,32 @@
 }
 
 #BARRA-LATERAL .option:nth-child(2) a {
-    color: rgb(0, 0, 0);}
+    color: rgb(0, 0, 0);
+}
 
 #BARRA-LATERAL .option:nth-child(2) a i {
     color: rgb(0, 0, 0);
 }
 
 /* TITULO */
-.head {
+
+.titulo_icono {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: space-between;
 }
 
-.head .titulo {
-    margin: auto;
+.container h2 {
+    margin: 0 auto;
 }
 
-.head a {
-    color: blue;
-}
-
-.head a {
+.container .impresora {
+    margin-right: 5px;
     font-size: 30px;
+}
+
+.container .impresora a i {
+    color: blue;
 }
 
 /* TABLA */
@@ -35,7 +37,7 @@
     max-height: 330px;
     overflow-y: auto;
     /* Agrega un scrollbar vertical si el contenido es más largo que la altura máxima 
-    se puede hacer que el scroll este oculto ???
+    se puede hacer que el scroll / este oculto ???
     */
     border: 1px solid lightgray;
 
@@ -70,8 +72,16 @@ table .fecha {
     background-color: lightgrey;
 }
 
-tbody {}
+#body_MI .trAbajo td:not(:last-child) {
+    border-left: 2px solid lightgray;
+    border-right: 2px solid lightgray;
+}
 
-.bor {
-    border: 2px solid lightgray;
+#body_MI .trAbajo td button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
 }

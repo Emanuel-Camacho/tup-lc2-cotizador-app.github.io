@@ -6,6 +6,9 @@ let LISTA = new Array();
 
 let USD = new Array();
 let OTRA = new Array();
+
+let fechaExacta;
+
 // Función para actualizar la fecha en el HTML
 function actualizarFecha() {
     const fechaElemento = document.querySelector('.dia');
@@ -17,6 +20,7 @@ function actualizarFecha() {
     const minutos = fechaActual.getMinutes();
     const fechaTexto = `Datos Actualizados al ${dia}/${mes}/${año} ${horas}:${minutos < 10 ? '0' + minutos : minutos}hs`;
     fechaElemento.textContent = fechaTexto;
+
 }
 
 // Actualizar la fecha al cargar la página
@@ -24,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarFecha(); // Actualizar al inicio
     setInterval(actualizarFecha, 5 * 60 * 1000); // Actualizar cada 5 minutos
 });
+
 
 // Fetch de los datos de dólares y cotizaciones
 fetch("https://dolarapi.com/v1/dolares")
@@ -62,6 +67,8 @@ if (LISTA.length > 0) {
         tarjeta.classList.add("tarjeta");
 
         if (i < 7) {
+            tarjeta.classList.add("USD");
+            tarjeta.classList.add(`monedita${i}`);
             tarjeta.innerHTML = `
             <div class="moneda">
                 <h3>Dolar ${LISTA[i].nombre}</h3>
@@ -79,6 +86,9 @@ if (LISTA.length > 0) {
             <button class="boton_repetido" data-id="${i}" data-state="off"><i class="fa-solid fa-star"></i></button>
         `;
         } else {
+            tarjeta.classList.add("OTRA");
+            tarjeta.classList.add(`OTRA${i}`);
+            tarjeta.classList.add(`monedita${i}`);
             tarjeta.innerHTML = `
                 <div class="moneda">
                     <h3>${LISTA[i].nombre}</h3>
@@ -102,6 +112,14 @@ if (LISTA.length > 0) {
     console.log("No se encontraron monedas en la lista.");
 }
 
+function conseguirFecha() {
+    const fechaActual = new Date();
+    const dia = fechaActual.getDate();
+    const mes = fechaActual.getMonth() + 1;
+    const año = fechaActual.getFullYear();
+    fechaExacta = `${dia}/${mes}/${año}`;
+    return fechaExacta
+}
 
 function agregar_favoritos(event) {
     const boton = event.currentTarget;
@@ -117,6 +135,8 @@ function agregar_favoritos(event) {
     }
 
     if (!monedaRepetida) {
+        LISTA[id].fechaActualizacion = conseguirFecha()
+        
         FAVORITOS.push(LISTA[id]);
         localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 
@@ -150,5 +170,121 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.querySelectorAll('.boton_repetido').forEach((boton) => {
     boton.addEventListener('click', agregar_favoritos);
+});
+
+document.querySelector('.boton_filtro').addEventListener('click', function () {
+    const selectedOption = document.getElementById('options').value;
+    console.log('Opción seleccionada:', selectedOption);
+
+    switch (selectedOption) {
+        case 'TODAS':
+            document.querySelectorAll('.tarjeta').forEach(elemento => {
+                elemento.style.display = 'flex';
+            });
+            break;
+        case 'USD':
+            document.querySelectorAll('.tarjeta').forEach(elemento => {
+                elemento.style.display = 'none';
+            });
+            document.querySelectorAll('.USD').forEach(elemento => {
+                elemento.style.display = 'flex';
+            });
+            break;
+        case 'OTRA':
+            document.querySelectorAll('.tarjeta').forEach(elemento => {
+                elemento.style.display = 'none';
+            });
+            document.querySelectorAll('.OTRA').forEach(elemento => {
+                elemento.style.display = 'flex';
+            });
+            break;
+        case 'Euro':
+            document.querySelectorAll('.tarjeta').forEach(elemento => {
+                elemento.style.display = 'none';
+            });
+            document.querySelectorAll('.OTRA7').forEach(elemento => {
+                elemento.style.display = 'flex';
+            });
+            break;
+        case 'PesoBR':
+            document.querySelectorAll('.tarjeta').forEach(elemento => {
+                elemento.style.display = 'none';
+            });
+            document.querySelectorAll('.OTRA8').forEach(elemento => {
+                elemento.style.display = 'flex';
+            });
+            break;
+        case 'PesoChileno':
+            document.querySelectorAll('.tarjeta').forEach(elemento => {
+                elemento.style.display = 'none';
+            });
+            document.querySelectorAll('.OTRA9').forEach(elemento => {
+                elemento.style.display = 'flex';
+            });
+            break;
+        case 'PesoUruguayo':
+            document.querySelectorAll('.tarjeta').forEach(elemento => {
+                elemento.style.display = 'none';
+            });
+            document.querySelectorAll('.OTRA10').forEach(elemento => {
+                elemento.style.display = 'flex';
+            });
+            break;
+        case 'FAVORITOS':
+            let seleccionado;
+            console.log(FAVORITOS);
+            document.querySelectorAll('.tarjeta').forEach(elemento => {
+                elemento.style.display = 'none';
+            });
+            for (let i = 0; i < FAVORITOS.length; i++) {
+                switch (FAVORITOS[i].nombre) {
+                    case 'Oficial':
+                        seleccionado = document.querySelector(`.monedita0`);
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Blue':
+                        seleccionado = document.querySelector('.monedita1');
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Bolsa':
+                        seleccionado = document.querySelector('.monedita2');
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Contado con liquidación':
+                        seleccionado = document.querySelector(`.monedita3`);
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Mayorista':
+                        seleccionado = document.querySelector('.monedita4');
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Cripto':
+                        seleccionado = document.querySelector('.monedita5');
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Tarjeta':
+                        seleccionado = document.querySelector('.monedita6');
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Euro':
+                        seleccionado = document.querySelector('.monedita7');
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Real Brasileño':
+                        seleccionado = document.querySelector('.monedita8');
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Peso Chileno':
+                        seleccionado = document.querySelector('.monedita9');
+                        seleccionado.style.display = 'flex';
+                        break;
+                    case 'Peso Uruguayo':
+                        seleccionado = document.querySelector('.monedita10');
+                        seleccionado.style.display = 'flex';
+                        break;
+                }
+            }
+            break;
+    }
 });
 
