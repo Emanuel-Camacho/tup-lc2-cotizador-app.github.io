@@ -13,7 +13,10 @@
     color: #333;
     font-size: 24px;
     margin-bottom: 20px; /* Añade espacio debajo del título */
-    background-color: lightseagreen;
+    background-color: #176B87;
+    color: white;
+    border-radius: 7px;
+    padding: 5px;
 }
 
 .container label {

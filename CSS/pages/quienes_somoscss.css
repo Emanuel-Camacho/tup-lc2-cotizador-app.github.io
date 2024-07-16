@@ -130,19 +130,4 @@
         margin-bottom: 0;
     }
 
-    /* Colores específicos para cada tipo de miembro */
-    .member.blue {
-        background-color: #cce5ff;
-    }
-
-    .member.green {
-        background-color: #d4edda;
-    }
-
-    .member.yellow {
-        background-color: #fff3cd;
-    }
-
-    .member.pink {
-        background-color: #f8d7da;
-    }
+}
