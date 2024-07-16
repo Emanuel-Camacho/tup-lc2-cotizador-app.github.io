@@ -4,11 +4,22 @@ function tabla_MIARCHIVO() {
 
     const tablaBody = document.querySelector('#body_MI');
 
-    // LISTA_FAV_MI[ultimo_numero].fechaActualizacion = '00/00/0000'
+    // LISTA_FAV_MI[1].fechaActualizacion = '17/00/0000'
 
     tablaBody.innerHTML = '';
 
     let fechaHoy = ''
+
+    if (LISTA_FAV_MI.length == 0) {
+        const trVacio = document.createElement('tr');
+        const tdVacio = document.createElement('td');
+        tdVacio.colSpan = 5;
+        tdVacio.innerHTML = "NO HAY NINGUNA MONEDA AGREGADA A FAVORITOS";
+        tdVacio.classList.add("tdVacio");
+        // mensajeVacio.classList.add("fecha");
+        trVacio.appendChild(tdVacio);
+        tablaBody.appendChild(trVacio);
+    }
 
     // se carga la tabla con los agregados a favoritos
     for (let i = 0; i < LISTA_FAV_MI.length; i++) {
@@ -59,7 +70,7 @@ function tabla_MIARCHIVO() {
         const boton = event.currentTarget;
         const dataID = boton.getAttribute('data-id');
 
-        console.log('Data ID:', dataID);
+        // console.log('Data ID:', dataID);
         LISTA_FAV_MI.splice(dataID, 1);
         showAlert('Operación exitosa', 'success');
         localStorage.setItem('FAVORITOS', JSON.stringify(LISTA_FAV_MI));
@@ -72,12 +83,13 @@ function tabla_MIARCHIVO() {
 }
 
 
+
 function showAlert(message, type) {
     const alertBox = document.getElementById('alert-message');
     alertBox.textContent = message;
     alertBox.className = `alert ${type}`;
     alertBox.style.display = 'block';
-    
+
     setTimeout(() => {
         alertBox.style.display = 'none';
     }, 3000); // Ocultar después de 3 segundos
@@ -89,5 +101,7 @@ showAlert('Operación incorrecta', 'warning');
 
 showAlert('Ha ocurrido un error al intentar consultar los datos.', 'error');
 */
+
+
 
 document.addEventListener('DOMContentLoaded', tabla_MIARCHIVO);

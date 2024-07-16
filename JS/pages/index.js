@@ -10,8 +10,8 @@ let fechaExacta;
 
 // Inicializa FAVORITOS con los datos de localStorage si existen
 function cargar_tarjetas() {
-    
-    
+
+
     // Función para actualizar la fecha en el HTML
     function actualizarFecha() {
         const fechaElemento = document.querySelector('.dia');
@@ -23,16 +23,16 @@ function cargar_tarjetas() {
         const minutos = fechaActual.getMinutes();
         const fechaTexto = `Datos Actualizados al ${dia}/${mes}/${año} ${horas}:${minutos < 10 ? '0' + minutos : minutos}hs`;
         fechaElemento.textContent = fechaTexto;
-    
+
     }
-    
+
     // Actualizar la fecha al cargar la página
     document.addEventListener('DOMContentLoaded', () => {
         actualizarFecha(); // Actualizar al inicio
         setInterval(actualizarFecha, 5 * 60 * 1000); // Actualizar cada 5 minutos
     });
-    
-    
+
+
     // Fetch de los datos de dólares y cotizaciones
     fetch("https://dolarapi.com/v1/dolares")
         .then(response => response.json())
@@ -45,7 +45,7 @@ function cargar_tarjetas() {
                 console.log("No se encontraron datos de dólares.");
             }
         });
-    
+
     fetch("https://dolarapi.com/v1/cotizaciones")
         .then(response => response.json())
         .then(data => {
@@ -58,17 +58,17 @@ function cargar_tarjetas() {
                 console.log("No se encontraron cotizaciones.");
             }
         });
-    
-    
+
+
     LISTA = JSON.parse(localStorage.getItem('MONEDAS'));
-    
+
     if (LISTA.length > 0) {
         const cotizaciones = document.getElementById("cotizaciones");
-    
+
         for (let i = 0; i < LISTA.length; i++) {
             const tarjeta = document.createElement("div")
             tarjeta.classList.add("tarjeta");
-    
+
             if (i < 7) {
                 tarjeta.classList.add("USD");
                 tarjeta.classList.add(`monedita${i}`);
@@ -114,7 +114,7 @@ function cargar_tarjetas() {
     } else {
         console.log("No se encontraron monedas en la lista.");
     }
-    
+
     function conseguirFecha() {
         const fechaActual = new Date();
         const dia = fechaActual.getDate();
@@ -123,49 +123,48 @@ function cargar_tarjetas() {
         fechaExacta = `${dia}/${mes}/${año}`;
         return fechaExacta
     }
-    
+
     function agregar_favoritos(event) {
         const boton = event.currentTarget;
         const id = boton.getAttribute('data-id');
         let monedaRepetida = false;
-    
+
         // Verificar si la moneda ya está en favoritos
         for (let i = 0; i < FAVORITOS.length; i++) {
             if (FAVORITOS[i].nombre === LISTA[id].nombre) {
                 monedaRepetida = true;
                 showAlert('Operación incorrecta - Esa moneda ya esta agregada a favoritos.', 'warning');
-    
                 break;
             }
         }
-    
+
         if (!monedaRepetida) {
             showAlert('Operación exitosa', 'success');
             LISTA[id].fechaActualizacion = conseguirFecha()
-    
+
             FAVORITOS.push(LISTA[id]);
             localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
-    
+
             // Cambiar el color del icono a amarillo
             const iconoEstrella = boton.querySelector('i.fa-solid');
             iconoEstrella.style.color = 'gold';
-    
+
             // Agregar clase para indicar estado de favorito
             boton.classList.add('favorito');
         }
         // console.log(FAVORITOS);
     }
-    
+
     document.querySelectorAll('.boton_repetido').forEach((boton) => {
         boton.addEventListener('click', agregar_favoritos);
     });
-    
-    
-    
+
+
+
     document.querySelector('.boton_filtro').addEventListener('click', function () {
         const selectedOption = document.getElementById('options').value;
         console.log('Opción seleccionada:', selectedOption);
-    
+
         switch (selectedOption) {
             case 'TODAS':
                 document.querySelectorAll('.tarjeta').forEach(elemento => {
@@ -277,19 +276,20 @@ function cargar_tarjetas() {
                 break;
         }
     });
-    
+
     function showAlert(message, type) {
         const alertBox = document.getElementById('alert-message');
         alertBox.textContent = message;
         alertBox.className = `alert ${type}`;
         alertBox.style.display = 'block';
-    
+
         setTimeout(() => {
             alertBox.style.display = 'none';
         }, 3000); // Ocultar después de 3 segundos
     }
-    
-    /* showAlert('Operación exitosa', 'success');
+
+    /* 
+    showAlert('Operación exitosa', 'success');
     
     showAlert('Operación incorrecta', 'warning');
     
@@ -300,9 +300,8 @@ function cargar_tarjetas() {
 
 // Cargar favoritos desde localStorage al iniciar la página
 document.addEventListener('DOMContentLoaded', () => {
+    // cargas las tarjetas al cargar la pagina
     cargar_tarjetas();
-
-    FAVORITOS = JSON.parse(localStorage.getItem('FAVORITOS')) || [];
 
     // Marcar como favoritos los botones correspondientes
     const botones = document.querySelectorAll('.boton_repetido');

@@ -63,6 +63,11 @@ td {
 
 }
 
+.tdVacio {
+    font-size: 15px;
+
+}
+
 thead {
     position: sticky;
     top: 0;
