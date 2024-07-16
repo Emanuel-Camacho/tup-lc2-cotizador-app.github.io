@@ -1,9 +1,10 @@
-
 function tabla_MIARCHIVO() {
 
     const LISTA_FAV_MI = JSON.parse(localStorage.getItem('FAVORITOS'));
 
     const tablaBody = document.querySelector('#body_MI');
+
+    // LISTA_FAV_MI[ultimo_numero].fechaActualizacion = '00/00/0000'
 
     tablaBody.innerHTML = '';
 
