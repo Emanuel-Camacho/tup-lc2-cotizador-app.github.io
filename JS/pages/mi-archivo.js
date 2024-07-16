@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', tabla_MIARCHIVO);
 
 function tabla_MIARCHIVO() {
 
@@ -54,13 +53,14 @@ function tabla_MIARCHIVO() {
         }
     }
 
+    // funcionalida para quitar de favoritos
     function quitarfavoritos(event) {
         const boton = event.currentTarget;
         const dataID = boton.getAttribute('data-id');
 
         console.log('Data ID:', dataID);
         LISTA_FAV_MI.splice(dataID, 1);
-        console.log(dataID);
+        showAlert('Operación exitosa', 'success');
         localStorage.setItem('FAVORITOS', JSON.stringify(LISTA_FAV_MI));
         tabla_MIARCHIVO();
     }
@@ -71,4 +71,22 @@ function tabla_MIARCHIVO() {
 }
 
 
+function showAlert(message, type) {
+    const alertBox = document.getElementById('alert-message');
+    alertBox.textContent = message;
+    alertBox.className = `alert ${type}`;
+    alertBox.style.display = 'block';
+    
+    setTimeout(() => {
+        alertBox.style.display = 'none';
+    }, 3000); // Ocultar después de 3 segundos
+}
 
+/* showAlert('Operación exitosa', 'success');
+
+showAlert('Operación incorrecta', 'warning');
+
+showAlert('Ha ocurrido un error al intentar consultar los datos.', 'error');
+*/
+
+document.addEventListener('DOMContentLoaded', tabla_MIARCHIVO);

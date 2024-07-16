@@ -124,18 +124,20 @@ function conseguirFecha() {
 function agregar_favoritos(event) {
     const boton = event.currentTarget;
     const id = boton.getAttribute('data-id');
-    console.log(id)
     let monedaRepetida = false;
 
     // Verificar si la moneda ya está en favoritos
     for (let i = 0; i < FAVORITOS.length; i++) {
         if (FAVORITOS[i].nombre === LISTA[id].nombre) {
             monedaRepetida = true;
+            showAlert('Operación incorrecta - Esa moneda ya esta agregada a favoritos.', 'warning');
+
             break;
         }
     }
 
     if (!monedaRepetida) {
+        showAlert('Operación exitosa', 'success');
         LISTA[id].fechaActualizacion = conseguirFecha()
 
         FAVORITOS.push(LISTA[id]);
@@ -289,3 +291,20 @@ document.querySelector('.boton_filtro').addEventListener('click', function () {
     }
 });
 
+function showAlert(message, type) {
+    const alertBox = document.getElementById('alert-message');
+    alertBox.textContent = message;
+    alertBox.className = `alert ${type}`;
+    alertBox.style.display = 'block';
+
+    setTimeout(() => {
+        alertBox.style.display = 'none';
+    }, 3000); // Ocultar después de 3 segundos
+}
+
+/* showAlert('Operación exitosa', 'success');
+
+showAlert('Operación incorrecta', 'warning');
+
+showAlert('Ha ocurrido un error al intentar consultar los datos.', 'error');
+ */

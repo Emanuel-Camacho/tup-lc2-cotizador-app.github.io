@@ -156,43 +156,27 @@
 }
 
 .alert {
-    display: none;
-    /* Oculto por defecto */
-
-    width: max-content;
-    font-size: 20px;
-
-    /* 
-    top: 48%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-    */
-
-    z-index: 1000;
     position: absolute;
-
-    margin: auto auto;
-    padding: 20px 40px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
     color: white;
-    opacity: 0.9;
-    border-radius: 50px;
+    opacity: 0.8;
+    display: none;
+    align-self: center;
 }
 
-.alert-success {
-    background-color: #28a746;
-    font-weight: bold;
+.alert.success {
+    background-color: #28a745;
 }
 
-.alert-warning {
+.alert.warning {
     background-color: #ffc107;
-    font-weight: bold;
-
 }
 
-.alert-error {
+.alert.error {
     background-color: #dc3545;
-    font-weight: bold;
-
 }
 
 .boton_repetido,
