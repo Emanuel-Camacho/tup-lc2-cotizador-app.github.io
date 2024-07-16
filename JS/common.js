@@ -103,7 +103,7 @@ if (LISTA.length > 0) {
                         </div>
                     </div>
                 </div>
-                <button class="boton_repetido" data-id="${i}" data-state="off"><i class="fa-solid fa-star"></i></button>
+                <button class="boton_repetido" data-id="${i}"><i class="fa-solid fa-star"></i></button>
             `;
         }
         cotizaciones.appendChild(tarjeta);
@@ -124,6 +124,7 @@ function conseguirFecha() {
 function agregar_favoritos(event) {
     const boton = event.currentTarget;
     const id = boton.getAttribute('data-id');
+    console.log(id)
     let monedaRepetida = false;
 
     // Verificar si la moneda ya está en favoritos
@@ -136,7 +137,7 @@ function agregar_favoritos(event) {
 
     if (!monedaRepetida) {
         LISTA[id].fechaActualizacion = conseguirFecha()
-        
+
         FAVORITOS.push(LISTA[id]);
         localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 
