@@ -168,8 +168,6 @@ function graficar_selec_todas() {
 
     console.log(etiquetas);
 
-
-
     Object.keys(diccionario_monedas).forEach((valor, index) => {
         datasets.push({
             label: `Compra ${valor}`,
