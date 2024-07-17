@@ -112,17 +112,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault(); // Previene la acción por defecto del enlace
 
         // Selecciona el contenedor que deseas imprimir
-        const container = document.querySelector('.container').innerHTML;
+        const container = document.querySelector('.tabla-container').innerHTML;
 
         // Crea una nueva ventana para la impresión
         const printWindow = window.open('', '', 'height=600,width=800');
 
-        printWindow.document.write('<html><head><title>Imprimir</title>');
-        printWindow.document.write('<link rel="stylesheet" href="CSS/common.css">');
-        printWindow.document.write('<link rel="stylesheet" href="CSS/pages/mi-archivo.css">');
-        printWindow.document.write('</head><body >');
         printWindow.document.write(container);
-        printWindow.document.write('</body></html>');
 
         printWindow.document.close();
         printWindow.print();

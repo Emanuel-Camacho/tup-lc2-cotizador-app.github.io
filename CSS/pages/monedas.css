@@ -45,7 +45,7 @@
         "pie";
     grid-gap: 10px;
 
-    padding: 10px;
+
 }
 
 
@@ -71,12 +71,7 @@
     flex-flow: column wrap;
 }
 
-.container .pie {
-    grid-area: pie;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 20px;
-}
+
 
 .tarjeta {
     display: flex;
@@ -191,4 +186,10 @@
 
 .boton_filtro {
     color: red;
+}
+
+.mensaje_vacio {
+    align-self: center;
+    justify-content: center;
+    align-items: center;
 }

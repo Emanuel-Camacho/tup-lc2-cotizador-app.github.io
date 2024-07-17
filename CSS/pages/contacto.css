@@ -98,12 +98,12 @@ textarea {
 
 /* DERECHA */
 
-.derecha {
+.lado_derecho {
     display: flex;
     flex-direction: column;
 }
 
-.derecha div {}
+.lado_derecho div {}
 
 .info {
     display: flex;

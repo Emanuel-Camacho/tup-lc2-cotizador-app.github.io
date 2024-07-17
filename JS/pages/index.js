@@ -165,6 +165,9 @@ function cargar_tarjetas() {
         const selectedOption = document.getElementById('options').value;
         console.log('Opción seleccionada:', selectedOption);
 
+        const mensajeVacio = document.querySelector('.mensaje_vacio');
+        mensajeVacio.style.display = 'none';
+
         switch (selectedOption) {
             case 'TODAS':
                 document.querySelectorAll('.tarjeta').forEach(elemento => {
@@ -220,59 +223,71 @@ function cargar_tarjetas() {
                 });
                 break;
             case 'FAVORITOS':
-                let seleccionado;
-                console.log(FAVORITOS);
-                document.querySelectorAll('.tarjeta').forEach(elemento => {
-                    elemento.style.display = 'none';
-                });
-                for (let i = 0; i < FAVORITOS.length; i++) {
-                    switch (FAVORITOS[i].nombre) {
-                        case 'Oficial':
-                            seleccionado = document.querySelector(`.monedita0`);
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Blue':
-                            seleccionado = document.querySelector('.monedita1');
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Bolsa':
-                            seleccionado = document.querySelector('.monedita2');
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Contado con liquidación':
-                            seleccionado = document.querySelector(`.monedita3`);
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Mayorista':
-                            seleccionado = document.querySelector('.monedita4');
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Cripto':
-                            seleccionado = document.querySelector('.monedita5');
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Tarjeta':
-                            seleccionado = document.querySelector('.monedita6');
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Euro':
-                            seleccionado = document.querySelector('.monedita7');
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Real Brasileño':
-                            seleccionado = document.querySelector('.monedita8');
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Peso Chileno':
-                            seleccionado = document.querySelector('.monedita9');
-                            seleccionado.style.display = 'flex';
-                            break;
-                        case 'Peso Uruguayo':
-                            seleccionado = document.querySelector('.monedita10');
-                            seleccionado.style.display = 'flex';
-                            break;
+
+                
+                if (FAVORITOS.length == 0) {
+                    document.querySelectorAll('.tarjeta').forEach(elemento => {
+                        elemento.style.display = 'none';
+                    });
+                    mensajeVacio.innerHTML = 'No hay favoritos agregados'
+                    mensajeVacio.style.display = 'flex';
+                }
+                else {
+                    let seleccionado;
+                    console.log(FAVORITOS);
+                    document.querySelectorAll('.tarjeta').forEach(elemento => {
+                        elemento.style.display = 'none';
+                    });
+                    for (let i = 0; i < FAVORITOS.length; i++) {
+                        switch (FAVORITOS[i].nombre) {
+                            case 'Oficial':
+                                seleccionado = document.querySelector(`.monedita0`);
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Blue':
+                                seleccionado = document.querySelector('.monedita1');
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Bolsa':
+                                seleccionado = document.querySelector('.monedita2');
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Contado con liquidación':
+                                seleccionado = document.querySelector(`.monedita3`);
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Mayorista':
+                                seleccionado = document.querySelector('.monedita4');
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Cripto':
+                                seleccionado = document.querySelector('.monedita5');
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Tarjeta':
+                                seleccionado = document.querySelector('.monedita6');
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Euro':
+                                seleccionado = document.querySelector('.monedita7');
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Real Brasileño':
+                                seleccionado = document.querySelector('.monedita8');
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Peso Chileno':
+                                seleccionado = document.querySelector('.monedita9');
+                                seleccionado.style.display = 'flex';
+                                break;
+                            case 'Peso Uruguayo':
+                                seleccionado = document.querySelector('.monedita10');
+                                seleccionado.style.display = 'flex';
+                                break;
+                        }
                     }
                 }
+
                 break;
         }
     });

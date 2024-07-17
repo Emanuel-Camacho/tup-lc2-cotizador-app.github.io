@@ -242,6 +242,14 @@ body {
 
 /* PIE */
 
+.container .pie {
+    grid-area: pie;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
 .pie .izquierda {
     text-align: left;
 }
@@ -359,4 +367,3 @@ body {
     align-self: flex-end;
     text-align: right;
 }
-
