@@ -131,7 +131,7 @@ td {
 }
 
 thead {
-    position: sticky;
+    position: static;
     top: 0;
 }
 
