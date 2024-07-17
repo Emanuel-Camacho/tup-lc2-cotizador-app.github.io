@@ -38,6 +38,7 @@
 .container {
     display: grid;
     grid-template-areas:
+        "alert"
         "h2"
         "select"
         "dia"
@@ -150,7 +151,8 @@
     z-index: 100;
 }
 
-.alert {
+.container .alert {
+    grid-area: alert;
     position: absolute;
     padding: 15px;
     border-radius: 5px;
@@ -159,7 +161,10 @@
     color: white;
     opacity: 0.8;
     display: none;
+
     align-self: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .alert.success {

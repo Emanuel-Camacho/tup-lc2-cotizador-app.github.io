@@ -56,6 +56,8 @@
 
             <main id="CONTENIDO-CENTRAL">
 
+                <div class="alert" id="alert-message"></div>
+
                 <div class="URL">
                     <p>Usted esta en: INICIO / INFORME</p>
                 </div>
@@ -74,20 +76,19 @@
                                 </div>
                                 <div class="sel_bott">
                                     <select id="options" name="moneda">
-                                        <option value="">TODAS</option>
-                                        <option value="Dólar Oficial">Dólar Oficial</option>
-                                        <option value="Dólar Blue">Dólar Blue</option>
-                                        <option value="Dólar Bolsa (MEP)">Dólar Bolsa (MEP)</option>
-                                        <option value="Dólar Contado con Liqui (CCL)">Dólar Contado con Liqui (CCL)
-                                        </option>
-                                        <option value="Dólar Tarjeta">Dólar Tarjeta</option>
-                                        <option value="Dólar Mayorista">Dólar Mayorista</option>
-                                        <option value="Dólar Cripto">Dólar Cripto</option>
+                                        <option disabled selected>OPCION</option>
+                                        <option value="TODAS">TODAS</option>
+                                        <option value="Oficial">Dolar Oficial</option>
+                                        <option value="Blue">Dolar Blue</option>
+                                        <option value="Bolsa">Dolar Bolsa</option>
+                                        <option value="Contado con liquidación">Dolar Contado con liquidación</option>
+                                        <option value="Mayorista">Dolar Mayorista</option>
+                                        <option value="Cripto">Dolar Cripto</option>
+                                        <option value="Tarjeta">Dolar Tarjeta</option>
                                         <option value="Euro">Euro</option>
-                                        <option value="Real Brasileño">Real Brasileño</option>
-                                        <option value="Peso Chileno">Peso Chileno</option>
-                                        <option value="Peso Uruguayo">Peso Uruguayo</option>
-                                        <option value="FAVORITOS">FAVORITOS</option>
+                                        <option value="PesoBR">Peso Brasilero</option>
+                                        <option value="PesoChileno">Peso Chileno</option>
+                                        <option value="PesoUruguayo">Peso Uruguayo</option>
                                     </select>
                                     <button class="boton_info"><i class="fa-solid fa-filter-circle-dollar"></i></button>
                                 </div>
@@ -130,47 +131,28 @@
                                             <th>VARIACIÓN</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="body_INFO">
 
-                                        <div>
-                                            <tr>
-                                                <td colspan="5" class="moneda">DOLAR</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="bor"></td>
-                                                <td class="bor">
-                                                    <div>00/00/0000</div>
-                                                    <div>00/00/0000</div>
-                                                    <div>00/00/0000</div>
-                                                </td>
-                                                <td class="bor">
-                                                    <div>$000</div>
-                                                    <div>$000</div>
-                                                    <div>$000</div>
-                                                </td>
-                                                <td class="bor">
-                                                    <div>$0000</div>
-                                                    <div>$0000</div>
-                                                    <div>$0000</div>
-                                                </td>
-                                                <td class="bor">
-                                                    <div><a href="#"><i class="fa-solid fa-arrow-down"
-                                                                style="color: red;"></i></a></div>
-                                                    <div><a href="#"><i class="fa-solid fa-arrow-up"
-                                                                style="color: green;"></i></a></div>
-                                                    <div><a href="#"><i class="fa-solid fa-arrow-down"
-                                                                style="color: red;"></i></a></div>
-                                                </td>
-                                            </tr>
-                                        </div>
-                                        <!-- repetir para scroll-->
+                                        <!-- <tr>
+                                            <td class="bor">Dolar</td>
+                                            <td class="bor">00/00/0000</td>
+                                            <td class="bor">$000</td>
+                                            <td class="bor">$0000</td>
+                                            <td class="bor">
+                                                <a href="#"><i class="fa-solid fa-arrow-down"
+                                                        style="color: red;"></i></a>
+                                                <a href="#">
+                                                    <i class="fa-solid fa-arrow-up" style="color: green;"></i></a>
+                                            </td>
+                                        </tr> -->
 
                                     </tbody>
                                 </table>
                             </div>
 
                             <div class="pie">
-                                <div class="izquierda"><i class="fa-solid fa-exclamation"></i> </div>
+                                <div class="izquierda"><i class="fa-solid fa-exclamation"> </i> En esta pagina se ve el
+                                    informe de monedas.</div>
                                 <div class="derecha"><span>Datos obtenidos de </span><a
                                         href="https://dolarapi.com">Dolarapi.com</a></div>
                             </div>

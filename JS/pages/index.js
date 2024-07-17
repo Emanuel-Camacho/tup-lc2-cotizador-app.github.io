@@ -159,8 +159,6 @@ function cargar_tarjetas() {
         boton.addEventListener('click', agregar_favoritos);
     });
 
-
-
     document.querySelector('.boton_filtro').addEventListener('click', function () {
         const selectedOption = document.getElementById('options').value;
         console.log('Opción seleccionada:', selectedOption);
@@ -173,6 +171,7 @@ function cargar_tarjetas() {
                 document.querySelectorAll('.tarjeta').forEach(elemento => {
                     elemento.style.display = 'flex';
                 });
+                mensajeVacio.style.display = 'none';
                 break;
             case 'USD':
                 document.querySelectorAll('.tarjeta').forEach(elemento => {
@@ -224,7 +223,7 @@ function cargar_tarjetas() {
                 break;
             case 'FAVORITOS':
 
-                
+
                 if (FAVORITOS.length == 0) {
                     document.querySelectorAll('.tarjeta').forEach(elemento => {
                         elemento.style.display = 'none';

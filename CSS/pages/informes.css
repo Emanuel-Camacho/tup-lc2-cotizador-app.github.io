@@ -204,3 +204,27 @@ table .moneda {
     cursor: pointer;
     color: red;
 }
+
+.alert {
+    position: absolute;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    opacity: 0.8;
+    display: none;
+    align-self: center;
+}
+
+.alert.success {
+    background-color: #28a745;
+}
+
+.alert.warning {
+    background-color: #ffc107;
+}
+
+.alert.error {
+    background-color: #dc3545;
+}
