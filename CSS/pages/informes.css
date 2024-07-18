@@ -205,6 +205,13 @@ table .moneda {
     color: red;
 }
 
+#form div{
+    margin-bottom: 7px;
+}
+#form #boton_informe {
+    padding: 5px;
+}
+
 .alert {
     position: absolute;
     padding: 15px;

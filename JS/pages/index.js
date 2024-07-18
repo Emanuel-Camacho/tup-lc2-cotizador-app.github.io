@@ -140,7 +140,7 @@ function cargar_tarjetas() {
         if (!monedaRepetida) {
             showAlert('Operación exitosa', 'success');
             LISTA[id].fechaActualizacion = conseguirFecha()
-
+            
             FAVORITOS.push(LISTA[id]);
             localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 

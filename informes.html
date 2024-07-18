@@ -12,9 +12,16 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="IMG/icon.ico">
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     <script src="JS/pages/informe.js" defer></script>
     <script src="JS/common.js" defer></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('JAG4iez87oYS3mCH5')
+    </script>
 
 </head>
 
@@ -53,7 +60,7 @@
                         <i class="fa-solid fa-address-book left"></i> <span class="center">Contáctenos</span>
                     </a>
                 </div>
-                
+
                 <div class="comentarios">
                     <!-- <div>
                         <img src="IMG/hasbula cuadrado.jpg" alt="Perfil" class="izquierda">
@@ -86,8 +93,7 @@
                                 </div>
                                 <div class="sel_bott">
                                     <select id="options" name="moneda">
-                                        <option disabled selected>OPCION</option>
-                                        <option value="TODAS">TODAS</option>
+                                        <option value="TODAS" selected>TODAS</option>
                                         <option value="Oficial">Dolar Oficial</option>
                                         <option value="Blue">Dolar Blue</option>
                                         <option value="Bolsa">Dolar Bolsa</option>
@@ -119,12 +125,25 @@
                             <div class="modal-content">
                                 <span class="close" id="closeModal">&times;</span>
                                 <h2>Compartir Información</h2>
-                                <form id="formularioCompartir">
-                                    <label for="nombre">Nombre:</label>
-                                    <input type="text" id="nombre" name="nombre" required><br><br>
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" required><br><br>
-                                    <button id="enviar_compartir" type="submit">Enviar</button>
+
+                                <form id="form">
+
+                                    <div class="field">
+                                        <label for="from_name">Nombre:</label>
+                                        <input required type="text" name="from_name" id="from_name">
+                                    </div>
+
+                                    <div style="display: none;" class="field">
+                                        <label for="tabla_inf">Mensaje</label>
+                                        <input type="text" name="tabla_inf" id="tabla_inf">
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="mensaje">Mensaje</label>
+                                        <input type="text" name="mensaje" id="mensaje">
+                                    </div>
+
+                                    <input type="submit" id="boton_informe" value="Enviar">
                                 </form>
                             </div>
                         </div>

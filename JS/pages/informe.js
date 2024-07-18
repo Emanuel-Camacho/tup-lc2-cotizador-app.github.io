@@ -29,24 +29,40 @@ window.addEventListener('click', function (event) {
     }
 });
 
-// Enviar formulario
-formularioCompartir.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+const btn = document.getElementById('boton_informe');
 
-    // Obtener valores de nombre y email
-    let nombre = nombreInput.value;
-    let email = emailInput.value;
 
-    // Aquí puedes implementar la lógica para enviar el formulario, por ejemplo usando fetch() o enviándolo a un servidor
-    // Por ahora, simplemente lo mostraremos en una alerta
-    alert(`Nombre: ${nombre}\nEmail: ${email}`);
+document.getElementById('form')
+    .addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    // Resetear el formulario y ocultar la modal después del envío
-    formularioCompartir.reset();
-    modal.style.display = 'none';
-});
+        let tabla_informe = '';
 
-console.log(LISTA_FAV_INFO)
+        for (let i = 0; i < LISTA_FAV_INFO.length; i++) {
+            tabla_informe += `Moneda ${LISTA_FAV_INFO[i].nombre} = Fecha: ${LISTA_FAV_INFO[i].fechaActualizacion} Compra: $${LISTA_FAV_INFO[i].compra} Venta: $${LISTA_FAV_INFO[i].venta} ******** `;
+            tabla_informe += '\n'
+        }
+
+        console.log(tabla_informe);
+
+        var inputElement = document.getElementById('tabla_inf');
+        inputElement.value = tabla_informe;
+
+        btn.value = 'Enviando...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_rlszzur';
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.value = 'Email enviado';
+                alert('Enviado con Exito!');
+            }, (err) => {
+                btn.value = 'Error!';
+                alert(JSON.stringify(err));
+            });
+    });
+
 
 
 for (let i = 0; i < LISTA_FAV_INFO.length; i++) {
@@ -88,9 +104,13 @@ const boton_select = document.querySelector('.boton_info');
 
 let grafico_cargado;
 
+graficar_selec_todas();
+
 function graficar() {
     const select_Monedas = document.getElementById('options').value;
     let monedaSeleccionada = null;
+
+
 
     if (select_Monedas == 'TODAS') {
         graficar_selec_todas();
@@ -165,8 +185,6 @@ function graficar_selec_todas() {
         diccionario_monedas[elemento.nombre].compra.push(elemento.compra);
         diccionario_monedas[elemento.nombre].venta.push(elemento.venta);
     });
-
-    console.log(etiquetas);
 
     Object.keys(diccionario_monedas).forEach((valor, index) => {
         datasets.push({
