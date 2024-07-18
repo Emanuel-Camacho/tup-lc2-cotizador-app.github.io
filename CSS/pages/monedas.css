@@ -38,11 +38,11 @@
 .container {
     display: grid;
     grid-template-areas:
-        "alert"
         "h2"
         "select"
         "dia"
         "cotizaciones"
+        "alert"
         "pie";
     grid-gap: 10px;
 
