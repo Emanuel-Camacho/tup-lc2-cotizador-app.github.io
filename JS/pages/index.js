@@ -10,8 +10,7 @@ let fechaExacta;
 
 // Inicializa FAVORITOS con los datos de localStorage si existen
 function cargar_tarjetas() {
-
-
+    
     // Función para actualizar la fecha en el HTML
     function actualizarFecha() {
         const fechaElemento = document.querySelector('.dia');

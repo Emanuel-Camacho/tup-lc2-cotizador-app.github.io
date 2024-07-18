@@ -123,10 +123,13 @@
 
 .compra {
     background-color: #28a746;
+    padding: 3px;
 }
 
 .venta {
     background-color: #dc3546c2;
+    padding: 2px;
+
 }
 
 .precio div h3 {
