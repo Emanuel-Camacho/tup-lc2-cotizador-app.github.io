@@ -1,10 +1,7 @@
 let FAVORITOS = JSON.parse(localStorage.getItem('FAVORITOS')) || [];
 
-const LISTA_NUBE = new Array();
-let LISTA = new Array();
-
-let USD = new Array();
-let OTRA = new Array();
+const LISTA_NUBE = new Array(); // recibe los datos del api y los manda al localStorage
+let LISTA = new Array(); // utilizamos para modificar los datos del api
 
 let fechaExacta;
 
@@ -31,7 +28,6 @@ function cargar_tarjetas() {
         setInterval(actualizarFecha, 5 * 60 * 1000); // Actualizar cada 5 minutos
     });
 
-
     // Fetch de los datos de dólares y cotizaciones
     fetch("https://dolarapi.com/v1/dolares")
         .then(response => response.json())
@@ -57,7 +53,6 @@ function cargar_tarjetas() {
                 console.log("No se encontraron cotizaciones.");
             }
         });
-
 
     LISTA = JSON.parse(localStorage.getItem('MONEDAS'));
 
@@ -222,7 +217,6 @@ function cargar_tarjetas() {
                 break;
             case 'FAVORITOS':
 
-
                 if (FAVORITOS.length == 0) {
                     document.querySelectorAll('.tarjeta').forEach(elemento => {
                         elemento.style.display = 'none';
@@ -285,7 +279,6 @@ function cargar_tarjetas() {
                         }
                     }
                 }
-
                 break;
         }
     });

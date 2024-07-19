@@ -22,89 +22,87 @@
 
 </head>
 
-<body>
-    <div id="ROJO">
-        <header id="CABECERA">
-            <h2><i class="fa-solid fa-sack-dollar"></i> <span class="mayus">c</span>otizador de <span
-                    class="mayus">m</span>onedas</h2>
-        </header>
+<body id="ROJO">
+    <header id="CABECERA">
+        <h2><i class="fa-solid fa-sack-dollar"></i> <span class="mayus">c</span>otizador de <span
+                class="mayus">m</span>onedas</h2>
+    </header>
 
-        <!-- cambiar barra lateral por menu horizontal -->
+    <!-- cambiar barra lateral por menu horizontal -->
 
-        <div id="AZUL">
-            <section id="BARRA-LATERAL">
+    <div id="AZUL">
+        <section id="BARRA-LATERAL">
 
-                <div class="option">
-                    <a href="#">
-                        <i class="fa-solid fa-house-user"></i> Inicio
-                    </a>
-                </div>
+            <div class="option">
+                <a href="#">
+                    <i class="fa-solid fa-house-user"></i> Inicio
+                </a>
+            </div>
 
-                <div class="option">
-                    <a href="miarchivo.html">
-                        <i class="fa-solid fa-folder left"></i> <span class="center">Mi Archivo</span>
-                    </a>
-                </div>
+            <div class="option">
+                <a href="miarchivo.html">
+                    <i class="fa-solid fa-folder left"></i> <span class="center">Mi Archivo</span>
+                </a>
+            </div>
 
-                <div class="option">
-                    <a href="informes.html">
-                        <i class="fa-regular fa-file left"></i> <span class="center">Informe</span>
-                    </a>
-                </div>
+            <div class="option">
+                <a href="informes.html">
+                    <i class="fa-regular fa-file left"></i> <span class="center">Informe</span>
+                </a>
+            </div>
 
-                <div class="option">
-                    <a href="Contacto.html">
-                        <i class="fa-solid fa-address-book left"></i> <span class="center">Contáctenos</span>
-                    </a>
-                </div>
+            <div class="option">
+                <a href="Contacto.html">
+                    <i class="fa-solid fa-address-book left"></i> <span class="center">Contáctenos</span>
+                </a>
+            </div>
 
-                <!-- COMENTARIOS A MANO O PREDEFINIDOS -->
+            <!-- COMENTARIOS A MANO O PREDEFINIDOS -->
 
-                <div class="comentarios">
-                    <!-- <div>
+            <div class="comentarios">
+                <!-- <div>
                         <img src="IMG/comentario 4.webp" alt="Perfil">
                         <h3>Hasbulla Nagomedov</h3>
                     </div>
                     <p> La pagina esta buena, los creadores son amigos mios.</p> -->
+            </div>
+
+        </section>
+
+        <main id="CONTENIDO-CENTRAL">
+
+            <div class="URL">
+                <p>Usted esta en: INICIO</p>
+            </div>
+
+            <div class="container">
+
+                <h2>Pizarra de Cotizacion</h2>
+
+                <div class="select">
+                    <label class="coin" for="moneda">Selecciona una moneda: </label>
+                    <select id="options" name="moneda">
+                        <option value="TODAS">TODAS</option>
+                        <option value="USD">Dolares</option>
+                        <option value="OTRA">Otras Monedas</option>
+                        <option value="Euro">Euro</option>
+                        <option value="PesoBR">Peso Brasilero</option>
+                        <option value="PesoChileno">Peso Chileno</option>
+                        <option value="PesoUruguayo">Peso Uruguayo</option>
+                        <option value="FAVORITOS">FAVORITOS</option>
+                    </select>
+                    <button class="boton_filtro"><i class="fa-solid fa-filter-circle-dollar"></i></button>
                 </div>
 
-            </section>
+                <div class="dia">Datos Actualizados al 00/00/0000 00:00hs</div>
 
-            <main id="CONTENIDO-CENTRAL">
+                <div id="cotizaciones">
 
-                <div class="URL">
-                    <p>Usted esta en: INICIO</p>
-                </div>
+                    <div class="alert" id="alert-message"></div>
 
-                <div class="container">
+                    <div class="tarjeta mensaje_vacio" style="display: none;"></div>
 
-                    <h2>Pizarra de Cotizacion</h2>
-
-                    <div class="select">
-                        <label class="coin" for="moneda">Selecciona una moneda: </label>
-                        <select id="options" name="moneda">
-                            <option value="TODAS">TODAS</option>
-                            <option value="USD">Dolares</option>
-                            <option value="OTRA">Otras Monedas</option>
-                            <option value="Euro">Euro</option>
-                            <option value="PesoBR">Peso Brasilero</option>
-                            <option value="PesoChileno">Peso Chileno</option>
-                            <option value="PesoUruguayo">Peso Uruguayo</option>
-                            <option value="FAVORITOS">FAVORITOS</option>
-                        </select>
-                        <button class="boton_filtro"><i class="fa-solid fa-filter-circle-dollar"></i></button>
-                    </div>
-
-                    <div class="dia">Datos Actualizados al 00/00/0000 00:00hs</div>
-
-
-                    <div id="cotizaciones">
-
-                        <div class="alert" id="alert-message"></div>
-
-                        <div class="tarjeta mensaje_vacio" style="display: none;"></div>
-
-                        <!-- <div class="tarjeta">
+                    <!-- <div class="tarjeta monedita*">
                             <div class="moneda">
                                 <h3>Dolar</h3>
                                 <div class="precio">
@@ -123,72 +121,71 @@
                                     class="fa-solid fa-star"></i></button>
                         </div> -->
 
-                    </div>
-
-                    <div class="pie">
-                        <div class="izquierda"><i class="fa-solid fa-exclamation"></i> Haga click en <i
-                                class="fa-solid fa-star"></i>
-                            para guardar los datos de cotizacion.</div>
-                        <div class="derecha"><span>Datos obtenidos de </span><a
-                                href="https://dolarapi.com">Dolarapi.com</a></div>
-                    </div>
-
                 </div>
 
-            </main>
+                <div class="pie">
+                    <div class="izquierda"><i class="fa-solid fa-exclamation"></i> Haga click en <i
+                            class="fa-solid fa-star"></i>
+                        para guardar los datos de cotizacion.</div>
+                    <div class="derecha"><span>Datos obtenidos de </span><a href="https://dolarapi.com">Dolarapi.com</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <footer id="PIE-DE-PAGINA">
+        <div class="con-tenedor">
+
+            <div class="listado">
+                <ul>
+                    <h3>INSTITUCIONAL</h3>
+                    <li><a href="quienes_somos.html"><span>¿Quienes somos?</span></a></li>
+                    <li><a href="socios_estrategicos.html"><span>Socios Estrategicos</span></a></li>
+                    <li><a href="trabaje_con_nosotros.html"><span>Trabaje con Nosotros</span></a></li>
+                    <li><a href="ayuda.html"><span>Ayuda</span></a></li>
+                </ul>
+            </div>
+
+            <div class="listado">
+                <ul>
+                    <h3>ACCESO</h3>
+                    <li><a href="index.html"><span>Inicio</span></a></li> <!--- que te mande arriba? -->
+                    <li><a href="miarchivo.html"><span>Mi Archivo</span></a></li>
+                    <li><a href="informes.html"><span>Informes</span></a></li>
+                    <li><a href="Contacto.html"><span>Contácto</span></a></li>
+                </ul>
+            </div>
+
+            <div class="no-listado">
+                <ul>
+                    <h3>CONTACTO</h3>
+                    <li>Universidad Tecnologica Nacional</li>
+                    <li>ZEBALLOS 1341 S2000BQA</li>
+                    <li>ROSARIO</li>
+                    <li>0341-4481871</li>
+                    <li class="no-listado-2">¡Escribanos!</li>
+                </ul>
+            </div>
+
+            <div class="no-listado no-listado-2">
+                <ul>
+                    <h3>Desarrollado por:</h3>
+                    <li><a href="https://github.com/Emanuel-Camacho">Emanuel Thomas Camacho (53363)</a></li>
+                    <li><a href="https://github.com/RomanDuarte">Sergio Duarte (53356)</a></li>
+                    <li><a href="https://github.com/Mateof311">Mateo Fux (53351)</a></li>
+                    <li><a href="https://github.com/FelipeGil05">Felipe Gil (53336)</a></li>
+                    <li>TUP6 - 2024</li>
+                </ul>
+            </div>
         </div>
 
-        <footer id="PIE-DE-PAGINA"> <!-- "animacion" hover moverse 1px a la -->
-            <div class="con-tenedor">
-
-                <div class="listado">
-                    <ul>
-                        <h3>INSTITUCIONAL</h3>
-                        <li><a href="quienes_somos.html"><span>¿Quienes somos?</span></a></li>
-                        <li><a href="socios_estrategicos.html"><span>Socios Estrategicos</span></a></li>
-                        <li><a href="trabaje_con_nosotros.html"><span>Trabaje con Nosotros</span></a></li>
-                        <li><a href="ayuda.html"><span>Ayuda</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="listado">
-                    <ul>
-                        <h3>ACCESO</h3>
-                        <li><a href="index.html"><span>Inicio</span></a></li> <!--- que te mande arriba? -->
-                        <li><a href="miarchivo.html"><span>Mi Archivo</span></a></li>
-                        <li><a href="informes.html"><span>Informes</span></a></li>
-                        <li><a href="Contacto.html"><span>Contácto</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="no-listado">
-                    <ul>
-                        <h3>CONTACTO</h3>
-                        <li>Universidad Tecnologica Nacional</li>
-                        <li>ZEBALLOS 1341 S2000BQA</li>
-                        <li>ROSARIO</li>
-                        <li>0341-4481871</li>
-                        <li class="no-listado-2">¡Escribanos!</li>
-                    </ul>
-                </div>
-
-                <div class="no-listado no-listado-2">
-                    <ul>
-                        <h3>Desarrollado por:</h3>
-                        <li><a href="https://github.com/Emanuel-Camacho">Emanuel Thomas Camacho (53363)</a></li>
-                        <li><a href="https://github.com/RomanDuarte">Sergio Duarte (53356)</a></li>
-                        <li><a href="https://github.com/Mateof311">Mateo Fux (53351)</a></li>
-                        <li><a href="https://github.com/FelipeGil05">Felipe Gil (53336)</a></li>
-                        <li>TUP6 - 2024</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div>
-                TUP - Catedra de Laboratorio de Computacion 2 - Año 2024
-            </div>
-        </footer>
-    </div>
+        <div>
+            TUP - Catedra de Laboratorio de Computacion 2 - Año 2024
+        </div>
+    </footer>
 </body>
 
 </html>

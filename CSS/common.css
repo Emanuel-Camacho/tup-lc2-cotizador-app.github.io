@@ -300,14 +300,11 @@ body {
 
 #AZUL {
     flex: 1;
-    /* ocupa todo el alto de la pag, esta bien ??? */
 }
 
 
 #PIE-DE-PAGINA {
-    /* alto no nodificar por ahora  */
     flex-shrink: 0;
-
 
     margin: 5px;
     padding: 10px;
@@ -376,7 +373,7 @@ body {
 
 #PIE-DE-PAGINA .con-tenedor .no-listado-2 {
     align-self: flex-end;
-    text-align: right;
+    text-align: right; /* ya lo alienea a la derecha */
 }
 
 @media screen and (max-width: 960px) {
