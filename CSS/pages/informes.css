@@ -248,3 +248,13 @@ table .moneda {
         width: 100%;
     }
 }
+
+@media (max-width: 950px) {
+    .modal-content {
+        width: 30%;
+    }
+
+    #form div input {
+        width: 50%;
+    }
+}
