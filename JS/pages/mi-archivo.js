@@ -16,7 +16,6 @@ function tabla_MIARCHIVO() {
         tdVacio.colSpan = 5;
         tdVacio.innerHTML = "NO HAY NINGUNA MONEDA AGREGADA A FAVORITOS";
         tdVacio.classList.add("tdVacio");
-        // mensajeVacio.classList.add("fecha");
         trVacio.appendChild(tdVacio);
         tablaBody.appendChild(trVacio);
     }

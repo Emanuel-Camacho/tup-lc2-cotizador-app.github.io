@@ -6,7 +6,7 @@ var formularioCompartir = document.getElementById('formularioCompartir');
 var closeModal = document.getElementById('closeModal');
 var modal = document.getElementById('myModal');
 
-const LISTA_FAV_INFO = JSON.parse(localStorage.getItem('FAVORITOS'));
+const LISTA_FAV_INFO = JSON.parse(localStorage.getItem('FAVORITOS')) || [];
 const body_INFO = document.querySelector('.body_INFO');
 
 modal.style.display = 'none';
@@ -38,29 +38,34 @@ document.getElementById('form')
 
         let tabla_informe = '';
 
-        for (let i = 0; i < LISTA_FAV_INFO.length; i++) {
-            tabla_informe += `Moneda ${LISTA_FAV_INFO[i].nombre} = Fecha: ${LISTA_FAV_INFO[i].fechaActualizacion} Compra: $${LISTA_FAV_INFO[i].compra} Venta: $${LISTA_FAV_INFO[i].venta} ******** `;
-            tabla_informe += '\n'
+        if (LISTA_FAV_INFO.length != 0) {
+            for (let i = 0; i < LISTA_FAV_INFO.length; i++) {
+                tabla_informe += `Moneda ${LISTA_FAV_INFO[i].nombre} = Fecha: ${LISTA_FAV_INFO[i].fechaActualizacion} Compra: $${LISTA_FAV_INFO[i].compra} Venta: $${LISTA_FAV_INFO[i].venta} ******** `;
+                tabla_informe += '\n'
+            }
+
+            var inputElement = document.getElementById('tabla_inf');
+            inputElement.value = tabla_informe;
+    
+            btn.value = 'Enviando...';
+    
+            const serviceID = 'default_service';
+            const templateID = 'template_rlszzur';
+    
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.value = 'Email enviado';
+                    alert('Enviado con Exito!');
+                }, (err) => {
+                    btn.value = 'Error!';
+                    alert(JSON.stringify(err));
+                });
+        }
+        else {
+            modal.style.display = 'none';
+            showAlert('No hay favoritos cargados.', 'error');
         }
 
-        console.log(tabla_informe);
-
-        var inputElement = document.getElementById('tabla_inf');
-        inputElement.value = tabla_informe;
-
-        btn.value = 'Enviando...';
-
-        const serviceID = 'default_service';
-        const templateID = 'template_rlszzur';
-
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-                btn.value = 'Email enviado';
-                alert('Enviado con Exito!');
-            }, (err) => {
-                btn.value = 'Error!';
-                alert(JSON.stringify(err));
-            });
     });
 
 
@@ -97,7 +102,14 @@ for (let i = 0; i < LISTA_FAV_INFO.length; i++) {
     body_INFO.appendChild(trFila);
 }
 
-
+if (LISTA_FAV_INFO.length == 0) {
+    const trVacio = document.createElement('tr');
+    const tdVacio = document.createElement('td');
+    tdVacio.colSpan = 5;
+    tdVacio.innerHTML = "NO HAY NINGUNA MONEDA AGREGADA A FAVORITOS";
+    trVacio.appendChild(tdVacio);
+    body_INFO.appendChild(trVacio);
+}
 
 const ctx = document.getElementById("miGrafica").getContext("2d");
 const boton_select = document.querySelector('.boton_info');

@@ -16,6 +16,12 @@
 
     <script src="JS/common.js" defer></script>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('JAG4iez87oYS3mCH5')
+    </script>
+
 </head>
 
 <body>
@@ -82,31 +88,35 @@
 
                                 <h2>DATOS DE CONTACTO</h2>
 
-                                <form id="contactForm" action="" method="POST">
-
-                                    <div>
-                                        <label for="nombre">Nombre Completo:</label>
-                                        <input type="text" id="nombre" name="nombre" required>
+                                <form id="form">
+                                    <div class="field">
+                                        <label for="from_name">Nombre:</label>
+                                        <input required type="text" name="from_name" id="from_name">
+                                    </div>
+                                    <div class="field">
+                                        <label for="email">Email:</label>
+                                        <input required type="email" name="email" id="email">
+                                    </div>
+                                    <div class="field">
+                                        <label for="message">Mensaje:</label>
+                                        <input required type="text" name="message" id="message">
+                                    </div>
+                                    <div style="display: none;" class="field">
+                                        <label for="reply_to">reply_to</label>
+                                        <input type="text" name="reply_to" id="reply_to">
                                     </div>
 
-                                    <div>
-                                        <label for="correo">Correo Electrónico:</label>
-                                        <input type="email" id="correo" name="correo" required>
-                                    </div>
 
-                                    <div>
-                                        <label for="mensaje">Mensaje o Comentarios:</label>
-                                        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                                    <div class="botones">
+                                        <input class="gris" type="button" id="limpiarBtn" value="LIMPIAR">
+                                        
+                                        <input type="submit" id="button" class="verde" value="ENVIAR">
+                                        <!-- <input class="verde" type="button" id="enviarBtn" value="ENVIAR"> -->
                                     </div>
-
                                 </form>
-
+                                
                             </div>
-
-                            <div class="botones">
-                                <input class="gris" type="button" id="limpiarBtn" value="LIMPIAR">
-                                <input class="verde" type="button" id="enviarBtn" value="ENVIAR">
-                            </div>
+                            
 
                         </div>
 
@@ -115,7 +125,8 @@
                             <div class="info">
                                 <p>Si tiene alguna sugerencia o incoveniente por favor complete el siguiente formulario
                                     y envíenoslo. Lo contactaremos a la brevedad</p>
-                                <p>Esta web está desarrollada utilizando <a href="https://dolarapi.com">Dolarapi.com</a></p>
+                                <p>Esta web está desarrollada utilizando <a href="https://dolarapi.com">Dolarapi.com</a>
+                                </p>
                             </div>
 
                             <div class="datos">
