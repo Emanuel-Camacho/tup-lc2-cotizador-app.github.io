@@ -415,9 +415,6 @@ body {
     }
 }
 
-
-
-
 @media screen and (max-width: 500px) {
     #PIE-DE-PAGINA .con-tenedor {
         display: flex;
