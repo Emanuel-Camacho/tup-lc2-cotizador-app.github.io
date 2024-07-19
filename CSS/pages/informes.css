@@ -205,9 +205,10 @@ table .moneda {
     color: red;
 }
 
-#form div{
+#form div {
     margin-bottom: 7px;
 }
+
 #form #boton_informe {
     padding: 5px;
 }
@@ -234,4 +235,16 @@ table .moneda {
 
 .alert.error {
     background-color: #dc3545;
+}
+
+@media (max-width: 670px) {
+    .lado-lado {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grafico {
+        align-self: center;
+        width: 100%;
+    }
 }

@@ -45,11 +45,7 @@
         "alert"
         "pie";
     grid-gap: 10px;
-
-
 }
-
-
 
 .container h2 {
     grid-area: h2;
@@ -72,7 +68,50 @@
     flex-flow: column wrap;
 }
 
+/* Nueva media query para cambiar la disposición a partir de 735px */
+@media (max-width: 735px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
 
+    #cotizaciones {
+        display: flex;
+    }
+
+    #cotizaciones .tarjeta {
+        width: 100%;
+        align-self: center;
+    }
+
+    .tarjeta .moneda {
+        width: 100%;
+    }
+
+    /* .container #cotizaciones {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    } */
+}
+
+@media (max-width: 390px) {
+    .moneda {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .moneda .precio {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .precio .compra,
+    .precio .venta {
+        margin-right: 0px;
+        
+    }
+}
 
 .tarjeta {
     display: flex;
@@ -86,7 +125,6 @@
     color: gold;
 }
 
-
 .moneda {
     display: flex;
     justify-content: space-between;
@@ -98,7 +136,6 @@
 
     border: 1px solid #74a0cc4f;
     background-color: #74a0cc4f;
-
 }
 
 .precio {
@@ -110,12 +147,11 @@
 .precio div {
     display: flex;
     flex-direction: column;
-
 }
 
 .precio .compra,
 .venta {
-    margin-left: 15px;
+    margin-right: 10px;
     border-radius: 0.5em;
     font-size: 13px;
     align-self: center;
@@ -129,7 +165,6 @@
 .venta {
     background-color: #dc3546c2;
     padding: 2px;
-
 }
 
 .precio div h3 {
@@ -141,7 +176,6 @@
 .precio div p {
     font-size: 15px;
 }
-
 
 /* Estilos para los mensajes de alerta */
 

@@ -143,7 +143,6 @@ body {
 .option:nth-child(1) a i {
     color: #ffffff;
     line-height: 30px;
-
 }
 
 
@@ -379,3 +378,63 @@ body {
     align-self: flex-end;
     text-align: right;
 }
+
+@media screen and (max-width: 960px) {
+    #BARRA-LATERAL .comentarios {
+        display: none;
+    }
+
+    #BARRA-LATERAL {
+        display: flex;
+        width: auto;
+    }
+
+    #BARRA-LATERAL div {
+        width: 100%;
+    }
+
+    .option {
+        display: flex;
+        justify-content: center;
+    }
+
+    .option a {
+        display: flex;
+    }
+
+    .option a i {
+        margin-right: 5px;
+    }
+
+    #AZUL {
+        flex-direction: column;
+    }
+
+    #CONTENIDO-CENTRAL {
+        width: auto;
+    }
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    #PIE-DE-PAGINA .con-tenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #PIE-DE-PAGINA .con-tenedor div {
+        text-align: center;
+        align-self: center;
+        margin-bottom: 30px;
+    }
+
+    #PIE-DE-PAGINA .con-tenedor .no-listado-2 {
+        align-self: center;
+        text-align: center;
+    }
+}
+
+

@@ -20,7 +20,6 @@
 }
 
 .lado-lado div {
-    width: ;
     align-self: center;
     margin: 10px;
 
@@ -29,13 +28,10 @@
 /* IZQUIERDA */
 
 .formulario {
-    display: ;
-    flex-direction: ;
     margin: 10px;
 
 }
 
-.formulario div {}
 
 .campo {
     display: flex;
@@ -73,7 +69,6 @@ textarea {
 }
 
 .botones {
-    margin-left: ;
     text-align: right;
 
 }
@@ -103,12 +98,10 @@ textarea {
     flex-direction: column;
 }
 
-.lado_derecho div {}
 
 .info {
     display: flex;
     flex-direction: column;
-    max-width: 450px;
     text-align: justify;
 }
 
@@ -119,13 +112,8 @@ textarea {
 
 .datos {
     display: flex;
-    max-width: 400px;
-
     border: 1px solid lightgray;
     padding: 20px;
-
-    margin-top: ;
-
 }
 
 
@@ -136,4 +124,44 @@ textarea {
 
 .datos img {
     width: 70%;
+}
+
+@media (max-width: 800px) {
+    .lado-lado {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .lado-lado div {
+        width: 100%;
+    }
+
+    .botones {
+        text-align: center;
+
+    }
+
+    .lado-lado .formulario .campo {
+        width: auto;
+    }
+
+    .lado-lado .lado_derecho {
+        width: 100%;
+    }
+
+    .lado_derecho .info {
+        max-width: none;
+    }
+
+    .info p {
+        margin: 5px;
+    }
+
+    .lado_derecho .datos {
+        width: auto;
+        display: flex;
+        border: 1px solid lightgray;
+        padding: 20px;
+    }
 }
