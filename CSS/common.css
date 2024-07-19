@@ -207,7 +207,7 @@ body {
 
 }
 
-.comentarios div h3 {   
+.comentarios div h3 {
     align-self: center;
 }
 
@@ -437,4 +437,8 @@ body {
     }
 }
 
-
+@media screen and (max-width: 450px) {
+    #CABECERA h2{
+        font-size: 20px;
+    }
+}
