@@ -204,7 +204,7 @@
 
 .container .alert {
     grid-area: alert;
-    position: absolute;
+    position: sticky;
     padding: 15px;
     border-radius: 5px;
     font-size: 20px;
@@ -213,9 +213,8 @@
     opacity: 0.8;
     display: none;
 
-    align-self: center;
-    justify-content: center;
-    align-items: center;
+    bottom: 50%;
+    margin: 0 auto;
 }
 
 .alert.success {

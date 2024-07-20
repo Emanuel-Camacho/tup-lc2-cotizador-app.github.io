@@ -1,13 +1,18 @@
 let FAVORITOS = JSON.parse(localStorage.getItem('FAVORITOS')) || [];
 
-const LISTA_NUBE = new Array(); // recibe los datos del api y los manda al localStorage
+let LISTA_NUBE = new Array(); // recibe los datos del api y los manda al localStorage
 let LISTA = new Array(); // utilizamos para modificar los datos del api
 
 let fechaExacta;
 
 // Inicializa FAVORITOS con los datos de localStorage si existen
 function cargar_tarjetas() {
-    
+
+    const cotizaciones_borrar = document.getElementById("cotizaciones");
+    cotizaciones_borrar.innerHTML = '';
+    LISTA_NUBE = [];
+    LISTA = [];
+
     // Función para actualizar la fecha en el HTML
     function actualizarFecha() {
         const fechaElemento = document.querySelector('.dia');
@@ -21,12 +26,6 @@ function cargar_tarjetas() {
         fechaElemento.textContent = fechaTexto;
 
     }
-
-    // Actualizar la fecha al cargar la página
-    document.addEventListener('DOMContentLoaded', () => {
-        actualizarFecha(); // Actualizar al inicio
-        setInterval(actualizarFecha, 5 * 60 * 1000); // Actualizar cada 5 minutos
-    });
 
     // Fetch de los datos de dólares y cotizaciones
     fetch("https://dolarapi.com/v1/dolares")
@@ -135,8 +134,8 @@ function cargar_tarjetas() {
         if (!monedaRepetida) {
             showAlert('Operación exitosa', 'success');
             LISTA[id].fechaActualizacion = conseguirFecha()
-            
-            // LISTA[id].fechaActualizacion = '23/07/2024' // para poner otras fechas
+
+            // LISTA[id].fechaActualizacion = '23/7/2024' // para poner otras fechas
             FAVORITOS.push(LISTA[id]);
             localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 
@@ -284,32 +283,6 @@ function cargar_tarjetas() {
         }
     });
 
-    function showAlert(message, type) {
-        const alertBox = document.getElementById('alert-message');
-        alertBox.textContent = message;
-        alertBox.className = `alert ${type}`;
-        alertBox.style.display = 'block';
-
-        setTimeout(() => {
-            alertBox.style.display = 'none';
-        }, 3000); // Ocultar después de 3 segundos
-    }
-
-    /* 
-    showAlert('Operación exitosa', 'success');
-    
-    showAlert('Operación incorrecta', 'warning');
-    
-    showAlert('Ha ocurrido un error al intentar consultar los datos.', 'error');
-     */
-}
-
-
-// Cargar favoritos desde localStorage al iniciar la página
-document.addEventListener('DOMContentLoaded', () => {
-    // cargas las tarjetas al cargar la pagina
-    cargar_tarjetas();
-
     // Marcar como favoritos los botones correspondientes
     const botones = document.querySelectorAll('.boton_repetido');
     botones.forEach(boton => {
@@ -321,4 +294,32 @@ document.addEventListener('DOMContentLoaded', () => {
             boton.classList.add('favorito');
         }
     });
+
+    function showAlert(message, type) {
+        let alertBox = document.getElementById('alert-message');
+        console.log(alertBox)
+        alertBox.textContent = message;
+        alertBox.className = `alert ${type}`;
+        alertBox.style.display = 'block';
+
+        setTimeout(() => {
+            alertBox.style.display = 'none';
+        }, 3000); // Ocultar después de 3 segundos
+    }
+    /* showAlert('Operación exitosa', 'success');
+    
+    showAlert('Operación incorrecta', 'warning');
+    
+    showAlert('Ha ocurrido un error al intentar consultar los datos.', 'error');
+    */
+}
+
+
+
+// Cargar favoritos desde localStorage al iniciar la página
+document.addEventListener('DOMContentLoaded', () => {
+    // cargas las tarjetas al cargar la pagina
+    cargar_tarjetas(); // Actualizar al inicio
+    setInterval(cargar_tarjetas, 5 * 60 * 1000); // Actualizar cada 5 minutos
+
 });

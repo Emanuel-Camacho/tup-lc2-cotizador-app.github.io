@@ -46,12 +46,12 @@ document.getElementById('form')
 
             var inputElement = document.getElementById('tabla_inf');
             inputElement.value = tabla_informe;
-    
+
             btn.value = 'Enviando...';
-    
+
             const serviceID = 'default_service';
             const templateID = 'template_rlszzur';
-    
+
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
                     btn.value = 'Email enviado';
@@ -119,10 +119,19 @@ let grafico_cargado;
 graficar_selec_todas();
 
 function graficar() {
+
+
     const select_Monedas = document.getElementById('options').value;
     let monedaSeleccionada = null;
 
-
+    if (LISTA_FAV_INFO.length == 0) {
+        if (select_Monedas == 'TODAS') {
+            showAlert('Ninguna moneda esta en favoritos', 'error')
+        }
+        else {
+            showAlert('Esa moneda no se encuentra en favoritos', 'error')
+        }
+    }
 
     if (select_Monedas == 'TODAS') {
         graficar_selec_todas();
@@ -226,6 +235,7 @@ function graficar_selec_todas() {
 
 function showAlert(message, type) {
     const alertBox = document.getElementById('alert-message');
+    console.log(alertBox)
     alertBox.textContent = message;
     alertBox.className = `alert ${type}`;
     alertBox.style.display = 'block';
