@@ -91,7 +91,7 @@ for (let i = 0; i < LISTA_FAV_INFO.length; i++) {
 
     const tdVariacion = document.createElement('td');
     tdVariacion.classList.add('bor');
-    tdVariacion.innerHTML = `<a href="#"><i class="fa-solid fa-arrow-down" style="color: red;"></i></a> <a href="#"><i class="fa-solid fa-arrow-up" style="color: green;"></i></a>`
+    tdVariacion.innerHTML = `<i class="fa-solid fa-arrow-down" style="color: red;"></i> <i class="fa-solid fa-arrow-up" style="color: green;"></i>`
 
     trFila.appendChild(tdNombre);
     trFila.appendChild(tdFecha);
