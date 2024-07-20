@@ -135,7 +135,7 @@ function cargar_tarjetas() {
             showAlert('Operación exitosa', 'success');
             LISTA[id].fechaActualizacion = conseguirFecha()
 
-            // LISTA[id].fechaActualizacion = '23/7/2024' // para poner otras fechas
+            LISTA[id].fechaActualizacion = '23/7/2024' // para poner otras fechas
             FAVORITOS.push(LISTA[id]);
             localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 

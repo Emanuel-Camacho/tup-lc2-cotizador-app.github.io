@@ -101,6 +101,8 @@ table .fecha {
     opacity: 0.8;
     display: none;
     align-self: center;
+    z-index: 1;
+
 }
 
 .alert.success {

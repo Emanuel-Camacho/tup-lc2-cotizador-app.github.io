@@ -70,38 +70,6 @@ document.getElementById('form')
 
 
 
-for (let i = 0; i < LISTA_FAV_INFO.length; i++) {
-    const trFila = document.createElement('tr');
-
-    const tdNombre = document.createElement('td');
-    tdNombre.classList.add('bor');
-    tdNombre.innerHTML = LISTA_FAV_INFO[i].nombre
-
-    const tdFecha = document.createElement('td');
-    tdFecha.classList.add('bor');
-    tdFecha.innerHTML = LISTA_FAV_INFO[i].fechaActualizacion
-
-    const tdCompra = document.createElement('td');
-    tdCompra.classList.add('bor');
-    tdCompra.innerHTML = '$' + LISTA_FAV_INFO[i].compra
-
-    const tdVenta = document.createElement('td');
-    tdVenta.classList.add('bor');
-    tdVenta.innerHTML = '$' + LISTA_FAV_INFO[i].venta
-
-    const tdVariacion = document.createElement('td');
-    tdVariacion.classList.add('bor');
-    tdVariacion.innerHTML = `<i class="fa-solid fa-arrow-down" style="color: red;"></i> <i class="fa-solid fa-arrow-up" style="color: green;"></i>`
-
-    trFila.appendChild(tdNombre);
-    trFila.appendChild(tdFecha);
-    trFila.appendChild(tdCompra);
-    trFila.appendChild(tdVenta);
-    trFila.appendChild(tdVariacion);
-
-    body_INFO.appendChild(trFila);
-}
-
 if (LISTA_FAV_INFO.length == 0) {
     const trVacio = document.createElement('tr');
     const tdVacio = document.createElement('td');
@@ -109,6 +77,41 @@ if (LISTA_FAV_INFO.length == 0) {
     tdVacio.innerHTML = "NO HAY NINGUNA MONEDA AGREGADA A FAVORITOS";
     trVacio.appendChild(tdVacio);
     body_INFO.appendChild(trVacio);
+}
+else {
+
+    for (let i = 0; i < LISTA_FAV_INFO.length; i++) {
+        const trFila = document.createElement('tr');
+
+        const tdNombre = document.createElement('td');
+        tdNombre.classList.add('bor');
+        tdNombre.innerHTML = LISTA_FAV_INFO[i].nombre
+
+        const tdFecha = document.createElement('td');
+        tdFecha.classList.add('bor');
+        tdFecha.innerHTML = LISTA_FAV_INFO[i].fechaActualizacion
+
+        const tdCompra = document.createElement('td');
+        tdCompra.classList.add('bor');
+        tdCompra.innerHTML = '$' + LISTA_FAV_INFO[i].compra
+
+        const tdVenta = document.createElement('td');
+        tdVenta.classList.add('bor');
+        tdVenta.innerHTML = '$' + LISTA_FAV_INFO[i].venta
+
+        const tdVariacion = document.createElement('td');
+        tdVariacion.classList.add('bor');
+        tdVariacion.innerHTML = `<i class="fa-solid fa-arrow-down" style="color: red;"></i> <i class="fa-solid fa-arrow-up" style="color: green;"></i>`
+
+        trFila.appendChild(tdNombre);
+        trFila.appendChild(tdFecha);
+        trFila.appendChild(tdCompra);
+        trFila.appendChild(tdVenta);
+        trFila.appendChild(tdVariacion);
+
+        body_INFO.appendChild(trFila);
+    }
+
 }
 
 const ctx = document.getElementById("miGrafica").getContext("2d");
@@ -126,10 +129,10 @@ function graficar() {
 
     if (LISTA_FAV_INFO.length == 0) {
         if (select_Monedas == 'TODAS') {
-            showAlert('Ninguna moneda esta en favoritos', 'error')
+            showAlert('Ninguna moneda esta en favoritos.', 'error')
         }
         else {
-            showAlert('Esa moneda no se encuentra en favoritos', 'error')
+            showAlert('Esa moneda no se encuentra en favoritos.', 'error')
         }
     }
 
@@ -153,7 +156,6 @@ function graficar() {
         const ejeX = [monedaSeleccionada.fechaActualizacion];
         const compra = [monedaSeleccionada.compra];
         const venta = [monedaSeleccionada.venta];
-
 
         if (grafico_cargado) {
             grafico_cargado.destroy();
