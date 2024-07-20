@@ -326,6 +326,6 @@ function cargar_tarjetas() {
 document.addEventListener('DOMContentLoaded', () => {
     // cargas las tarjetas al cargar la pagina
     cargar_tarjetas(); // Actualizar al inicio
-    setInterval(cargar_tarjetas, 5000); // Actualizar cada 5 minutos
+    setInterval(cargar_tarjetas, 5 * 60 * 1000); // Actualizar cada 5 minutos
 
 });
