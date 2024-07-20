@@ -57,6 +57,7 @@
         "dia"
         "cotizaciones"
         "alert"
+        "mensaje_vacio"
         "pie";
     grid-gap: 10px;
 }
@@ -80,6 +81,10 @@
     height: 60%;
     display: flex;
     flex-flow: column wrap;
+}
+
+.mensaje_vacio {
+    grid-area: mensaje_vacio;
 }
 
 /* Nueva media query para cambiar la disposición a partir de 735px */

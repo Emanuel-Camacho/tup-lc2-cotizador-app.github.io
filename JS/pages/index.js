@@ -6,7 +6,11 @@ let LISTA = new Array(); // utilizamos para modificar los datos del api
 let fechaExacta;
 
 // Inicializa FAVORITOS con los datos de localStorage si existen
+
+
+
 function cargar_tarjetas() {
+
 
     const cotizaciones_borrar = document.getElementById("cotizaciones");
     cotizaciones_borrar.innerHTML = '';
@@ -104,6 +108,11 @@ function cargar_tarjetas() {
             }
             cotizaciones.appendChild(tarjeta);
         }
+        let mensajeVacio = document.createElement('div');
+        mensajeVacio.classList.add("mensajeVacio");
+        mensajeVacio.innerHTML = 'NO HAY FAVORITOS AGREGADOS';
+        mensajeVacio.style.display = 'none';
+        cotizaciones.appendChild(mensajeVacio);
     } else {
         console.log("No se encontraron monedas en la lista.");
     }
@@ -157,7 +166,7 @@ function cargar_tarjetas() {
         const selectedOption = document.getElementById('options').value;
         console.log('Opción seleccionada:', selectedOption);
 
-        const mensajeVacio = document.querySelector('.mensaje_vacio');
+        let mensajeVacio = document.querySelector('.mensajeVacio')
         mensajeVacio.style.display = 'none';
 
         switch (selectedOption) {
@@ -165,7 +174,6 @@ function cargar_tarjetas() {
                 document.querySelectorAll('.tarjeta').forEach(elemento => {
                     elemento.style.display = 'flex';
                 });
-                mensajeVacio.style.display = 'none';
                 break;
             case 'USD':
                 document.querySelectorAll('.tarjeta').forEach(elemento => {
@@ -221,8 +229,7 @@ function cargar_tarjetas() {
                     document.querySelectorAll('.tarjeta').forEach(elemento => {
                         elemento.style.display = 'none';
                     });
-                    mensajeVacio.innerHTML = 'No hay favoritos agregados'
-                    mensajeVacio.style.display = 'flex';
+                    mensajeVacio.style.display = 'block';
                 }
                 else {
                     let seleccionado;
@@ -297,7 +304,6 @@ function cargar_tarjetas() {
 
     function showAlert(message, type) {
         let alertBox = document.getElementById('alert-message');
-        console.log(alertBox)
         alertBox.textContent = message;
         alertBox.className = `alert ${type}`;
         alertBox.style.display = 'block';
@@ -320,6 +326,6 @@ function cargar_tarjetas() {
 document.addEventListener('DOMContentLoaded', () => {
     // cargas las tarjetas al cargar la pagina
     cargar_tarjetas(); // Actualizar al inicio
-    setInterval(cargar_tarjetas, 5 * 60 * 1000); // Actualizar cada 5 minutos
+    setInterval(cargar_tarjetas, 5000); // Actualizar cada 5 minutos
 
 });
