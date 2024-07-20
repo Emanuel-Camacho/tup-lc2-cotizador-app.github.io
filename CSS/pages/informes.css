@@ -119,6 +119,7 @@
 
 .tabla-container table thead {
     background-color: #b5daff;
+    position: sticky;
 
 }
 

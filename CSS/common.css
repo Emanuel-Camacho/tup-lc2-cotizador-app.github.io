@@ -247,7 +247,7 @@ body {
     border: 1px solid rgb(0, 0, 0);
 }
 
-.container h2 {
+.container h2, .titulo_icono {
     margin-top: 10px;
 }
 

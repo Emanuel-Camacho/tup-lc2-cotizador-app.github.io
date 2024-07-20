@@ -24,7 +24,7 @@
 
 .container .impresora {
     margin-right: 5px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .container .impresora a i {
@@ -51,7 +51,7 @@
 
 .tabla-container table thead {
     background-color: #b5daff;
-    position: static;
+    position: sticky;
 
 }
 
