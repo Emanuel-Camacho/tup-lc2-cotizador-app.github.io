@@ -21,6 +21,7 @@ function cargar_tarjetas() {
     function actualizarFecha() {
         const fechaElemento = document.querySelector('.dia');
         const fechaActual = new Date();
+        console.log(fechaActual)
         const dia = fechaActual.getDate();
         const mes = fechaActual.getMonth() + 1;
         const año = fechaActual.getFullYear();
@@ -144,7 +145,7 @@ function cargar_tarjetas() {
             showAlert('Operación exitosa', 'success');
             LISTA[id].fechaActualizacion = conseguirFecha()
 
-            // LISTA[id].fechaActualizacion = '23/7/2024' // para poner otras fechas
+            //LISTA[id].fechaActualizacion = '23/7/2024' // para poner otras fechas
             FAVORITOS.push(LISTA[id]);
             localStorage.setItem('FAVORITOS', JSON.stringify(FAVORITOS));
 

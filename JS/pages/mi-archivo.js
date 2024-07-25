@@ -3,7 +3,7 @@ function tabla_MIARCHIVO() {
     const LISTA_FAV_MI = JSON.parse(localStorage.getItem('FAVORITOS')) || [];
 
     const tablaBody = document.querySelector('#body_MI');
-
+    
     // LISTA_FAV_MI[1].fechaActualizacion = '19/7/2024'
 
     tablaBody.innerHTML = '';
