@@ -50,11 +50,11 @@ document.getElementById('form')
             btn.value = 'Enviando...';
 
             const serviceID = 'default_service';
-            const templateID = 'template_rlszzur';
+            const templateID = 'service_avqduoe';
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
-                    btn.value = 'Email enviado';
+                    btn.value = 'Enviar';
                     alert('Enviado con Exito!');
                 }, (err) => {
                     btn.value = 'Error!';

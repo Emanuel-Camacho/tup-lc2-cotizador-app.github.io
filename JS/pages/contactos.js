@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
     });
 
-    
+
 });
 
 const btn = document.getElementById('button');
@@ -19,14 +19,14 @@ document.getElementById('form')
         btn.value = 'Enviando...';
 
         const serviceID = 'default_service';
-        const templateID = 'template_cy4vr6b';
+        const templateID = 'service_avqduoe';
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
                 btn.value = 'Enviar';
                 alert('Enviado!');
             }, (err) => {
-                btn.value = 'Enviar';
+                btn.value = 'Error!';
                 alert(JSON.stringify(err));
             });
     });
