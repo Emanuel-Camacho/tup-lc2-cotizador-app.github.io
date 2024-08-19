@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const printButton = document.getElementById('print-button');
 
     printButton.addEventListener('click', (event) => {
-        event.preventDefault(); // Previene la acción por defecto del enlace
+        event.preventDefault(); // Previene la acción por defecto del enlace, el <a> normalmente redirigiría a otra página
 
         // Selecciona el contenedor que deseas imprimir
         const container = document.querySelector('.tabla-container').innerHTML;
@@ -118,9 +118,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Crea una nueva ventana para la impresión
         const printWindow = window.open('', '', 'height=600,width=800');
 
-        printWindow.document.write(container);
+        printWindow.document.write(container); // Escribe el contenido seleccionado en la nueva ventana.
 
-        printWindow.document.close();
-        printWindow.print();
+        printWindow.document.close(); // Cierra el documento en la nueva ventana, lo que es necesario para que el contenido se renderice.
+        printWindow.print(); // Abre el diálogo de impresión para la nueva ventana
     });
 });
